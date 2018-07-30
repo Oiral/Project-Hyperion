@@ -15,4 +15,12 @@ public class PlayingCardScript : MonoBehaviour {
     {
         info.SpawnInMatchCard(title, number, desc);
     }
+
+    public void ClickedOn()
+    {
+        Debug.Log(info.nameOfCard);
+        DeckScript deckMan = GameObject.FindGameObjectWithTag("DeckManager").GetComponent<DeckScript>();
+        deckMan.RemoveCard(info);
+    }
+
 }
