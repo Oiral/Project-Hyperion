@@ -19,8 +19,6 @@ public class Card : ScriptableObject {
     public int attackDamage = 0;
     [SerializeField]
     public int multiplyValue = 1;
-    [SerializeField]
-    public bool enabled = true;
 
     [Header("Shop Info")]
     public int price = 1;

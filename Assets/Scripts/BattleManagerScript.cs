@@ -12,6 +12,11 @@ public class BattleManagerScript : MonoBehaviour {
     public PlayerScript player;
     public GameObject cardPrefab;
 
+    //UI Stuff
+    public GameObject UiCardPrefab;
+    public GameObject UIHandParent;
+    public List<GameCard> playerHand = new List<GameCard>();
+
     public GameCard[] enemyCardsInPlay = new GameCard[3];
     public GameCard[] playerCardsInPlay = new GameCard[3];
 
@@ -26,19 +31,19 @@ public class BattleManagerScript : MonoBehaviour {
 
     public void StartTurn()
     {
-        setupUpTurnButton.interactable = false;
+        //setupUpTurnButton.interactable = false;
         StartCoroutine(SetUpTurn());
         playerAutoPlayButton.interactable = true;
     }
     public void PlayerAutoPlay()
     {
-        playerAutoPlayButton.interactable = false;
-        StartCoroutine(PlayerSetUpTurnAuto());
+        //playerAutoPlayButton.interactable = false;
+        //StartCoroutine(PlayerSetUpTurnAuto());
         matchButton.interactable = true;
     }
     public void MatchCards()
     {
-        matchButton.interactable = false;
+        //matchButton.interactable = false;
         StartCoroutine(CheckCards());
     }
 
@@ -55,24 +60,13 @@ public class BattleManagerScript : MonoBehaviour {
         PlayerDraw();
     }
 
-    public void PlayerDraw()
-    {
-        for (int i = 0; i < 3; i++)
-        {
-            GameObject SpawnedCardObject = Instantiate(cardPrefab);
-            GameCard spawnedCard = SpawnedCardObject.GetComponent<PlayingCardScript>().info = player.currentDeck.DrawRandom();
-            spawnedCard.attachedObject = SpawnedCardObject;
-            SpawnedCardObject.GetComponent<PlayingCardScript>().targetPos = new Vector3(-20, 0, i * 12);
-            playerCardsInPlay[i] = spawnedCard;
-        }
-    }
-
     #endregion
 
     IEnumerator SetUpTurn()
     {
         yield return new WaitForSeconds(0.1f);
         AiDraw();
+        PlayerDraw();
     }
 
     public void AiDraw()
@@ -82,9 +76,49 @@ public class BattleManagerScript : MonoBehaviour {
             GameObject SpawnedCardObject = Instantiate(cardPrefab);
             GameCard spawnedCard = SpawnedCardObject.GetComponent<PlayingCardScript>().info = enemy.currentDeck.DrawRandom();
             spawnedCard.attachedObject = SpawnedCardObject;
-            SpawnedCardObject.GetComponent<PlayingCardScript>().targetPos = new Vector3(0, 0, i * 12);
+            SpawnedCardObject.GetComponent<PlayingCardScript>().targetPos = new Vector3(AiXValue, 0, i * 12);
             enemyCardsInPlay[i] = spawnedCard;
             //Debug.Log("spawned card", spawnedCard.attachedObject);
+        }
+    }
+
+    public void PlayerDraw()
+    {
+        while (playerHand.Count < 5)
+        {
+            //Check if there is more card to draw
+            if (player.currentDeck.activeDeck.Count > 0)
+            {
+
+                GameObject UISpawnedCardObject = Instantiate(UiCardPrefab, UIHandParent.transform);
+                GameCard spawnedCard = UISpawnedCardObject.GetComponent<UiCardScript>().info = player.currentDeck.DrawRandom();
+                spawnedCard.attachedObject = UISpawnedCardObject;
+                playerHand.Add(spawnedCard);
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+
+    public void PlayerPlayCard(GameCard cardPlayed)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if (playerCardsInPlay[i] == null)
+            {
+                //Destroy the card played
+                Destroy(cardPlayed.attachedObject);
+                playerHand.Remove(cardPlayed);
+
+                GameObject SpawnedCardObject = Instantiate(cardPrefab);
+                SpawnedCardObject.GetComponent<PlayingCardScript>().info = cardPlayed;
+                cardPlayed.attachedObject = SpawnedCardObject;
+                SpawnedCardObject.GetComponent<PlayingCardScript>().targetPos = new Vector3(PlayerXValue, 0, i * 12);
+                playerCardsInPlay[i] = cardPlayed;
+                break;
+            }
         }
     }
 

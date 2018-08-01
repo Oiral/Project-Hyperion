@@ -29,6 +29,17 @@ public class GameCard{
         relatedCard = cardToCopy;
     }
 
+    public void UpdateMatchCardUI(Text title, Text damageNumbers)
+    {
+        damageNumbers.text = (attackDamage * multiplyValue).ToString();
+        if (multiplyValue > 1)
+        {
+            damageNumbers.color = Color.yellow;
+        }
+
+        title.text = relatedCard.nameOfCard;
+    }
+
     public void UpdateMatchCardUI(Text title, Text damageNumbers, Text battleDescriptionText)
     {
         damageNumbers.text = (attackDamage * multiplyValue).ToString();
