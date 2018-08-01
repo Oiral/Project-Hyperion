@@ -15,8 +15,8 @@ public class BattleManagerScript : MonoBehaviour {
     public GameCard[] enemyCardsInPlay = new GameCard[3];
     public GameCard[] playerCardsInPlay = new GameCard[3];
 
-    public int AiXValue = 0;
-    public int PlayerXValue = -20;
+    int AiXValue = 0;
+    int PlayerXValue = -20;
 
     #region testing
     //Testing Items
@@ -51,9 +51,10 @@ public class BattleManagerScript : MonoBehaviour {
 
     IEnumerator PlayerSetUpTurnAuto()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
         PlayerDraw();
     }
+
     public void PlayerDraw()
     {
         for (int i = 0; i < 3; i++)
@@ -70,7 +71,7 @@ public class BattleManagerScript : MonoBehaviour {
 
     IEnumerator SetUpTurn()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
         AiDraw();
     }
 
@@ -83,6 +84,7 @@ public class BattleManagerScript : MonoBehaviour {
             spawnedCard.attachedObject = SpawnedCardObject;
             SpawnedCardObject.GetComponent<PlayingCardScript>().targetPos = new Vector3(0, 0, i * 12);
             enemyCardsInPlay[i] = spawnedCard;
+            //Debug.Log("spawned card", spawnedCard.attachedObject);
         }
     }
 
@@ -93,6 +95,8 @@ public class BattleManagerScript : MonoBehaviour {
         EvaluateRow(1);
         yield return new WaitForSeconds(1);
         EvaluateRow(2);
+        yield return new WaitForSeconds(1);
+        StartCoroutine(EndTurn());
     }
 
     public void EvaluateRow(int row)
@@ -144,18 +148,36 @@ public class BattleManagerScript : MonoBehaviour {
             {
                 case CardType.Mirror:
                     Debug.Log("Mirroring");
-                    if (enemyCardsInPlay[row] == playerCardsInPlay[row])//Checking for the edge case of both being a mirror
+                    if (enemyCardsInPlay[row].relatedCard == playerCardsInPlay[row].relatedCard)//Checking for the edge case of both being a mirror
                     {
                         break;
                     }
 
                     EvaluateCard(otherCollumn[row], row, isPlayer);
+
+                    //Visual stuff
+                    Vector3 currpos = cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos;
+
+                    //spawn in the mirrored card
+                    Card relatedCard = otherCollumn[row].relatedCard;
+                    GameObject SpawnedCardObject = Instantiate(cardPrefab,otherCollumn[row].attachedObject.transform.position,Quaternion.identity);
+                    GameCard spawnedCard = SpawnedCardObject.GetComponent<PlayingCardScript>().info = otherCollumn[row];
+                    spawnedCard.attachedObject = SpawnedCardObject;
+                    SpawnedCardObject.GetComponent<PlayingCardScript>().targetPos = currpos;
+                    myCollumn[row] = spawnedCard;
+
+                    //move the mirror card down
                     
+                    currpos.y -= 1;
+                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos = currpos;
                     break;
 
                 case CardType.Freeze:
                     Debug.Log("Freeze");
-                    otherCollumn[row].enabled = false;
+                    if (otherCollumn[row].extras != CardFamily.Effect)
+                    {
+                        otherCollumn[row].enabled = false;
+                    }
                     break;
 
                 case CardType.Thief:
@@ -163,7 +185,7 @@ public class BattleManagerScript : MonoBehaviour {
                     if (otherCollumn[row].extras == CardFamily.Effect)//Check if opponents card is a effect
                     {
                         //If they are both thiefs disable both
-                        enemyCardsInPlay[row].enabled = playerCardsInPlay[row].enabled = false;
+                        //enemyCardsInPlay[row].enabled = playerCardsInPlay[row].enabled = false;
                         break;
                     }
 
@@ -173,7 +195,8 @@ public class BattleManagerScript : MonoBehaviour {
 
                     //Disable this card
                     cardToEval.enabled = false;
-                    EvaluateCard(otherCollumn[row], row, isPlayer);
+                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(0, -1, 0);
+                    EvaluateCard(myCollumn[row], row, isPlayer);
 
                     //visualization
                     UpdateCardPos();
@@ -187,6 +210,9 @@ public class BattleManagerScript : MonoBehaviour {
                     }
 
                     myCollumn[row + 1].multiplyValue += 1;
+
+                    //visualisation
+                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(0, -1, 9);
                     break;
                 case CardType.Heal:
                     Debug.Log("Heal");
@@ -215,19 +241,49 @@ public class BattleManagerScript : MonoBehaviour {
 
     void UpdateCardPos()
     {
-        foreach (GameCard card in playerCardsInPlay)
+        foreach (GameCard curCard in playerCardsInPlay)
         {
-            Vector3 pos = card.attachedObject.transform.position;
-            pos.x = PlayerXValue;
-            card.attachedObject.GetComponent<PlayingCardScript>().targetPos = pos;
+            if (curCard != null)
+            {
+                Debug.Log("Updating card", curCard.attachedObject);
+                Vector3 pos = curCard.attachedObject.transform.position;
+                pos.x = PlayerXValue;
+                curCard.attachedObject.GetComponent<PlayingCardScript>().targetPos = pos;
+            }
         }
-        foreach (GameCard card in enemyCardsInPlay)
+        foreach (GameCard curCard in enemyCardsInPlay)
         {
-            Vector3 pos = card.attachedObject.transform.position;
-            pos.x = AiXValue;
-            card.attachedObject.GetComponent<PlayingCardScript>().targetPos = pos;
+            if (curCard != null)
+            {
+                Vector3 pos = curCard.attachedObject.transform.position;
+                pos.x = AiXValue;
+                curCard.attachedObject.GetComponent<PlayingCardScript>().targetPos = pos;
+            }
         }
     }
 
+
+    IEnumerator EndTurn()
+    {
+        //move cards that are in play
+        foreach (GameObject cardInPlay in GameObject.FindGameObjectsWithTag("Played Card"))
+        {
+            cardInPlay.GetComponent<PlayingCardScript>().targetPos += new Vector3(0, -50, 0);
+            Destroy(cardInPlay, 2);
+        }
+        yield return new WaitForSeconds(1);
+        //Check if there are no more cards left
+        if (player.currentDeck.activeDeck.Count > 0)
+        {
+            StartCoroutine(SetUpTurn());
+            playerAutoPlayButton.interactable = true;
+        }
+        else
+        {
+            Debug.Log("End Game!");
+        }
+
+        
+    }
 
 }

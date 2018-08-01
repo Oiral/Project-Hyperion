@@ -10,6 +10,7 @@ public class PlayerScript : MonoBehaviour {
     public int maxHP = 15;
 
     public Text healthText;
+    public Text shieldText;
 
     public Deck currentDeck;
 
@@ -25,6 +26,7 @@ public class PlayerScript : MonoBehaviour {
             shield = 0;
         }
         Debug.Log("Health: " + health + " Shield: " + shield);
+        UpdateUI();
     }
 
     public void Heal(int amount)
@@ -34,19 +36,27 @@ public class PlayerScript : MonoBehaviour {
         {
             health = maxHP;
         }
+        UpdateUI();
     }
 
     public void Block(int amount)
     {
         shield += amount;
+        UpdateUI();
     }
 
     private void Start()
     {
         currentDeck.GenerateActiveDeck();
+        UpdateUI();
     }
     private void OnDisable()
     {
         currentDeck.activeDeck.Clear();
+    }
+    public void UpdateUI()
+    {
+        healthText.text = health.ToString();
+        shieldText.text = shield.ToString();
     }
 }
