@@ -15,6 +15,9 @@ public class BattleManagerScript : MonoBehaviour {
     public GameCard[] enemyCardsInPlay = new GameCard[3];
     public GameCard[] playerCardsInPlay = new GameCard[3];
 
+    public int AiXValue = 0;
+    public int PlayerXValue = -20;
+
     #region testing
     //Testing Items
     public Button setupUpTurnButton;
@@ -57,6 +60,7 @@ public class BattleManagerScript : MonoBehaviour {
         {
             GameObject SpawnedCardObject = Instantiate(cardPrefab);
             GameCard spawnedCard = SpawnedCardObject.GetComponent<PlayingCardScript>().info = player.currentDeck.DrawRandom();
+            spawnedCard.attachedObject = SpawnedCardObject;
             SpawnedCardObject.GetComponent<PlayingCardScript>().targetPos = new Vector3(-20, 0, i * 12);
             playerCardsInPlay[i] = spawnedCard;
         }
@@ -75,7 +79,8 @@ public class BattleManagerScript : MonoBehaviour {
         for (int i = 0; i < 3; i++)
         {
             GameObject SpawnedCardObject = Instantiate(cardPrefab);
-            GameCard spawnedCard = SpawnedCardObject.GetComponent<PlayingCardScript>().info = enemy.currentDeck.DrawRandom().relatedCard;
+            GameCard spawnedCard = SpawnedCardObject.GetComponent<PlayingCardScript>().info = enemy.currentDeck.DrawRandom();
+            spawnedCard.attachedObject = SpawnedCardObject;
             SpawnedCardObject.GetComponent<PlayingCardScript>().targetPos = new Vector3(0, 0, i * 12);
             enemyCardsInPlay[i] = spawnedCard;
         }
@@ -117,15 +122,22 @@ public class BattleManagerScript : MonoBehaviour {
             GameCard[] myCollumn;
             GameCard[] otherCollumn;
 
+            PlayerScript user;
+            PlayerScript opponent;
+
             if (isPlayer)
             {
                 myCollumn = playerCardsInPlay;
                 otherCollumn = enemyCardsInPlay;
+                user = player;
+                opponent = enemy;
             }
             else
             {
                 myCollumn = enemyCardsInPlay;
                 otherCollumn = playerCardsInPlay;
+                user = enemy;
+                opponent = player;
             }
 
             switch (cardToEval.typeOfCard)
@@ -148,21 +160,28 @@ public class BattleManagerScript : MonoBehaviour {
 
                 case CardType.Thief:
                     Debug.Log("Thief");
-                    if (enemyCardsInPlay[row] == playerCardsInPlay[row])//Check for the edge case of both theifs
+                    if (otherCollumn[row].extras == CardFamily.Effect)//Check if opponents card is a effect
                     {
                         //If they are both thiefs disable both
                         enemyCardsInPlay[row].enabled = playerCardsInPlay[row].enabled = false;
                         break;
                     }
 
+                    //Swap the other cards around
+                    myCollumn[row] = otherCollumn[row];
+                    otherCollumn[row] = cardToEval;
+
                     //Disable this card
                     cardToEval.enabled = false;
                     EvaluateCard(otherCollumn[row], row, isPlayer);
+
+                    //visualization
+                    UpdateCardPos();
                     break;
 
                 case CardType.Multiply:
                     Debug.Log("Mulitply");
-                    if (row >= 3)//Catch if this multiply is the last one in the list
+                    if (row >= 2)//Catch if this multiply is the last one in the list
                     {
                         break;
                     }
@@ -171,23 +190,44 @@ public class BattleManagerScript : MonoBehaviour {
                     break;
                 case CardType.Heal:
                     Debug.Log("Heal");
+                    //heal the player
+                    user.Heal(cardToEval.attackDamage * cardToEval.multiplyValue);
                     break;
                 case CardType.Block:
                     Debug.Log("Block");
+                    //add block
+                    user.Block(cardToEval.attackDamage * cardToEval.multiplyValue);
                     break;
                 case CardType.Hit:
                     Debug.Log("Hit");
+                    //deal damage
+                    opponent.Damage(cardToEval.attackDamage * cardToEval.multiplyValue);
                     break;
                 case CardType.Chain:
                     Debug.Log("Chain");
+                    //deal damage
+                    opponent.Damage(cardToEval.attackDamage * cardToEval.multiplyValue);
                     break;
             }
         }
-        cardToEval.enabled = true;
         
     }
 
-
+    void UpdateCardPos()
+    {
+        foreach (GameCard card in playerCardsInPlay)
+        {
+            Vector3 pos = card.attachedObject.transform.position;
+            pos.x = PlayerXValue;
+            card.attachedObject.GetComponent<PlayingCardScript>().targetPos = pos;
+        }
+        foreach (GameCard card in enemyCardsInPlay)
+        {
+            Vector3 pos = card.attachedObject.transform.position;
+            pos.x = AiXValue;
+            card.attachedObject.GetComponent<PlayingCardScript>().targetPos = pos;
+        }
+    }
 
 
 }

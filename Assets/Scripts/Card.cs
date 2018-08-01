@@ -16,7 +16,7 @@ public class Card : ScriptableObject {
 
     [Header("Battle Stats")]
     [SerializeField]
-    public float attackDamage = 0;
+    public int attackDamage = 0;
     [SerializeField]
     public int multiplyValue = 1;
     [SerializeField]
@@ -31,14 +31,4 @@ public class Card : ScriptableObject {
     [Multiline]
     public string description;
     public CardBattleDescriptions battleDescription;
-
-    public void SpawnInMatchCard(Text title, Text damageNumbers, Text battleDescriptionText)
-    {
-        damageNumbers.text = attackDamage.ToString();
-        title.text = nameOfCard;
-
-        string desc = battleDescription.Description;
-        desc = desc.Replace("{atk}", attackDamage.ToString());
-        battleDescriptionText.text = desc;
-    }
 }

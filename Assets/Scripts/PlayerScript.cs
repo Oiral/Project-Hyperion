@@ -6,20 +6,39 @@ using UnityEngine.UI;
 public class PlayerScript : MonoBehaviour {
 
     public int health;
+    public int shield;
+    public int maxHP = 15;
 
     public Text healthText;
 
     public Deck currentDeck;
 
-    public void ChangeHealth(int healthToChange)
+    public void Damage(int amount)
     {
-        health += healthToChange;
-        if (health <= 0)
+        //Deal damage to shield first
+        shield -= amount;
+
+        //If shield is in negative carry the damage over to health
+        if (shield < 0)
         {
-            Debug.Log("Im dead");
-            health = 0;
+            health += shield;
+            shield = 0;
         }
-        healthText.text = health + "/10";
+        Debug.Log("Health: " + health + " Shield: " + shield);
+    }
+
+    public void Heal(int amount)
+    {
+        health += amount;
+        if (health > maxHP)
+        {
+            health = maxHP;
+        }
+    }
+
+    public void Block(int amount)
+    {
+        shield += amount;
     }
 
     private void Start()
@@ -28,6 +47,6 @@ public class PlayerScript : MonoBehaviour {
     }
     private void OnDisable()
     {
-        Debug.Log("Test");
+        currentDeck.activeDeck.Clear();
     }
 }
