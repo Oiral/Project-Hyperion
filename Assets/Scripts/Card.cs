@@ -10,12 +10,16 @@ public enum CardType { Mirror, Freeze, Thief, Multiply, Heal, Block, Hit, Chain 
 public class Card : ScriptableObject {
     
     [Header("General Stats")]
+
     public CardType typeOfCard;
     public CardFamily extras;
 
     [Header("Battle Stats")]
+    [SerializeField]
     public float attackDamage = 0;
+    [SerializeField]
     public int multiplyValue = 1;
+    [SerializeField]
     public bool enabled = true;
 
     [Header("Shop Info")]

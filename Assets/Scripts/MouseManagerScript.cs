@@ -7,6 +7,7 @@ public class MouseManagerScript : MonoBehaviour {
     public GameObject activeCard;
     public GameObject selectedCard;
 
+    /*
     private void Update()
     {
         RaycastHit hit;
@@ -55,5 +56,5 @@ public class MouseManagerScript : MonoBehaviour {
                 cardScript.cardRenderer.material = mat;
             }
         }
-    }
+    }*/
 }

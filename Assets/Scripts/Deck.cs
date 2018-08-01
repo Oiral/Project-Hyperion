@@ -4,8 +4,11 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "Deck", menuName = "Cards/Create Deck", order = 1)]
 public class Deck : ScriptableObject {
-    public List<Card> activeDeck;
+    [SerializeField]
+    public List<GameCard> activeDeck;
+    [SerializeField]
     public List<Card> unactiveDeck;
+    [SerializeField]
     public List<Card> inventoryCards;
 
 
@@ -18,13 +21,13 @@ public class Deck : ScriptableObject {
         }
         else
         {
-            activeDeck = new List<Card>();
+            activeDeck = new List<GameCard>();
             foreach (Card card in unactiveDeck)
             {
-                activeDeck.Add(card);
+                activeDeck.Add(new GameCard(card));
             }
             
-            activeDeck.Sort(delegate(Card a, Card b)
+            activeDeck.Sort(delegate(GameCard a, GameCard b)
             {
                 return (a.typeOfCard.CompareTo(b.typeOfCard));
             });
@@ -32,14 +35,14 @@ public class Deck : ScriptableObject {
     }
 
     /// <summary>
-    /// Draw a random card form the active deck
+    /// Draw a random game card form the active deck
     /// </summary>
-    /// <returns>the card that has been drawn</returns>
-    public Card DrawRandom()
+    /// <returns>the game card that has been drawn</returns>
+    public GameCard DrawRandom()
     {
         int randomNumber = UnityEngine.Random.Range(0, activeDeck.Count);
-        Debug.Log(randomNumber.ToString());
-        Card card = activeDeck[randomNumber];
+        //Debug.Log(randomNumber.ToString());
+        GameCard card = activeDeck[randomNumber];
         activeDeck.Remove(card);
 
         return card;
