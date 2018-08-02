@@ -44,7 +44,11 @@ public class BattleManagerScript : MonoBehaviour {
     public void MatchCards()
     {
         //matchButton.interactable = false;
-        StartCoroutine(CheckCards());
+        if (playerCardsInPlay[2] != null)
+        {
+            CheckChainCards(playerCardsInPlay);
+            StartCoroutine(CheckCards());
+        }
     }
 
 
@@ -66,6 +70,7 @@ public class BattleManagerScript : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.1f);
         AiDraw();
+        CheckChainCards(enemyCardsInPlay);
         PlayerDraw();
     }
 
@@ -120,6 +125,27 @@ public class BattleManagerScript : MonoBehaviour {
                 break;
             }
         }
+    }
+
+    //Check how many chain cards there are then takes each of them and adds their value
+    void CheckChainCards(GameCard[] playedCardsToCheck)
+    {
+        List<GameCard> chainCards = new List<GameCard>();
+        //find all the chain cards in play
+        foreach (GameCard card in playedCardsToCheck)
+        {
+            if (card.typeOfCard == CardType.Chain)
+            {
+                chainCards.Add(card);
+            }
+        }
+
+        //set their attack values to how many chain cards are in play
+        foreach (GameCard chainCard in chainCards)
+        {
+            chainCard.attackDamage = chainCards.Count;
+        }
+
     }
 
     IEnumerator CheckCards()
