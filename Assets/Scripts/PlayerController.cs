@@ -6,8 +6,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-
-
     public float speed;
     public float walkSoundDelay;
     private Rigidbody rb;
@@ -18,6 +16,24 @@ public class PlayerController : MonoBehaviour
     private float volHighRange = 1.0f;
     public bool walkingBool;
     bool soundBool = true;
+    public bool normal_ideal_bool;
+
+    public static PlayerController instance;
+
+    public PlayerController Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+
+        else
+        {
+            Instance = this;
+        }
+    }
 
     void Start()
     {
@@ -55,5 +71,15 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(walkSoundDelay);
         soundBool = true;
         print("WB = false");
+    }
+
+    void WalkingBool()
+    {
+
+    }
+
+    void idealBool()
+    {
+        normal_ideal_bool = true;
     }
 }
