@@ -11,6 +11,8 @@ public class UiCardScript : MonoBehaviour {
     public Text number;
     public Text desc;
 
+    public bool hover = false;
+
     private void Update()
     {
         info.UpdateMatchCardUI(title, number, desc);
@@ -20,5 +22,14 @@ public class UiCardScript : MonoBehaviour {
     {
         GameObject.FindGameObjectWithTag("Battle Manager").GetComponent<BattleManagerScript>().PlayerPlayCard(info);
             
+    }
+
+    public void OnHover()
+    {
+        hover = true;
+    }
+    public void LeaveHover()
+    {
+        hover = false;
     }
 }

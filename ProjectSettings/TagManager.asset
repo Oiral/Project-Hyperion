@@ -9,6 +9,7 @@ TagManager:
   - DeckManager
   - Played Card
   - Battle Manager
+  - Player Hand
   layers:
   - Default
   - TransparentFX

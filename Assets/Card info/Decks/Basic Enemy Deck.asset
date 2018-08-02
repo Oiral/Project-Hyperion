@@ -11,24 +11,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20608c04a0d30864f8e7397e56de38dd, type: 3}
   m_Name: Basic Enemy Deck
   m_EditorClassIdentifier: 
-  activeDeck: []
   unactiveDeck:
+  - {fileID: 11400000, guid: 009d0825d82246240870383f939e9154, type: 2}
+  - {fileID: 11400000, guid: 6eeb590a2c3470d49a9345f228784900, type: 2}
+  - {fileID: 11400000, guid: fb9369bf2c947ca44bb93978eadc7241, type: 2}
+  - {fileID: 11400000, guid: fb9369bf2c947ca44bb93978eadc7241, type: 2}
   - {fileID: 11400000, guid: 28a31c6df345fe440863e18c9ff9bc0c, type: 2}
-  - {fileID: 11400000, guid: b74baa44131319d42a6689e54af7a1f1, type: 2}
+  - {fileID: 11400000, guid: 28a31c6df345fe440863e18c9ff9bc0c, type: 2}
   - {fileID: 11400000, guid: 7d3f7b4c2995c1e4cbe70129de40e4ab, type: 2}
-  - {fileID: 11400000, guid: 1f670561ee072014fa5bcd69e8364ea4, type: 2}
+  - {fileID: 11400000, guid: 7613bdbe1db328f4995e315aec0fc458, type: 2}
+  - {fileID: 11400000, guid: 575123dae6cf0f3499a9f99319780b10, type: 2}
+  - {fileID: 11400000, guid: 7d3f7b4c2995c1e4cbe70129de40e4ab, type: 2}
+  - {fileID: 11400000, guid: 7613bdbe1db328f4995e315aec0fc458, type: 2}
+  - {fileID: 11400000, guid: 1c92ebb92d0c0534eb336a9076636a01, type: 2}
   - {fileID: 11400000, guid: 1c92ebb92d0c0534eb336a9076636a01, type: 2}
   - {fileID: 11400000, guid: 63620f0db224a8f46adee61d6e9af88f, type: 2}
   - {fileID: 11400000, guid: 4bd9ca2887b80284cbdec62310e98235, type: 2}
-  - {fileID: 11400000, guid: 3e15ea2e48608b048b3c5260edbf4862, type: 2}
-  - {fileID: 11400000, guid: 28a31c6df345fe440863e18c9ff9bc0c, type: 2}
-  - {fileID: 11400000, guid: b74baa44131319d42a6689e54af7a1f1, type: 2}
-  - {fileID: 11400000, guid: 7d3f7b4c2995c1e4cbe70129de40e4ab, type: 2}
-  - {fileID: 11400000, guid: 1f670561ee072014fa5bcd69e8364ea4, type: 2}
-  - {fileID: 11400000, guid: 1c92ebb92d0c0534eb336a9076636a01, type: 2}
-  - {fileID: 11400000, guid: 63620f0db224a8f46adee61d6e9af88f, type: 2}
   - {fileID: 11400000, guid: 4bd9ca2887b80284cbdec62310e98235, type: 2}
   - {fileID: 11400000, guid: 3e15ea2e48608b048b3c5260edbf4862, type: 2}
-  - {fileID: 11400000, guid: 28a31c6df345fe440863e18c9ff9bc0c, type: 2}
-  - {fileID: 11400000, guid: b74baa44131319d42a6689e54af7a1f1, type: 2}
+  - {fileID: 11400000, guid: 3e15ea2e48608b048b3c5260edbf4862, type: 2}
   inventoryCards: []

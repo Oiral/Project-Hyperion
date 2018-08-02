@@ -31,7 +31,15 @@ public class GameCard{
 
     public void UpdateMatchCardUI(Text title, Text damageNumbers)
     {
-        damageNumbers.text = (attackDamage * multiplyValue).ToString();
+        if (extras != CardFamily.Effect)//if the card is not an effect
+        {
+            damageNumbers.text = (attackDamage * multiplyValue).ToString();
+        }
+        else
+        {
+            damageNumbers.text = "";
+        }
+
         if (multiplyValue > 1)
         {
             damageNumbers.color = Color.yellow;
@@ -42,7 +50,15 @@ public class GameCard{
 
     public void UpdateMatchCardUI(Text title, Text damageNumbers, Text battleDescriptionText)
     {
-        damageNumbers.text = (attackDamage * multiplyValue).ToString();
+        if (extras != CardFamily.Effect)//if the card is not an effect
+        {
+            damageNumbers.text = (attackDamage * multiplyValue).ToString();
+        }
+        else
+        {
+            damageNumbers.text = "";
+        }
+
         if (multiplyValue > 1)
         {
             damageNumbers.color = Color.yellow;

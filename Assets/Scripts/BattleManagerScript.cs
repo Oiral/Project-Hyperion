@@ -29,6 +29,8 @@ public class BattleManagerScript : MonoBehaviour {
     public Button playerAutoPlayButton;
     public Button matchButton;
 
+    public GameObject hideCards;
+
     public void StartTurn()
     {
         //setupUpTurnButton.interactable = false;
@@ -75,6 +77,7 @@ public class BattleManagerScript : MonoBehaviour {
     IEnumerator SetUpTurn()
     {
         yield return new WaitForSeconds(1f);
+        hideCards.SetActive(true);
         AiDraw();
         CheckChainCards(enemyCardsInPlay);
         PlayerDraw();
@@ -156,12 +159,17 @@ public class BattleManagerScript : MonoBehaviour {
 
     IEnumerator CheckCards()
     {
+        hideCards.SetActive(false);
         yield return StartCoroutine(EvaluateRow(0));
         yield return new WaitForSeconds(1);
         yield return StartCoroutine(EvaluateRow(1));
         yield return new WaitForSeconds(1);
         yield return StartCoroutine(EvaluateRow(2));
         yield return new WaitForSeconds(1);
+        for (int i = 0; i < 3; i++)
+        {
+            playerCardsInPlay[i] = enemyCardsInPlay[i] = null;
+        }
         StartCoroutine(EndTurn());
     }
 
@@ -183,7 +191,7 @@ public class BattleManagerScript : MonoBehaviour {
             Debug.Log("Running player match");
             yield return StartCoroutine(EvaluateCard(playerCardsInPlay[row], row, true));
         }
-        playerCardsInPlay[row] = enemyCardsInPlay[row] = null;
+        //playerCardsInPlay[row] = enemyCardsInPlay[row] = null;
     }
 
     IEnumerator EvaluateCard(GameCard cardToEval,int row,bool isPlayer)
@@ -309,6 +317,7 @@ public class BattleManagerScript : MonoBehaviour {
                     //Visual
                     cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(defendMove, 0, 0);
                     break;
+
                 case CardType.Block:
                     Debug.Log("Block", cardToEval.attachedObject);
                     //add block
@@ -317,6 +326,7 @@ public class BattleManagerScript : MonoBehaviour {
                     //Visual
                     cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(defendMove, 0, 0);
                     break;
+
                 case CardType.Hit:
                     Debug.Log("Hit", cardToEval.attachedObject);
                     //deal damage
@@ -325,6 +335,7 @@ public class BattleManagerScript : MonoBehaviour {
                     //Visual
                     cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(attackMove, 0, 0);
                     break;
+
                 case CardType.Chain:
                     Debug.Log("Chain", cardToEval.attachedObject);
                     //deal damage
@@ -363,19 +374,23 @@ public class BattleManagerScript : MonoBehaviour {
 
     IEnumerator EndTurn()
     {
+        yield return new WaitForSeconds(1);
         //move cards that are in play
         foreach (GameObject cardInPlay in GameObject.FindGameObjectsWithTag("Played Card"))
         {
             cardInPlay.GetComponent<PlayingCardScript>().targetPos += new Vector3(0, -50, 0);
             Destroy(cardInPlay, 2);
         }
+        player.shield = enemy.shield = 0;
+        player.UpdateUI();
+        enemy.UpdateUI();
         yield return new WaitForSeconds(1);
         //Check if there are no more cards left
         if (player.currentDeck.activeDeck.Count > 0)
         {
-            player.shield = enemy.shield = 0;
+            
             StartCoroutine(SetUpTurn());
-            playerAutoPlayButton.interactable = true;
+            //playerAutoPlayButton.interactable = true;
         }
         else
         {

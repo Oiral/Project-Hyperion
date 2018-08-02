@@ -17,14 +17,23 @@ public class HandScript : MonoBehaviour {
             itemsInHand[i].transform.position = transform.position;
             itemsInHand[i].transform.position += new Vector3(x * 50, 0);
             itemsInHand[i].transform.rotation = Quaternion.Euler(new Vector3(0, 0, x * -40));
+
+            //if the card is being hovered over
+            if (itemsInHand[i].GetComponent<UiCardScript>().hover)
+            {
+                itemsInHand[i].transform.localScale = new Vector3(2, 2, 2);
+                itemsInHand[i].transform.position += new Vector3(0, 50);
+            }
+            else
+            {
+                itemsInHand[i].transform.localScale = new Vector3(1, 1, 1);
+            }
         }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Start();
-        }
+        Start();
+        
     }
 }
