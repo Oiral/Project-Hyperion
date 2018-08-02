@@ -58,6 +58,7 @@ public class BattleManagerScript : MonoBehaviour {
         player.currentDeck.activeDeck.Clear();
     }
 
+    
     IEnumerator PlayerSetUpTurnAuto()
     {
         yield return new WaitForSeconds(0.1f);
@@ -66,9 +67,14 @@ public class BattleManagerScript : MonoBehaviour {
 
     #endregion
 
+    private void Start()
+    {
+        StartCoroutine(SetUpTurn());
+    }
+
     IEnumerator SetUpTurn()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(1f);
         AiDraw();
         CheckChainCards(enemyCardsInPlay);
         PlayerDraw();
@@ -150,16 +156,16 @@ public class BattleManagerScript : MonoBehaviour {
 
     IEnumerator CheckCards()
     {
-        EvaluateRow(0);
+        yield return StartCoroutine(EvaluateRow(0));
         yield return new WaitForSeconds(1);
-        EvaluateRow(1);
+        yield return StartCoroutine(EvaluateRow(1));
         yield return new WaitForSeconds(1);
-        EvaluateRow(2);
+        yield return StartCoroutine(EvaluateRow(2));
         yield return new WaitForSeconds(1);
         StartCoroutine(EndTurn());
     }
 
-    public void EvaluateRow(int row)
+    IEnumerator EvaluateRow(int row)
     {
         //Debug.Log(playerCardsInPlay[row].nameOfCard + " + " + enemyCardsInPlay[row].nameOfCard);
        
@@ -167,18 +173,20 @@ public class BattleManagerScript : MonoBehaviour {
         //Check if the players card should go first depending on what type of card it is
         if (playerCardsInPlay[row].typeOfCard < enemyCardsInPlay[row].typeOfCard)
         {
-            EvaluateCard(playerCardsInPlay[row],row,true);
-            EvaluateCard(enemyCardsInPlay[row], row, false);
+            yield return StartCoroutine(EvaluateCard(playerCardsInPlay[row],row,true));
+            Debug.Log("Running enemy match");
+            yield return StartCoroutine(EvaluateCard(enemyCardsInPlay[row], row, false));
         }
         else
         {
-            EvaluateCard(enemyCardsInPlay[row], row, false);
-            EvaluateCard(playerCardsInPlay[row], row, true);
+            yield return StartCoroutine(EvaluateCard(enemyCardsInPlay[row], row, false));
+            Debug.Log("Running player match");
+            yield return StartCoroutine(EvaluateCard(playerCardsInPlay[row], row, true));
         }
         playerCardsInPlay[row] = enemyCardsInPlay[row] = null;
     }
 
-    public void EvaluateCard(GameCard cardToEval,int row,bool isPlayer)
+    IEnumerator EvaluateCard(GameCard cardToEval,int row,bool isPlayer)
     {
         //Check if the card is disabled
         if (cardToEval.enabled)
@@ -189,12 +197,17 @@ public class BattleManagerScript : MonoBehaviour {
             PlayerScript user;
             PlayerScript opponent;
 
+            int attackMove;
+            int defendMove;
+
             if (isPlayer)
             {
                 myCollumn = playerCardsInPlay;
                 otherCollumn = enemyCardsInPlay;
                 user = player;
                 opponent = enemy;
+                attackMove = 4;
+                defendMove = -4;
             }
             else
             {
@@ -202,6 +215,8 @@ public class BattleManagerScript : MonoBehaviour {
                 otherCollumn = playerCardsInPlay;
                 user = enemy;
                 opponent = player;
+                attackMove = -4;
+                defendMove = 4;
             }
 
             switch (cardToEval.typeOfCard)
@@ -213,23 +228,32 @@ public class BattleManagerScript : MonoBehaviour {
                         break;
                     }
 
-                    EvaluateCard(otherCollumn[row], row, isPlayer);
+                    
 
                     //Visual stuff
                     Vector3 currpos = cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos;
 
                     //spawn in the mirrored card
-                    Card relatedCard = otherCollumn[row].relatedCard;
                     GameObject SpawnedCardObject = Instantiate(cardPrefab,otherCollumn[row].attachedObject.transform.position,Quaternion.identity);
-                    GameCard spawnedCard = SpawnedCardObject.GetComponent<PlayingCardScript>().info = otherCollumn[row];
+
+                    //create a new game card and then copy the information over from the old one
+                    GameCard spawnedCard = new GameCard(otherCollumn[row].relatedCard);
+                    spawnedCard.multiplyValue = otherCollumn[row].multiplyValue;
+                    spawnedCard.attackDamage = otherCollumn[row].attackDamage;
+
+
+                    SpawnedCardObject.GetComponent<PlayingCardScript>().info = spawnedCard;
                     spawnedCard.attachedObject = SpawnedCardObject;
                     SpawnedCardObject.GetComponent<PlayingCardScript>().targetPos = currpos;
                     myCollumn[row] = spawnedCard;
 
                     //move the mirror card down
-                    
                     currpos.y -= 1;
                     cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos = currpos;
+
+                    yield return new WaitForSeconds(0.5f);
+                    //Check the new spawned in card
+                    yield return StartCoroutine( EvaluateCard(myCollumn[row], row, isPlayer));
                     break;
 
                 case CardType.Freeze:
@@ -256,10 +280,13 @@ public class BattleManagerScript : MonoBehaviour {
                     //Disable this card
                     cardToEval.enabled = false;
                     cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(0, -1, 0);
-                    EvaluateCard(myCollumn[row], row, isPlayer);
+                    
 
                     //visualization
                     UpdateCardPos();
+
+                    yield return new WaitForSeconds(0.5f);
+                    yield return StartCoroutine(EvaluateCard(myCollumn[row], row, isPlayer));
                     break;
 
                 case CardType.Multiply:
@@ -275,28 +302,39 @@ public class BattleManagerScript : MonoBehaviour {
                     cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(0, -1, 9);
                     break;
                 case CardType.Heal:
-                    Debug.Log("Heal");
+                    Debug.Log("Heal",cardToEval.attachedObject);
                     //heal the player
                     user.Heal(cardToEval.attackDamage * cardToEval.multiplyValue);
+
+                    //Visual
+                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(defendMove, 0, 0);
                     break;
                 case CardType.Block:
-                    Debug.Log("Block");
+                    Debug.Log("Block", cardToEval.attachedObject);
                     //add block
                     user.Block(cardToEval.attackDamage * cardToEval.multiplyValue);
+
+                    //Visual
+                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(defendMove, 0, 0);
                     break;
                 case CardType.Hit:
-                    Debug.Log("Hit");
+                    Debug.Log("Hit", cardToEval.attachedObject);
                     //deal damage
                     opponent.Damage(cardToEval.attackDamage * cardToEval.multiplyValue);
+
+                    //Visual
+                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(attackMove, 0, 0);
                     break;
                 case CardType.Chain:
-                    Debug.Log("Chain");
+                    Debug.Log("Chain", cardToEval.attachedObject);
                     //deal damage
                     opponent.Damage(cardToEval.attackDamage * cardToEval.multiplyValue);
+
+                    //Visual
+                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(attackMove, 0, 0);
                     break;
             }
         }
-        
     }
 
     void UpdateCardPos()
@@ -335,6 +373,7 @@ public class BattleManagerScript : MonoBehaviour {
         //Check if there are no more cards left
         if (player.currentDeck.activeDeck.Count > 0)
         {
+            player.shield = enemy.shield = 0;
             StartCoroutine(SetUpTurn());
             playerAutoPlayButton.interactable = true;
         }
