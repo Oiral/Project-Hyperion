@@ -5,9 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BattleManagerScript : MonoBehaviour {
-
-	
-
+    
     public PlayerScript enemy;
     public PlayerScript player;
     public GameObject cardPrefab;
@@ -77,7 +75,7 @@ public class BattleManagerScript : MonoBehaviour {
     IEnumerator SetUpTurn()
     {
         yield return new WaitForSeconds(1f);
-        hideCards.SetActive(true);
+        //hideCards.SetActive(true);
         AiDraw();
         CheckChainCards(enemyCardsInPlay);
         PlayerDraw();
@@ -370,7 +368,6 @@ public class BattleManagerScript : MonoBehaviour {
             }
         }
     }
-
 
     IEnumerator EndTurn()
     {
