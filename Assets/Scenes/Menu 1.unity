@@ -180,7 +180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: EXIT
+  m_Text: RETURN
 --- !u!222 &56693726
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -400,7 +400,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PLAY
+  m_Text: UNPAUSE
 --- !u!222 &670128332
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 1850660552}
   - component: {fileID: 1850660551}
   m_Layer: 5
-  m_Name: Exit_Button
+  m_Name: Return_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2104900113}
+      - m_Target: {fileID: 0}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -800,7 +800,7 @@ GameObject:
   - component: {fileID: 2052290090}
   - component: {fileID: 2052290089}
   m_Layer: 5
-  m_Name: Play_Button
+  m_Name: Unpause_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -864,7 +864,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2104900113}
+      - m_Target: {fileID: 0}
         m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
@@ -920,7 +920,7 @@ GameObject:
   - component: {fileID: 2104900112}
   - component: {fileID: 2104900113}
   m_Layer: 5
-  m_Name: MainMenu
+  m_Name: PauseMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -954,6 +954,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2104900111}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6c35ce91400bac4eb56b479352941a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a4d411ed724e424ebf6d13cf15d2bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
