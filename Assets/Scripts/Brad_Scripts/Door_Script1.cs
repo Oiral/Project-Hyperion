@@ -19,6 +19,6 @@ public class Door_Script1 : MonoBehaviour {
     {
         //Blue Door
         if (other.gameObject.tag == "Player")
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(1);
     }
 }

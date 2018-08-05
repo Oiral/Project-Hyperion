@@ -20,7 +20,7 @@ public class Enemie_Script : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             GameManager.previousSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(5);
         }
             
     }
