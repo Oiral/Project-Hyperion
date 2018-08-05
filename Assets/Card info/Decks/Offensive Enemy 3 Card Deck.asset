@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20608c04a0d30864f8e7397e56de38dd, type: 3}
+  m_Name: Offensive Enemy 3 Card Deck
+  m_EditorClassIdentifier: 
+  unactiveDeck:
+  - {fileID: 11400000, guid: fb9369bf2c947ca44bb93978eadc7241, type: 2}
+  - {fileID: 11400000, guid: 6eeb590a2c3470d49a9345f228784900, type: 2}
+  - {fileID: 11400000, guid: 1c92ebb92d0c0534eb336a9076636a01, type: 2}
+  inventoryCards: []

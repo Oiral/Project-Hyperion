@@ -2670,7 +2670,7 @@ MonoBehaviour:
   maxHP: 15
   healthText: {fileID: 192565212}
   shieldText: {fileID: 1476124803}
-  currentDeck: {fileID: 11400000, guid: ce5eef520540a6244b7b79e4401def67, type: 2}
+  currentDeck: {fileID: 11400000, guid: 626b1e56be1fe734ca2fce0dc7daceda, type: 2}
 --- !u!4 &1713214955
 Transform:
   m_ObjectHideFlags: 0

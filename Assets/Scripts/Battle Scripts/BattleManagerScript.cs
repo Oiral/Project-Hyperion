@@ -21,6 +21,8 @@ public class BattleManagerScript : MonoBehaviour {
     int AiXValue = 0;
     int PlayerXValue = -20;
 
+    GameManager GM;
+
     #region testing
     //Testing Items
     public Button setupUpTurnButton;
@@ -69,6 +71,19 @@ public class BattleManagerScript : MonoBehaviour {
 
     private void Start()
     {
+        //Check if there is a game manager with a deck to be loaded
+        GameObject gmObject = GameObject.FindGameObjectWithTag("GameController");
+        if (gmObject != null)
+        {
+            GM = gmObject.GetComponent<GameManager>();
+
+            enemy.currentDeck = GM.GetDeck();
+            enemy.health = GM.GetEnemyHP();
+
+            player.health = GM.playerHealth;
+        }
+        
+
         StartCoroutine(SetUpTurn());
     }
 
@@ -85,6 +100,12 @@ public class BattleManagerScript : MonoBehaviour {
     {
         for (int i = 0; i < 3; i++)
         {
+            //Check if there are no more cards to be drawn
+            if (enemy.currentDeck.activeDeck.Count == 0)
+            {
+                ReShuffle(enemy);
+            }
+
             GameObject SpawnedCardObject = Instantiate(cardPrefab);
             GameCard spawnedCard = SpawnedCardObject.GetComponent<PlayingCardScript>().info = enemy.currentDeck.DrawRandom();
             spawnedCard.attachedObject = SpawnedCardObject;
@@ -109,7 +130,12 @@ public class BattleManagerScript : MonoBehaviour {
             }
             else
             {
-                break;
+                if (player.discardedCards.Count == 0)
+                {
+                    break;
+                }
+                ReShuffle(player);
+
             }
         }
     }
@@ -132,6 +158,15 @@ public class BattleManagerScript : MonoBehaviour {
                 break;
             }
         }
+    }
+
+    public void ReShuffle(PlayerScript person)
+    {
+        foreach (GameCard card in person.discardedCards)
+        {
+            person.currentDeck.activeDeck.Add(card);
+        }
+        person.discardedCards.Clear();
     }
 
     //Check how many chain cards there are then takes each of them and adds their value
@@ -159,13 +194,18 @@ public class BattleManagerScript : MonoBehaviour {
     {
         hideCards.SetActive(false);
         yield return StartCoroutine(EvaluateRow(0));
+        CheckHealth();
         yield return new WaitForSeconds(1);
         yield return StartCoroutine(EvaluateRow(1));
+        CheckHealth();
         yield return new WaitForSeconds(1);
         yield return StartCoroutine(EvaluateRow(2));
+        CheckHealth();
         yield return new WaitForSeconds(1);
         for (int i = 0; i < 3; i++)
         {
+            player.discardedCards.Add(playerCardsInPlay[i]);
+            enemy.discardedCards.Add(enemyCardsInPlay[i]);
             playerCardsInPlay[i] = enemyCardsInPlay[i] = null;
         }
         StartCoroutine(EndTurn());
@@ -369,6 +409,16 @@ public class BattleManagerScript : MonoBehaviour {
         }
     }
 
+    void CheckHealth()
+    {
+        if (enemy.health <= 0 || player.health <= 0)
+        {
+            Debug.Log("End Game Early");
+            GM.playerHealth = player.health;
+            SceneManager.LoadScene(0);
+        }
+    }
+
     IEnumerator EndTurn()
     {
         yield return new WaitForSeconds(1);
@@ -382,6 +432,11 @@ public class BattleManagerScript : MonoBehaviour {
         player.UpdateUI();
         enemy.UpdateUI();
         yield return new WaitForSeconds(1);
+
+        //ReShuffle Deck stuff
+        StartCoroutine(SetUpTurn());
+
+        /*
         //Check if there are no more cards left
         if (player.currentDeck.activeDeck.Count > 0)
         {
@@ -392,7 +447,13 @@ public class BattleManagerScript : MonoBehaviour {
         else
         {
             Debug.Log("End Game!");
-        }
+            if (GM!= null)
+            {
+                GM.playerHealth = player.health;
+            }
+
+            SceneManager.LoadScene(0);
+        }*/
 
         
     }

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Name: Basic Enemy Deck
   m_EditorClassIdentifier: 
   unactiveDeck:
+  - {fileID: 11400000, guid: b74baa44131319d42a6689e54af7a1f1, type: 2}
   - {fileID: 11400000, guid: 009d0825d82246240870383f939e9154, type: 2}
   - {fileID: 11400000, guid: 6eeb590a2c3470d49a9345f228784900, type: 2}
-  - {fileID: 11400000, guid: fb9369bf2c947ca44bb93978eadc7241, type: 2}
   - {fileID: 11400000, guid: fb9369bf2c947ca44bb93978eadc7241, type: 2}
   - {fileID: 11400000, guid: 28a31c6df345fe440863e18c9ff9bc0c, type: 2}
   - {fileID: 11400000, guid: 28a31c6df345fe440863e18c9ff9bc0c, type: 2}
