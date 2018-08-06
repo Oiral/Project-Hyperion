@@ -109,7 +109,8 @@ public class BattleManagerScript : MonoBehaviour {
             GameObject SpawnedCardObject = Instantiate(cardPrefab);
             GameCard spawnedCard = SpawnedCardObject.GetComponent<PlayingCardScript>().info = enemy.currentDeck.DrawRandom();
             spawnedCard.attachedObject = SpawnedCardObject;
-            SpawnedCardObject.GetComponent<PlayingCardScript>().targetPos = new Vector3(AiXValue, 0, i * 12);
+            Vector3 pos = new Vector3(AiXValue, 0, i * 12);
+            VisualSet(spawnedCard, pos);
             enemyCardsInPlay[i] = spawnedCard;
             //Debug.Log("spawned card", spawnedCard.attachedObject);
         }
@@ -290,12 +291,12 @@ public class BattleManagerScript : MonoBehaviour {
 
                     SpawnedCardObject.GetComponent<PlayingCardScript>().info = spawnedCard;
                     spawnedCard.attachedObject = SpawnedCardObject;
-                    SpawnedCardObject.GetComponent<PlayingCardScript>().targetPos = currpos;
+                    VisualSet(spawnedCard, currpos);
                     myCollumn[row] = spawnedCard;
 
                     //move the mirror card down
                     currpos.y -= 1;
-                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos = currpos;
+                    VisualSet(cardToEval, currpos);
 
                     yield return new WaitForSeconds(0.5f);
                     //Check the new spawned in card
@@ -325,8 +326,8 @@ public class BattleManagerScript : MonoBehaviour {
 
                     //Disable this card
                     cardToEval.enabled = false;
-                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(0, -1, 0);
-                    
+                    VisualMove(cardToEval, new Vector3(0, -1, 0));
+
 
                     //visualization
                     UpdateCardPos();
@@ -345,7 +346,7 @@ public class BattleManagerScript : MonoBehaviour {
                     myCollumn[row + 1].multiplyValue += 1;
 
                     //visualisation
-                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(0, -1, 9);
+                    VisualMove(cardToEval, new Vector3(0, -1, 9));
                     break;
                 case CardType.Heal:
                     Debug.Log("Heal",cardToEval.attachedObject);
@@ -353,7 +354,7 @@ public class BattleManagerScript : MonoBehaviour {
                     user.Heal(cardToEval.attackDamage * cardToEval.multiplyValue);
 
                     //Visual
-                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(defendMove, 0, 0);
+                    VisualMove(cardToEval, new Vector3(defendMove, 0, 0));
                     break;
 
                 case CardType.Block:
@@ -362,7 +363,7 @@ public class BattleManagerScript : MonoBehaviour {
                     user.Block(cardToEval.attackDamage * cardToEval.multiplyValue);
 
                     //Visual
-                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(defendMove, 0, 0);
+                    VisualMove(cardToEval, new Vector3(defendMove, 0, 0));
                     break;
 
                 case CardType.Hit:
@@ -371,7 +372,7 @@ public class BattleManagerScript : MonoBehaviour {
                     opponent.Damage(cardToEval.attackDamage * cardToEval.multiplyValue);
 
                     //Visual
-                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(attackMove, 0, 0);
+                    VisualMove(cardToEval, new Vector3(attackMove, 0, 0));
                     break;
 
                 case CardType.Chain:
@@ -380,10 +381,20 @@ public class BattleManagerScript : MonoBehaviour {
                     opponent.Damage(cardToEval.attackDamage * cardToEval.multiplyValue);
 
                     //Visual
-                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(attackMove, 0, 0);
+                    VisualMove(cardToEval, new Vector3(attackMove, 0, 0));
                     break;
             }
         }
+    }
+
+    void VisualMove(GameCard cardToMove,Vector3 moveDir)
+    {
+        cardToMove.attachedObject.GetComponent<PlayingCardScript>().targetPos += moveDir;
+    }
+
+    void VisualSet(GameCard cardToMove,Vector3 targetPos)
+    {
+        cardToMove.attachedObject.GetComponent<PlayingCardScript>().targetPos = targetPos;
     }
 
     void UpdateCardPos()
