@@ -15,6 +15,8 @@ public class ShopCardScript : MonoBehaviour {
     public Vector3 targetPos;
     public float moveSpeed = 10;
 
+    public ShopManagerScript shopScript;
+
     private void Start()
     {
         info.UpdateMatchCardUI(title, number, desc, cost);
@@ -24,5 +26,16 @@ public class ShopCardScript : MonoBehaviour {
     {
         transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * moveSpeed);
         
+    }
+
+
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log(title.text);
+            shopScript.GivePlayerCard(info);
+            Destroy(gameObject);
+        }
     }
 }

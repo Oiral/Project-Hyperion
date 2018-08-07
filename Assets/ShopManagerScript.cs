@@ -25,9 +25,13 @@ public class ShopManagerScript : MonoBehaviour {
 
                 Vector3 pos = new Vector3(r * 10, 0, c * 12);
 
-                CardObject.GetComponent<ShopCardScript>().targetPos = pos;
+                ShopCardScript cardScript = CardObject.GetComponent<ShopCardScript>();
 
-                CardObject.GetComponent<ShopCardScript>().info = DrawRandomShopCard();
+                cardScript.targetPos = pos;
+
+                cardScript.info = DrawRandomShopCard();
+
+                cardScript.shopScript = this;
 
                 yield return new WaitForSeconds(0.1f);
             }
