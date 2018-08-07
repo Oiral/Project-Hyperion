@@ -16,6 +16,9 @@ public class ShopCardScript : MonoBehaviour {
     public float moveSpeed = 10;
 
     public ShopManagerScript shopScript;
+    public int inventoryNum;
+
+    public bool isShopCard;
 
     private void Start()
     {
@@ -24,18 +27,22 @@ public class ShopCardScript : MonoBehaviour {
 
     private void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * moveSpeed);
+        transform.localPosition = Vector3.Lerp(transform.localPosition, targetPos, Time.deltaTime * moveSpeed);
         
     }
 
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && isShopCard)
         {
             Debug.Log(title.text);
             shopScript.GivePlayerCard(info);
             Destroy(gameObject);
+        }
+        if (Input.GetMouseButtonDown(0) && !isShopCard)
+        {
+            shopScript.OfferCard(gameObject);
         }
     }
 }

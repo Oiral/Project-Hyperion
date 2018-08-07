@@ -15,7 +15,7 @@ MonoBehaviour:
   extras: 1
   attackDamage: 2
   multiplyValue: 1
-  price: 1
+  price: 2
   nameOfCard: Block
   image: {fileID: 0}
   description: 
