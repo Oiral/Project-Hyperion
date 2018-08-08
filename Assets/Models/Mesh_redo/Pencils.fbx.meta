@@ -1,16 +1,14 @@
 fileFormatVersion: 2
-guid: 24ef8ebd42f8bc54d83dfd585d26b6ef
+guid: 5c99b69ec3545c4418fa029eda640a49
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: pSphere3
-    100002: //RootNode
-    400000: pSphere3
-    400002: //RootNode
-    2100000: pSphere3Mat
-    2300000: pSphere3
-    3300000: pSphere3
-    4300000: pSphere3
+    100000: //RootNode
+    400000: //RootNode
+    2100000: lambert1
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Pencil_UV
   externalObjects: {}
   materials:
     importMaterials: 1
