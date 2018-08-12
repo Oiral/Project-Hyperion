@@ -57,6 +57,11 @@ public class PlayerController : MonoBehaviour
             walkingBool = true;
             Debug.Log("wB = true");
         }
+        else
+        {
+            walkingBool = false;
+            Debug.Log("wB = false");
+        }
 
         if (walkingBool && soundBool)
         {
