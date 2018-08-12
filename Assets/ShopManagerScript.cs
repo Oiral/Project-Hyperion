@@ -17,6 +17,9 @@ public class ShopManagerScript : MonoBehaviour {
     public Transform inventoryCenter;
     public Transform camFocusOnInventoryPos;
 
+    public OfferScript playerOffering;
+    public OfferScript shopOffering;
+
     private bool focusOnShop = true;
 
     List<GameObject> inventoryCards = new List<GameObject>();
@@ -40,10 +43,12 @@ public class ShopManagerScript : MonoBehaviour {
 
     IEnumerator GenerateShop()
     {
+        int i = 0;
         for (int r = 0; r < 3; r++)
         {
             for (int c = 0; c < 3; c++)
             {
+                
                 GameObject CardObject = Instantiate(shopPrefab, Vector3.zero, Quaternion.identity,shopCenter.transform);
 
                 Vector3 pos = new Vector3((r - 1) * 10, 0, (c - 1) * 12);
@@ -58,10 +63,61 @@ public class ShopManagerScript : MonoBehaviour {
 
                 cardScript.isShopCard = true;
 
+                cardScript.inventoryNum = i;
+
+                i++;
+
                 yield return new WaitForSeconds(0.1f);
             }
             
         }
+    }
+
+    IEnumerator UpdateShop(ShopCardScript card)
+    {
+        int i = 0;
+        for (int r = 0; r < 3; r++)
+        {
+            for (int c = 0; c < 3; c++)
+            {
+                if (card.inventoryNum == i)
+                {
+                    GameObject CardObject = Instantiate(shopPrefab, Vector3.zero, Quaternion.identity, shopCenter.transform);
+
+                    Vector3 pos = new Vector3((r - 1) * 10, 0, (c - 1) * 12);
+
+                    ShopCardScript cardScript = CardObject.GetComponent<ShopCardScript>();
+
+                    cardScript.targetPos = pos;
+
+                    cardScript.info = card.info;
+
+                    cardScript.shopScript = this;
+
+                    cardScript.isShopCard = true;
+
+                    cardScript.inventoryNum = i;
+
+                }
+
+                i++;
+            }
+        }
+        yield return new WaitForSeconds(0.1f);
+    }
+
+    void RegenInventory()
+    {
+        inventory = new Card[playerDeck.unactiveDeck.Count];
+
+        for (int i = 0; i < playerDeck.unactiveDeck.Count; i++)
+        {
+            inventory[i] = playerDeck.unactiveDeck[i];
+        }
+
+
+        StopAllCoroutines();
+        StartCoroutine(UpdateInventory());
     }
 
     IEnumerator UpdateInventory()
@@ -183,11 +239,97 @@ public class ShopManagerScript : MonoBehaviour {
         playerDeck.unactiveDeck.Add(cardToGive.relatedCard);
     }
 
-    public void OfferCard(GameObject cardOffering)
+    public void OfferCard(GameObject cardOffering, bool isPlayer)
     {
-        inventory[cardOffering.GetComponent<ShopCardScript>().inventoryNum] = null;
-        cardOffering.transform.parent = null;
-        cardOffering.GetComponent<ShopCardScript>().targetPos = new Vector3(0, 0, 0);
+        OfferScript offeringSide;
+        if (isPlayer)
+        {
+            offeringSide = playerOffering;
+            inventory[cardOffering.GetComponent<ShopCardScript>().inventoryNum] = null;
+            inventoryCards.Remove(cardOffering);
+        }
+        else
+        {
+            offeringSide = shopOffering;
+        }
+        cardOffering.transform.parent = offeringSide.gameObject.transform;
+        offeringSide.AddCard(cardOffering);
+        cardOffering.GetComponent<ShopCardScript>().offerScript = offeringSide;
+    }
+
+    public void AddPlayerCard(ShopCardScript cardToAdd)
+    {
+        StopAllCoroutines();
+        inventory[cardToAdd.inventoryNum] = cardToAdd.info.relatedCard;
+        StartCoroutine(UpdateInventory());
+    }
+
+    public void AddShopCard(ShopCardScript cardToAdd)
+    {
+        StopAllCoroutines();
+        StartCoroutine(UpdateShop(cardToAdd));
+    }
+
+    public void ExitShop()
+    {
+        //exit the shop maybe
+    }
+
+    public void ConfirmSelection()
+    {
+        //Set up some info to be used later
+        List<ShopCardScript> playerOffers = new List<ShopCardScript>();
+        List<ShopCardScript> shopOffers = new List<ShopCardScript>();
+
+        int playerPoints = playerOffering.points;
+        int shopPoints = shopOffering.points;
+
+        foreach (GameObject item in playerOffering.offeredCards)
+        {
+            playerOffers.Add(item.GetComponent<ShopCardScript>());
+        }
+        foreach (GameObject item in shopOffering.offeredCards)
+        {
+            shopOffers.Add(item.GetComponent<ShopCardScript>());
+        }
+
+
+        //check if either is empty
+        if (playerOffers.Count == 0 || shopOffers.Count == 0)
+        {
+            Debug.Log("Both parties need to offer something");
+            return;
+        }
+        //check if the prices match
+        //if they are good to go
+        //make the trade
+        if (playerPoints == shopPoints)//if the player has more or the same amount of points let the transfer go through
+        {
+            Debug.Log("Trade Confirmed");
+            //remove the player cards from the player unactive deck
+            for (int i = 0; i < playerOffers.Count; i++)
+            {
+                playerDeck.unactiveDeck.Remove(playerOffers[i].info.relatedCard);
+                //remove the cards that are up for offer
+                playerOffers[i].offerScript.RemoveCard(playerOffers[i].gameObject);
+            }
+
+            //add the shop cards to the players unactive deck
+            for (int i = 0; i < shopOffers.Count; i++)
+            {
+                playerDeck.unactiveDeck.Add(shopOffers[i].info.relatedCard);
+                //remove the cards that are up for offer
+                shopOffers[i].offerScript.RemoveCard(shopOffers[i].gameObject);
+            }
+            
+            RegenInventory();
+        }
+        else
+        {
+            Debug.Log("Not enough points");
+            //Maybe player a error thingy?
+        }
+
     }
 
 }

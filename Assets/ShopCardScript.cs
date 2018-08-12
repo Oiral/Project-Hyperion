@@ -20,6 +20,8 @@ public class ShopCardScript : MonoBehaviour {
 
     public bool isShopCard;
 
+    public OfferScript offerScript;
+
     private void Start()
     {
         info.UpdateMatchCardUI(title, number, desc, cost);
@@ -31,18 +33,34 @@ public class ShopCardScript : MonoBehaviour {
         
     }
 
-
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0) && isShopCard)
+        if (offerScript != null)//if the card has been offered up to exchange
         {
-            Debug.Log(title.text);
-            shopScript.GivePlayerCard(info);
-            Destroy(gameObject);
+            if (Input.GetMouseButtonDown(0) && isShopCard)
+            {
+                Debug.Log("Remove Shop Card");
+                offerScript.RemoveCard(gameObject);
+            }
+            if (Input.GetMouseButtonDown(0) && !isShopCard)
+            {
+                Debug.Log("Remove Player Card");
+                offerScript.RemoveCard(gameObject);
+            }
         }
-        if (Input.GetMouseButtonDown(0) && !isShopCard)
+        else
         {
-            shopScript.OfferCard(gameObject);
+            if (Input.GetMouseButtonDown(0) && isShopCard)
+            {
+                //Debug.Log(title.text);
+                shopScript.OfferCard(gameObject, false);
+            }
+            if (Input.GetMouseButtonDown(0) && !isShopCard)
+            {
+                shopScript.OfferCard(gameObject,true);
+            }
         }
+
+        
     }
 }
