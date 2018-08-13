@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ffde8eccfd71840b4c33b5733848e9, type: 3}
   m_Name: Multiply Desc
   m_EditorClassIdentifier: 
-  Description: Multiply next Attack/Defend by {atk}
+  Description: Multiply the card below by {atk}

@@ -15,8 +15,7 @@ MonoBehaviour:
   extras: 0
   attackDamage: 0
   multiplyValue: 1
-  enabled: 1
-  price: 1
+  price: 3
   nameOfCard: Freeze
   image: {fileID: 0}
   description: 

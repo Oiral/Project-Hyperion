@@ -15,8 +15,7 @@ MonoBehaviour:
   extras: 2
   attackDamage: 1
   multiplyValue: 1
-  enabled: 1
-  price: 1
+  price: 2
   nameOfCard: Chain
   image: {fileID: 0}
   description: 

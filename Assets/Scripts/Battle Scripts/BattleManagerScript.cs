@@ -21,6 +21,8 @@ public class BattleManagerScript : MonoBehaviour {
     int AiXValue = 0;
     int PlayerXValue = -20;
 
+    GameManager GM;
+
     #region testing
     //Testing Items
     public Button setupUpTurnButton;
@@ -69,6 +71,19 @@ public class BattleManagerScript : MonoBehaviour {
 
     private void Start()
     {
+        //Check if there is a game manager with a deck to be loaded
+        GameObject gmObject = GameObject.FindGameObjectWithTag("GameController");
+        if (gmObject != null)
+        {
+            GM = gmObject.GetComponent<GameManager>();
+
+            enemy.currentDeck = GM.GetDeck();
+            enemy.health = GM.GetEnemyHP();
+
+            player.health = GM.playerHealth;
+        }
+        
+
         StartCoroutine(SetUpTurn());
     }
 
@@ -85,10 +100,17 @@ public class BattleManagerScript : MonoBehaviour {
     {
         for (int i = 0; i < 3; i++)
         {
+            //Check if there are no more cards to be drawn
+            if (enemy.currentDeck.activeDeck.Count == 0)
+            {
+                ReShuffle(enemy);
+            }
+
             GameObject SpawnedCardObject = Instantiate(cardPrefab);
             GameCard spawnedCard = SpawnedCardObject.GetComponent<PlayingCardScript>().info = enemy.currentDeck.DrawRandom();
             spawnedCard.attachedObject = SpawnedCardObject;
-            SpawnedCardObject.GetComponent<PlayingCardScript>().targetPos = new Vector3(AiXValue, 0, i * 12);
+            Vector3 pos = new Vector3(AiXValue, 0, i * 12);
+            VisualSet(spawnedCard, pos);
             enemyCardsInPlay[i] = spawnedCard;
             //Debug.Log("spawned card", spawnedCard.attachedObject);
         }
@@ -109,7 +131,12 @@ public class BattleManagerScript : MonoBehaviour {
             }
             else
             {
-                break;
+                if (player.discardedCards.Count == 0)
+                {
+                    break;
+                }
+                ReShuffle(player);
+
             }
         }
     }
@@ -132,6 +159,15 @@ public class BattleManagerScript : MonoBehaviour {
                 break;
             }
         }
+    }
+
+    public void ReShuffle(PlayerScript person)
+    {
+        foreach (GameCard card in person.discardedCards)
+        {
+            person.currentDeck.activeDeck.Add(card);
+        }
+        person.discardedCards.Clear();
     }
 
     //Check how many chain cards there are then takes each of them and adds their value
@@ -159,13 +195,18 @@ public class BattleManagerScript : MonoBehaviour {
     {
         hideCards.SetActive(false);
         yield return StartCoroutine(EvaluateRow(0));
+        CheckHealth();
         yield return new WaitForSeconds(1);
         yield return StartCoroutine(EvaluateRow(1));
+        CheckHealth();
         yield return new WaitForSeconds(1);
         yield return StartCoroutine(EvaluateRow(2));
+        CheckHealth();
         yield return new WaitForSeconds(1);
         for (int i = 0; i < 3; i++)
         {
+            player.discardedCards.Add(playerCardsInPlay[i]);
+            enemy.discardedCards.Add(enemyCardsInPlay[i]);
             playerCardsInPlay[i] = enemyCardsInPlay[i] = null;
         }
         StartCoroutine(EndTurn());
@@ -250,12 +291,12 @@ public class BattleManagerScript : MonoBehaviour {
 
                     SpawnedCardObject.GetComponent<PlayingCardScript>().info = spawnedCard;
                     spawnedCard.attachedObject = SpawnedCardObject;
-                    SpawnedCardObject.GetComponent<PlayingCardScript>().targetPos = currpos;
+                    VisualSet(spawnedCard, currpos);
                     myCollumn[row] = spawnedCard;
 
                     //move the mirror card down
                     currpos.y -= 1;
-                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos = currpos;
+                    VisualSet(cardToEval, currpos);
 
                     yield return new WaitForSeconds(0.5f);
                     //Check the new spawned in card
@@ -285,8 +326,8 @@ public class BattleManagerScript : MonoBehaviour {
 
                     //Disable this card
                     cardToEval.enabled = false;
-                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(0, -1, 0);
-                    
+                    VisualMove(cardToEval, new Vector3(0, -1, 0));
+
 
                     //visualization
                     UpdateCardPos();
@@ -305,7 +346,7 @@ public class BattleManagerScript : MonoBehaviour {
                     myCollumn[row + 1].multiplyValue += 1;
 
                     //visualisation
-                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(0, -1, 9);
+                    VisualMove(cardToEval, new Vector3(0, -1, 9));
                     break;
                 case CardType.Heal:
                     Debug.Log("Heal",cardToEval.attachedObject);
@@ -313,7 +354,7 @@ public class BattleManagerScript : MonoBehaviour {
                     user.Heal(cardToEval.attackDamage * cardToEval.multiplyValue);
 
                     //Visual
-                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(defendMove, 0, 0);
+                    VisualMove(cardToEval, new Vector3(defendMove, 0, 0));
                     break;
 
                 case CardType.Block:
@@ -322,7 +363,7 @@ public class BattleManagerScript : MonoBehaviour {
                     user.Block(cardToEval.attackDamage * cardToEval.multiplyValue);
 
                     //Visual
-                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(defendMove, 0, 0);
+                    VisualMove(cardToEval, new Vector3(defendMove, 0, 0));
                     break;
 
                 case CardType.Hit:
@@ -331,7 +372,7 @@ public class BattleManagerScript : MonoBehaviour {
                     opponent.Damage(cardToEval.attackDamage * cardToEval.multiplyValue);
 
                     //Visual
-                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(attackMove, 0, 0);
+                    VisualMove(cardToEval, new Vector3(attackMove, 0, 0));
                     break;
 
                 case CardType.Chain:
@@ -340,10 +381,20 @@ public class BattleManagerScript : MonoBehaviour {
                     opponent.Damage(cardToEval.attackDamage * cardToEval.multiplyValue);
 
                     //Visual
-                    cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos += new Vector3(attackMove, 0, 0);
+                    VisualMove(cardToEval, new Vector3(attackMove, 0, 0));
                     break;
             }
         }
+    }
+
+    void VisualMove(GameCard cardToMove,Vector3 moveDir)
+    {
+        cardToMove.attachedObject.GetComponent<PlayingCardScript>().targetPos += moveDir;
+    }
+
+    void VisualSet(GameCard cardToMove,Vector3 targetPos)
+    {
+        cardToMove.attachedObject.GetComponent<PlayingCardScript>().targetPos = targetPos;
     }
 
     void UpdateCardPos()
@@ -369,6 +420,16 @@ public class BattleManagerScript : MonoBehaviour {
         }
     }
 
+    void CheckHealth()
+    {
+        if (enemy.health <= 0 || player.health <= 0)
+        {
+            Debug.Log("End Game Early");
+            GM.playerHealth = player.health;
+            SceneManager.LoadScene(0);
+        }
+    }
+
     IEnumerator EndTurn()
     {
         yield return new WaitForSeconds(1);
@@ -382,6 +443,11 @@ public class BattleManagerScript : MonoBehaviour {
         player.UpdateUI();
         enemy.UpdateUI();
         yield return new WaitForSeconds(1);
+
+        //ReShuffle Deck stuff
+        StartCoroutine(SetUpTurn());
+
+        /*
         //Check if there are no more cards left
         if (player.currentDeck.activeDeck.Count > 0)
         {
@@ -392,7 +458,13 @@ public class BattleManagerScript : MonoBehaviour {
         else
         {
             Debug.Log("End Game!");
-        }
+            if (GM!= null)
+            {
+                GM.playerHealth = player.health;
+            }
+
+            SceneManager.LoadScene(0);
+        }*/
 
         
     }

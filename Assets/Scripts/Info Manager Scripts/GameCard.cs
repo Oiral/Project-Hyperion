@@ -70,4 +70,29 @@ public class GameCard{
         desc = desc.Replace("{atk}", attackDamage.ToString());
         battleDescriptionText.text = desc;
     }
+
+    public void UpdateMatchCardUI(Text title, Text damageNumbers, Text battleDescriptionText, Text cost)
+    {
+        if (extras != CardFamily.Effect)//if the card is not an effect
+        {
+            damageNumbers.text = (attackDamage * multiplyValue).ToString();
+        }
+        else
+        {
+            damageNumbers.text = "";
+        }
+
+        if (multiplyValue > 1)
+        {
+            damageNumbers.color = Color.yellow;
+        }
+
+        title.text = relatedCard.nameOfCard;
+
+        string desc = relatedCard.battleDescription.Description;
+        desc = desc.Replace("{atk}", attackDamage.ToString());
+        battleDescriptionText.text = desc;
+
+        cost.text = relatedCard.price.ToString();
+    }
 }

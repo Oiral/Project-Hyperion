@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour {
     public Text shieldText;
 
     public Deck currentDeck;
+    public List<GameCard> discardedCards = new List<GameCard>();
 
     public void Damage(int amount)
     {
