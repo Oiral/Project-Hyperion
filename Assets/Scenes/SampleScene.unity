@@ -1884,7 +1884,7 @@ Transform:
   m_LocalPosition: {x: -2.3, y: 1.168, z: -0.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1430426252}
+  - {fileID: 2132741549}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11035,10 +11035,10 @@ RectTransform:
   m_Father: {fileID: 823662041}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.3612936, y: 0.62039083}
-  m_AnchorMax: {x: 0.63500005, y: 0.7986092}
-  m_AnchoredPosition: {x: 2.5, y: -1}
-  m_SizeDelta: {x: 4.399994, y: 0.69999695}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 11, y: 119}
+  m_SizeDelta: {x: -877.1, y: -648.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1341993180
 MonoBehaviour:
@@ -14381,6 +14381,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f344228aff461441b994b5f88ff9675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: 15
+  battlesLoaded: 0
+  decksToFight: []
+  enemyHP: 
+  fightSceneNumber: 0
 --- !u!1001 &1735364821
 Prefab:
   m_ObjectHideFlags: 0
