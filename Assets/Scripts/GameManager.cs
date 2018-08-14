@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum EnemyType { Normal,Boss,Teacher};
+
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
@@ -10,11 +12,15 @@ public class GameManager : MonoBehaviour {
     public int playerHealth = 15;
 
     public static int previousSceneIndex;
-    public int battlesLoaded = 0;
+    //public int battlesLoaded = 0;
     public List<Deck> decksToFight = new List<Deck>();
     public List<int> enemyHP = new List<int>();
 
     public int fightSceneNumber;
+
+
+    public int enemyHealth;
+    public Deck enemyDeck;
 
 	// Use this for initialization
 	void Awake () {
@@ -22,50 +28,52 @@ public class GameManager : MonoBehaviour {
         {
             instance = this;
         }
-
         else if (instance != this)
         { Destroy(gameObject); }
+
         DontDestroyOnLoad(gameObject);
-        previousSceneIndex = 0;
-        SceneManager.sceneLoaded += OnSceneLoad;
 	}
-
-    void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoad;
-    }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
-
-    public void LoadFight()
-    {
-        battlesLoaded += 1;
-        SceneManager.LoadScene(fightSceneNumber);
-    }
 
     public Deck GetDeck()
     {
-        return decksToFight[battlesLoaded - 1];
+        return enemyDeck;
     }
 
     public int GetEnemyHP()
     {
-        return enemyHP[battlesLoaded - 1];
+        return enemyHealth;
     }
 
-    void OnSceneLoad(Scene scene,LoadSceneMode mode)
+    public bool IsPlayerDead()
     {
         if (playerHealth <= 0)
         {
             Debug.Log("You lose");
+            return true;
         }
-
-        if (battlesLoaded >= decksToFight.Count)
+        else
         {
-            Debug.Log("You win the fights!");
+            Debug.Log("Player is alive");
+            return false;
         }
     }
+
+    public void LoadFight(Deck deckToFight,int hp)
+    {
+        enemyDeck = deckToFight;
+
+        enemyHealth = hp;
+
+        //load battle scene
+        SceneManager.LoadScene(fightSceneNumber);
+    }
+
+    #region testing stuff
+
+    public void Fight(int battleNum)
+    {
+        LoadFight(decksToFight[battleNum], enemyHP[battleNum]);
+    }
+    
+    #endregion
 }
