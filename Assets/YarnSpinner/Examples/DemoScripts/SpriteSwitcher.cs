@@ -26,10 +26,11 @@ SOFTWARE.
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 /// Attach sprite renderer to game object
 namespace Yarn.Unity.Example {
 
-    [RequireComponent (typeof (SpriteRenderer))]
+    //[RequireComponent (typeof (SpriteRenderer))]
     /// Attach SpriteSwitcher to game object
     public class SpriteSwitcher : MonoBehaviour {
 
@@ -39,6 +40,7 @@ namespace Yarn.Unity.Example {
             public Sprite sprite;
         }
 
+		public Image spriteRenderer;
         public SpriteInfo[] sprites;
 
         /// Create a command to use on a sprite
@@ -57,7 +59,11 @@ namespace Yarn.Unity.Example {
                 return;
             }
 
-            GetComponent<SpriteRenderer>().sprite = s;
+			if (spriteRenderer != null) {
+				spriteRenderer.sprite = s;
+			} else {
+				GetComponent<SpriteRenderer> ().sprite = s;
+			}
         }
     }
 

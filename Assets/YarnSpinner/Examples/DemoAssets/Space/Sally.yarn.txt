@@ -13,17 +13,17 @@ position: 524,111
     Sally: Hi.
 <<endif>>
 
-<<if not visited("Sally.Watch")>>
-    [[Anything exciting happen on your watch?|Sally.Watch]]
+<<if not visited("Sal.Watch")>>
+    [[Anything exciting happen on your watch?|Sal.Watch]]
 <<endif>>
 
-<<if $sally_warning and not visited("Sally.Sorry")>>
-    [[Sorry about the console.|Sally.Sorry]]
+<<if $sally_warning and not visited("Sal.Sorry")>>
+    [[Sorry about the console.|Sal.Sorry]]
 <<endif>>
-[[See you later.|Sally.Exit]]
+[[See you later.|Sal.Exit]]
 ===
 
-title: Sally.Watch
+title: Sal.Watch
 tags: 
 colorID: 0
 position: 512,430
@@ -38,7 +38,7 @@ Sally: Oh, Ship wanted to see you. Go say hi to it.
 <<endif>>
 ===
 
-title: Sally.Exit
+title: Sal.Exit
 tags: 
 colorID: 6
 position: 211,417
@@ -46,7 +46,7 @@ position: 211,417
 Sally: Bye.
 ===
 
-title: Sally.Sorry
+title: Sal.Sorry
 tags: 
 colorID: 0
 position: 827,439
