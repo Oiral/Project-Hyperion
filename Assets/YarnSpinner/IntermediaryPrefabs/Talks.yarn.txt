@@ -1,0 +1,63 @@
+title: Hades
+tags: 
+colorID: 0
+position: 721,130
+---
+<<setbust BustFace hades>>
+Hades: Hello, true believer!
+[[Hello!|Hades.Hello]]
+[[Ummmm...|Hades.Ummm]]
+===
+
+title: Hades.Hello
+tags: 
+colorID: 0
+position: 741,130
+---
+<<setbust BustFace nate>>
+Nate: Nice costume!!
+<<setbust BustFace hades>>
+Hades: Thanks!
+<<setbust BustFace none>>
+===
+
+title: Hades.Ummm
+tags: 
+colorID: 0
+position: 741,130
+---
+<<setbust BustFace nate>>
+Nate: I gotta go!
+<<setbust BustFace none>>
+===
+
+title: Aphrodite
+tags: 
+colorID: 0
+position: 524,111
+---
+<<if not visited("Aphrodite")>>
+	<<setbust BustFace aphrodite>>
+	Aphrodite: Think you can beat me?
+	[[Yes!|Aphrodite.Yes]]
+	[[Nooo!|Aphrodite.No]]
+<<else>>
+    Aphrodite: No fighting for you today!
+<<endif>>
+===
+
+title: Aphrodite.Yes
+tags: 
+colorID: 0
+position: 512,430
+---
+Aphrodite: How rude! I'm definitely not fighting you!
+===
+
+title: Aphrodite.No
+tags: 
+colorID: 6
+position: 211,417
+---
+Aphrodite: I'm glad you know your place!
+===
