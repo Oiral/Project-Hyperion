@@ -27,6 +27,7 @@ SOFTWARE.
 using UnityEngine;
 using System.Collections;
 using UnityEngine.Serialization;
+using Yarn.Unity;
 /// attached to the non-player characters, and stores the name of the
 /// Yarn node that should be run when you talk to them.
 public class NPC : MonoBehaviour {
@@ -40,9 +41,15 @@ public class NPC : MonoBehaviour {
 	public TextAsset scriptToLoad;
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
 		if (scriptToLoad != null) {
-			FindObjectOfType<Yarn.Unity.DialogueRunner> ().AddScript (scriptToLoad);
+			FindObjectOfType<Yarn.Unity.DialogueRunner>().AddScript(scriptToLoad);
 		}
+	}
+
+	[YarnCommand("startBattle")]
+	public void StartBattle(string player)
+	{
+
 	}
 }
