@@ -275,8 +275,6 @@ public class BattleManagerScript : MonoBehaviour {
                         break;
                     }
 
-                    
-
                     //Visual stuff
                     Vector3 currpos = cardToEval.attachedObject.GetComponent<PlayingCardScript>().targetPos;
 
@@ -292,7 +290,7 @@ public class BattleManagerScript : MonoBehaviour {
                     SpawnedCardObject.GetComponent<PlayingCardScript>().info = spawnedCard;
                     spawnedCard.attachedObject = SpawnedCardObject;
                     VisualSet(spawnedCard, currpos);
-                    myCollumn[row] = spawnedCard;
+                    //myCollumn[row] = spawnedCard;
 
                     //move the mirror card down
                     currpos.y -= 1;
@@ -300,7 +298,7 @@ public class BattleManagerScript : MonoBehaviour {
 
                     yield return new WaitForSeconds(0.5f);
                     //Check the new spawned in card
-                    yield return StartCoroutine( EvaluateCard(myCollumn[row], row, isPlayer));
+                    yield return StartCoroutine( EvaluateCard(spawnedCard, row, isPlayer));
                     break;
 
                 case CardType.Freeze:
@@ -321,19 +319,23 @@ public class BattleManagerScript : MonoBehaviour {
                     }
 
                     //Swap the other cards around
-                    myCollumn[row] = otherCollumn[row];
-                    otherCollumn[row] = cardToEval;
+                    //myCollumn[row] = otherCollumn[row];
+                    //otherCollumn[row] = cardToEval;
 
                     //Disable this card
                     cardToEval.enabled = false;
+                    VisualSet(otherCollumn[row], cardToEval.attachedObject.transform.localPosition);
+
                     VisualMove(cardToEval, new Vector3(0, -1, 0));
 
 
                     //visualization
-                    UpdateCardPos();
+                    //UpdateCardPos();
+
 
                     yield return new WaitForSeconds(0.5f);
-                    yield return StartCoroutine(EvaluateCard(myCollumn[row], row, isPlayer));
+                    yield return StartCoroutine(EvaluateCard(otherCollumn[row], row, isPlayer));
+                    otherCollumn[row].enabled = false;
                     break;
 
                 case CardType.Multiply:

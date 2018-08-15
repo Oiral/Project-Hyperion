@@ -6,6 +6,6 @@ public class MenuScript : MonoBehaviour {
 
 	public void LoadFight()
     {
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().LoadFight();
+        //GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().LoadFight();
     }
 }
