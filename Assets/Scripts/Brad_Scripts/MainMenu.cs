@@ -20,8 +20,7 @@ public class MainMenu : MonoBehaviour {
     {
 		SceneFlow.RunScene(SceneList.Credits);
     }
-
-
+    
 	//Rename Credits
     public void ReturnToMainMenu()
     {

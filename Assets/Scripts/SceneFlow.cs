@@ -10,7 +10,8 @@ public enum SceneList
 	Shop,
 	MainTitle,
 	MainMenu,
-	Credits
+	Credits,
+    Testing
 }
 
 public static class SceneFlow {
@@ -21,7 +22,8 @@ public static class SceneFlow {
 		"ShopScene",
 		"MainTitle",
 		"MainMenu",
-		"Credits"
+		"Credits",
+        "Testing"
 	};
 
 

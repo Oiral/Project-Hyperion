@@ -31,7 +31,6 @@ public class ShopManagerScript : MonoBehaviour {
     void Start()
     {
         inventory = new Card[playerDeck.unactiveDeck.Count];
-
         for (int i = 0; i < playerDeck.unactiveDeck.Count; i++)
         {
             inventory[i] = playerDeck.unactiveDeck[i];
@@ -122,11 +121,13 @@ public class ShopManagerScript : MonoBehaviour {
 
     IEnumerator UpdateInventory()
     {
+        
         foreach (GameObject objectToDestroy in inventoryCards)
         {
             Destroy(objectToDestroy);
         }
         inventoryCards.Clear();
+        
 
         int c = 0;
         int r = startingCollumn;
@@ -140,8 +141,9 @@ public class ShopManagerScript : MonoBehaviour {
             }
             //Debug.Log(c + " - " + r);
 
-            if (r == 0 || r == 1 || r == 2)
-            {
+            //if we only want the currently focused cards to be shown
+            //if (r == 0 || r == 1 || r == 2)
+            //{
                 //Check if there is a card in that slot
                 if (inventory[i] != null)
                 {
@@ -165,7 +167,7 @@ public class ShopManagerScript : MonoBehaviour {
                     inventoryCards.Add(CardObject);
                     yield return new WaitForSeconds(0.1f);
                 }
-            }
+            //}
 
             c++;
             
@@ -224,15 +226,17 @@ public class ShopManagerScript : MonoBehaviour {
     {
         startingCollumn += inventoryMove;
         StopAllCoroutines();
-        StartCoroutine(UpdateInventory());
+        //StartCoroutine(UpdateInventory());
+        inventoryCenter.GetComponent<CamShopScript>().targetPos += new Vector3(0, 0, inventoryMove);
     }
+
     public void PrevInventory()
     {
         startingCollumn -= inventoryMove;
         StopAllCoroutines();
-        StartCoroutine(UpdateInventory());
+        //StartCoroutine(UpdateInventory());
+        inventoryCenter.GetComponent<CamShopScript>().targetPos += new Vector3(0, 0, -inventoryMove);
     }
-
 
     public void GivePlayerCard(GameCard cardToGive)
     {
@@ -273,6 +277,8 @@ public class ShopManagerScript : MonoBehaviour {
     public void ExitShop()
     {
         //exit the shop maybe
+        Debug.Log("Quit Shop");
+        SceneFlow.RunScene(SceneList.MainScene);
     }
 
     public void ConfirmSelection()
@@ -327,7 +333,7 @@ public class ShopManagerScript : MonoBehaviour {
         else
         {
             Debug.Log("Not enough points");
-            //Maybe player a error thingy?
+            //Maybe player a error display?
         }
 
     }
