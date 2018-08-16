@@ -23,11 +23,13 @@ public class BattleManagerScript : MonoBehaviour {
 
     GameManager GM;
 
+    public Button matchButton;
+
     #region testing
     //Testing Items
     public Button setupUpTurnButton;
     public Button playerAutoPlayButton;
-    public Button matchButton;
+    
 
     public GameObject hideCards;
 
@@ -193,6 +195,7 @@ public class BattleManagerScript : MonoBehaviour {
 
     IEnumerator CheckCards()
     {
+        matchButton.interactable = false;
         hideCards.SetActive(false);
         yield return StartCoroutine(EvaluateRow(0));
         CheckHealth();
@@ -205,6 +208,10 @@ public class BattleManagerScript : MonoBehaviour {
         yield return new WaitForSeconds(1);
         for (int i = 0; i < 3; i++)
         {
+            //re enable the card in case it was disabled
+            playerCardsInPlay[i].enabled = true;
+            enemyCardsInPlay[i].enabled = true;
+
             player.discardedCards.Add(playerCardsInPlay[i]);
             enemy.discardedCards.Add(enemyCardsInPlay[i]);
             playerCardsInPlay[i] = enemyCardsInPlay[i] = null;
@@ -445,6 +452,8 @@ public class BattleManagerScript : MonoBehaviour {
         player.UpdateUI();
         enemy.UpdateUI();
         yield return new WaitForSeconds(1);
+
+        matchButton.interactable = true;
 
         //ReShuffle Deck stuff
         StartCoroutine(SetUpTurn());

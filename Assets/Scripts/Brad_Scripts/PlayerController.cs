@@ -44,6 +44,12 @@ public class PlayerController : MonoBehaviour
         source = GetComponent<AudioSource>();
         walkingBool = false;
         m_Animator = GetComponentInChildren<Animator>();
+
+        //if the gm has a saved pos. move player to saved pos
+        if (GameManager.instance.playerSavePos != Vector3.zero)
+        {
+            transform.position = GameManager.instance.playerSavePos;
+        }
     }
 
     void FixedUpdate()
@@ -65,12 +71,12 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(rb.velocity, Vector3.up);
 
             walkingBool = true;
-            Debug.Log("wB = true");
+            //Debug.Log("wB = true");
         }
         else
         {
             walkingBool = false;
-            Debug.Log("wB = false");
+            //Debug.Log("wB = false");
         }
 
         if (walkingBool && soundBool)
@@ -78,7 +84,7 @@ public class PlayerController : MonoBehaviour
             float vol = Random.Range(volLowRange, volHighRange);
             soundBool = false;
             source.PlayOneShot(walkSound, vol);
-            Debug.Log("sfx_playing");
+            //Debug.Log("sfx_playing");
             StartCoroutine(ResetSoundBool());
         }
 
@@ -86,7 +92,15 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(6);
         }
+        
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            GameManager.instance.playerSavePos = transform.position;
+            SceneFlow.RunScene(SceneList.Testing);
+        }
+        
     }
+
     IEnumerator ResetSoundBool()
     {
         yield return new WaitForSeconds(walkSoundDelay);

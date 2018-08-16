@@ -3460,13 +3460,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 282840810}
-  m_LocalRotation: {x: 0.23755464, y: -0.0014034752, z: 0.005738782, w: 0.9713562}
-  m_LocalPosition: {x: 4.3, y: 6.4, z: -9.8}
+  m_LocalRotation: {x: 0.357464, y: -0.0006729013, z: 0.0058694608, w: 0.9339083}
+  m_LocalPosition: {x: 4.27, y: 8.9, z: -8.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 27.485, y: 0, z: 0.67700005}
+  m_LocalEulerAnglesHint: {x: 41.889004, y: 0.22600001, z: 0.80700004}
 --- !u!82 &282840815
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5464,6 +5464,67 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400156, guid: 6021a9641d4e323419d94432c1c16b92, type: 3}
   m_PrefabInternal: {fileID: 413871738}
+--- !u!1 &414008501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 414008504}
+  - component: {fileID: 414008503}
+  - component: {fileID: 414008502}
+  m_Layer: 0
+  m_Name: Gauntlet 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &414008502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 414008501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d92cf142834508d44b625d24a0163bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 05000000070000000600000008000000
+  decks:
+  - {fileID: 11400000, guid: 4545f8874e6835c4a9f70cd6d0b52971, type: 2}
+  - {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d, type: 2}
+  - {fileID: 11400000, guid: 24b254a99bf7e364e8ecff9e93338c68, type: 2}
+  - {fileID: 11400000, guid: d1bf3e1d03cd5de4f9384ff9ae6d5fe7, type: 2}
+  gauntletNum: 1
+  dependantGauntlets: 
+--- !u!65 &414008503
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 414008501}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.46, y: 1, z: 2.2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &414008504
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 414008501}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.36, y: 0.46, z: -3.96}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &416407196
 GameObject:
   m_ObjectHideFlags: 0
@@ -9763,6 +9824,66 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 841528636}
   m_Mesh: {fileID: 4300000, guid: d2c18a63c206b59468add9169bd647aa, type: 3}
+--- !u!1 &849894793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 849894796}
+  - component: {fileID: 849894795}
+  - component: {fileID: 849894794}
+  m_Layer: 0
+  m_Name: Gauntlet 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &849894794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 849894793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d92cf142834508d44b625d24a0163bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 050000000700000009000000
+  decks:
+  - {fileID: 11400000, guid: d1bf3e1d03cd5de4f9384ff9ae6d5fe7, type: 2}
+  - {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d, type: 2}
+  - {fileID: 11400000, guid: 24b254a99bf7e364e8ecff9e93338c68, type: 2}
+  gauntletNum: 3
+  dependantGauntlets: 00000000
+--- !u!65 &849894795
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 849894793}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.86, y: 1, z: 3.11}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &849894796
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 849894793}
+  m_LocalRotation: {x: -0, y: 0.18116218, z: -0, w: 0.9834532}
+  m_LocalPosition: {x: 5.324, y: 0.46, z: 1.058}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 20.875002, z: 0}
 --- !u!1001 &856265400
 Prefab:
   m_ObjectHideFlags: 0
@@ -10909,6 +11030,65 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2c18a63c206b59468add9169bd647aa, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &949876955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 949876958}
+  - component: {fileID: 949876957}
+  - component: {fileID: 949876956}
+  m_Layer: 0
+  m_Name: Gauntlet 0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &949876956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 949876955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d92cf142834508d44b625d24a0163bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0500000007000000
+  decks:
+  - {fileID: 11400000, guid: 4545f8874e6835c4a9f70cd6d0b52971, type: 2}
+  - {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d, type: 2}
+  gauntletNum: 0
+  dependantGauntlets: 
+--- !u!65 &949876957
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 949876955}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.46, y: 1, z: 2.2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &949876958
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 949876955}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.54, y: 0.46, z: 2.53}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &961334713
 Prefab:
   m_ObjectHideFlags: 0
@@ -12311,6 +12491,64 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.76, y: 1.82, z: 0.64}
   m_Center: {x: 0, y: 0.97, z: 0}
+--- !u!1 &1074592133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1074592136}
+  - component: {fileID: 1074592135}
+  - component: {fileID: 1074592134}
+  m_Layer: 0
+  m_Name: Gauntlet 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1074592134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1074592133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d92cf142834508d44b625d24a0163bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 14000000
+  decks:
+  - {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d, type: 2}
+  gauntletNum: 3
+  dependantGauntlets: 000000000100000002000000
+--- !u!65 &1074592135
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1074592133}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.46, y: 1, z: 2.2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1074592136
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1074592133}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.78, y: 0.46, z: -0.22}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1104303038
 Prefab:
   m_ObjectHideFlags: 0
@@ -20030,11 +20268,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 15
-  decksToFight: []
-  enemyHP: 
+  playersThroughGauntlet: 0
   enemyHealth: 0
   enemyDeck: {fileID: 0}
   enemyList: []
+  playerSavePos: {x: 0, y: 0, z: 0}
 --- !u!1001 &1735364821
 Prefab:
   m_ObjectHideFlags: 0

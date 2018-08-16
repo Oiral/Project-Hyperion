@@ -13,22 +13,35 @@ public struct Enemy{
 }
 
 public class GameManager : MonoBehaviour {
-
-
-
+    
     public static GameManager instance;
 
     public int playerHealth = 15;
 
     public static int previousSceneIndex;
     //public int battlesLoaded = 0;
-    public List<Deck> decksToFight = new List<Deck>();
-    public List<int> enemyHP = new List<int>();
+    //public List<Deck> decksToFight = new List<Deck>();
+    //public List<int> enemyHP = new List<int>();
 
 
+    //info kept safe for load back into main scene
+    [Header("Safe keeping for main scene")]
+    public int playersThroughGauntlet;
+    public Dictionary<int, bool> gauntletNum = new Dictionary<int, bool>{
+        { 0, false },
+        { 1, false },
+        { 2, false },
+        { 3, false }
+    };
+
+    //Info to pass to battle scene
+    [HideInInspector]
     public int enemyHealth;
+    [HideInInspector]
     public Deck enemyDeck;
 	public List<Enemy> enemyList;
+
+    public Vector3 playerSavePos;
 
 	// Use this for initialization
 	void Awake () {
@@ -85,7 +98,7 @@ public class GameManager : MonoBehaviour {
 
     public void Fight(int battleNum)
     {
-        LoadFight(decksToFight[battleNum], enemyHP[battleNum]);
+        //LoadFight(decksToFight[battleNum], enemyHP[battleNum]);
     }
 
 	#endregion
