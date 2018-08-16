@@ -1,0 +1,33 @@
+title: Aphrodite
+tags: 
+colorID: 0
+position: 524,111
+---
+<<setbust YM aphrodite>>
+<<if not visited("Aphrodite")>>
+	Aphrodite: Think you can beat me?
+	[[Yes!|Aphrodite.Yes]]
+	[[Nooo!|Aphrodite.No]]
+<<else>>
+    Aphrodite: No fighting for you today!
+	<<resetbusts YM>>
+<<endif>>
+===
+
+title: Aphrodite.Yes
+tags: 
+colorID: 0
+position: 512,430
+---
+Aphrodite: How rude! I'm definitely not fighting you!
+<<resetbusts YM>>
+===
+
+title: Aphrodite.No
+tags: 
+colorID: 6
+position: 211,417
+---
+Aphrodite: I'm glad you know your place!
+<<resetbusts YM>>
+===

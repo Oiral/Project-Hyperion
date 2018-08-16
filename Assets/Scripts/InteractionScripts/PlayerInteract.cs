@@ -19,7 +19,7 @@ public class PlayerInteract : MonoBehaviour {
 		Gizmos.color = Color.blue;
 
 		// Flatten the sphere into a disk, which looks nicer in 2D games
-		Gizmos.matrix = Matrix4x4.TRS(transform.position, Quaternion.identity, new Vector3(1,1,1));
+		Gizmos.matrix = Matrix4x4.TRS(transform.position, Quaternion.identity, new Vector3(1,0,1));
 
 		// Need to draw at position zero because we set position in the line above
 		Gizmos.DrawWireSphere(Vector3.zero, interactionRadius);

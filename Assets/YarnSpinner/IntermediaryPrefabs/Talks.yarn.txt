@@ -14,7 +14,8 @@ tags:
 colorID: 0
 position: 741,130
 ---
-<<setbust BustFace nate>>
+<<setbust BustFace none>>
+<<setbust NateFace nate>>
 Nate: Nice costume!!
 <<setbust BustFace hades>>
 Hades: Thanks!
@@ -26,7 +27,8 @@ tags:
 colorID: 0
 position: 741,130
 ---
-<<setbust BustFace nate>>
+<<setbust BustFace none>>
+<<setbust NateFace nate>>
 Nate: I gotta go!
 <<setbust BustFace none>>
 ===
@@ -43,6 +45,7 @@ position: 524,111
 	[[Nooo!|Aphrodite.No]]
 <<else>>
     Aphrodite: No fighting for you today!
+	<<setbust BustFace none>>
 <<endif>>
 ===
 
@@ -52,6 +55,7 @@ colorID: 0
 position: 512,430
 ---
 Aphrodite: How rude! I'm definitely not fighting you!
+<<setbust BustFace none>>
 ===
 
 title: Aphrodite.No
@@ -60,4 +64,5 @@ colorID: 6
 position: 211,417
 ---
 Aphrodite: I'm glad you know your place!
+<<setbust BustFace none>>
 ===

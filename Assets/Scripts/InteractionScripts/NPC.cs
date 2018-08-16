@@ -47,9 +47,4 @@ public class NPC : MonoBehaviour {
 		}
 	}
 
-	[YarnCommand("startBattle")]
-	public void StartBattle(string player)
-	{
-
-	}
 }

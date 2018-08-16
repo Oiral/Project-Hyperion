@@ -1,0 +1,29 @@
+title: Hades
+tags: 
+colorID: 0
+position: 721,130
+---
+<<setbust YM hades>>
+Hades: Hello, true believer!
+[[Hello!|Hades.Hello]]
+[[Ummmm...|Hades.Ummm]]
+===
+
+title: Hades.Hello
+tags: 
+colorID: 0
+position: 741,130
+---
+Nate: Nice costume!!
+Hades: Thanks!
+<<resetbusts YM>>
+===
+
+title: Hades.Ummm
+tags: 
+colorID: 0
+position: 741,130
+---
+Nate: I gotta go!
+<<resetbusts YM>>
+===

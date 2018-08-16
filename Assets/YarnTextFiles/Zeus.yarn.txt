@@ -1,0 +1,33 @@
+title: Zeus
+tags: 
+colorID: 0
+position: 721,130
+---
+<<if not visited("Aphrodite")>>
+	Teacher: Do you wanna buy cards?
+	[[Yes!|Zeus.Yes]]
+	[[No Thanks!|Zeus.No]]
+<<else>>
+	Teacher: I hope you are ready to lose!
+    <<startbattle YM zeus>>
+<<endif>>
+<<resetbusts YM>>
+===
+
+title: Zeus.Yes
+tags: 
+colorID: 0
+position: 741,130
+---
+<<resetbusts YM>>
+<<openshop YM>>
+===
+
+title: Zeus.No
+tags: 
+colorID: 0
+position: 741,130
+---
+Teacher: Ok then!
+<<resetbusts YM>>
+===

@@ -5,7 +5,16 @@ using UnityEngine.SceneManagement;
 
 public enum EnemyType { Normal,Boss,Teacher};
 
+[System.Serializable]
+public struct Enemy{
+	public string name;
+	public int hp;
+	public Deck deck;
+}
+
 public class GameManager : MonoBehaviour {
+
+
 
     public static GameManager instance;
 
@@ -16,11 +25,10 @@ public class GameManager : MonoBehaviour {
     public List<Deck> decksToFight = new List<Deck>();
     public List<int> enemyHP = new List<int>();
 
-    public int fightSceneNumber;
-
 
     public int enemyHealth;
     public Deck enemyDeck;
+	public List<Enemy> enemyList;
 
 	// Use this for initialization
 	void Awake () {
@@ -39,7 +47,12 @@ public class GameManager : MonoBehaviour {
         return enemyDeck;
     }
 
-    public int GetEnemyHP()
+	public void SetEnemyHP(int hp)
+	{
+		enemyHealth = Mathf.Max(1, hp);
+	}
+
+	public int GetEnemyHP()
     {
         return enemyHealth;
     }
@@ -64,8 +77,8 @@ public class GameManager : MonoBehaviour {
 
         enemyHealth = hp;
 
-        //load battle scene
-        SceneManager.LoadScene(fightSceneNumber);
+		//load battle scene
+		StartBattle();
     }
 
     #region testing stuff
@@ -74,6 +87,24 @@ public class GameManager : MonoBehaviour {
     {
         LoadFight(decksToFight[battleNum], enemyHP[battleNum]);
     }
-    
-    #endregion
+
+	#endregion
+
+	public void StartBattle()
+	{
+		SceneFlow.RunScene(SceneList.Battle);
+	}
+
+	public void SetEnemy(string name)
+	{
+		foreach (Enemy enemy in enemyList)
+		{
+			if (enemy.name.ToLower() == name.ToLower())
+			{
+				enemyHealth = enemy.hp;
+				enemyDeck = enemy.deck;
+				break;
+			}
+		}
+	}
 }
