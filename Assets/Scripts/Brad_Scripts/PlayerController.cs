@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     public bool walkingBool;
     bool soundBool = true;
     public bool normal_ideal_bool;
+    Animator m_Animator;
+    bool m_Walk;
 
     public static PlayerController instance;
 
@@ -41,6 +43,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         source = GetComponent<AudioSource>();
         walkingBool = false;
+        m_Animator = GetComponentInChildren<Animator>();
     }
 
     void FixedUpdate()
@@ -50,10 +53,17 @@ public class PlayerController : MonoBehaviour
 
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        rb.AddForce(movement * speed);
+        rb.velocity = (movement.normalized * speed);
+
+        rb.angularVelocity = Vector3.zero;
+
+        m_Animator.SetBool("Walking Bool",walkingBool);
 
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
+            //Set our rotation to our move direction
+            transform.rotation = Quaternion.LookRotation(rb.velocity, Vector3.up);
+
             walkingBool = true;
             Debug.Log("wB = true");
         }
