@@ -5,22 +5,37 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/Menu 1.unity
     guid: 7d59575f8f87ff54e9747a7100fd60eb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu.unity
     guid: 94fcde1e41e4d2e4b947e48c860bc710
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/Menu 2.unity
     guid: 4c418da963c1a73469fd874d7219ee8d
   - enabled: 1
-    path: Assets/Scenes/Battle Scene.unity
-    guid: 6d150f6040bdec84085779e61cfdfa94
-  - enabled: 1
     path: Assets/Scenes/ShopScene.unity
     guid: 260b6ff9e023f3840a5be166898062e3
+  - enabled: 1
+    path: Assets/Scenes/BattleScene.unity
+    guid: 0bf907203fdddce4ab5bb9c8a3c7fa38
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 09a18a38b0d1a5240a53405e986d0d21
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 9aacc373198c9064793e79fa4b86455f
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 8c509858240a7b043991d7c5d8334011
+  - enabled: 1
+    path: Assets/Scenes/MainTitle.unity
+    guid: 97d105227aa3b334a82728fa0a3f1abe
   m_configObjects: {}

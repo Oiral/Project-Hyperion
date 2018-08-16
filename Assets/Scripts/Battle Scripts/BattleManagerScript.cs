@@ -428,7 +428,7 @@ public class BattleManagerScript : MonoBehaviour {
         {
             Debug.Log("End Game Early");
             GM.playerHealth = player.health;
-            SceneManager.LoadScene(0);
+			SceneFlow.RunScene(SceneList.MainScene);
         }
     }
 
@@ -464,8 +464,8 @@ public class BattleManagerScript : MonoBehaviour {
             {
                 GM.playerHealth = player.health;
             }
-
-            SceneManager.LoadScene(0);
+			
+            SceneFlow.RunScene(SceneList.MainScene);
         }*/
 
         

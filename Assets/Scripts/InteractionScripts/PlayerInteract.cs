@@ -33,7 +33,7 @@ public class PlayerInteract : MonoBehaviour {
 			GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
 			return;
 		} else {
-			GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.None;
+			GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY;
 		}
 
 		if (Input.GetKeyDown(KeyCode.Space)) {

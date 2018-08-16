@@ -41,7 +41,7 @@ public class PauseMenuScript_Inner : MonoBehaviour {
     public void LoadMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(1);
+		SceneFlow.RunScene(SceneList.MainMenu);
     }
 
     public void QuitGame()

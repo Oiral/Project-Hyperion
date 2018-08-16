@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour {
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(2);
+        SceneFlow.RunScene(SceneList.MainScene);
     }
 
     public void QuitGame()
@@ -15,18 +15,16 @@ public class MainMenu : MonoBehaviour {
         Application.Quit();
     }
 
+	//Please Rename something like ReturnToMainMenu etc.
     public void Credits()
     {
-       SceneManager.LoadScene(3);
+		SceneFlow.RunScene(SceneList.Credits);
     }
 
-    public void Title()
-    {
-        SceneManager.LoadScene(1);
-    }
 
-    public void Credit()
+	//Rename Credits
+    public void ReturnToMainMenu()
     {
-       SceneManager.LoadScene(1);
-    }
+		SceneFlow.RunScene(SceneList.MainMenu);
+	}
 }
