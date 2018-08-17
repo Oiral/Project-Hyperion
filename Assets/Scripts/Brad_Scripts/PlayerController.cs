@@ -93,11 +93,12 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(6);
         }
         
+        /*
         if (Input.GetKeyDown(KeyCode.N))
         {
             GameManager.instance.playerSavePos = transform.position;
             SceneFlow.RunScene(SceneList.Testing);
-        }
+        }*/
         
     }
 

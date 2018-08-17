@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44996673, g: 0.49735963, b: 0.5612218, a: 1}
+  m_IndirectSpecularColor: {r: 0.44996685, g: 0.49736005, b: 0.5612226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9857,7 +9857,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d1bf3e1d03cd5de4f9384ff9ae6d5fe7, type: 2}
   - {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d, type: 2}
   - {fileID: 11400000, guid: 24b254a99bf7e364e8ecff9e93338c68, type: 2}
-  gauntletNum: 3
+  gauntletNum: 2
   dependantGauntlets: 00000000
 --- !u!65 &849894795
 BoxCollider:
