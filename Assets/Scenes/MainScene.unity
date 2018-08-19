@@ -3334,7 +3334,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ab8a10fbe79830c459264e7804a8a591, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.098
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3478,13 +3478,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 775392f00ca9bc847945bed049cd19d7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.174
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 51
+  Priority: 61
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -6987,7 +6987,7 @@ Prefab:
     - target: {fileID: 13700002, guid: 6021a9641d4e323419d94432c1c16b92, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 595d99f714c3a0444ae026b6e572aa50, type: 2}
+      objectReference: {fileID: 2100000, guid: b877adbaf1c08ee49b9ad5923a782e38, type: 2}
     - target: {fileID: 13700000, guid: 6021a9641d4e323419d94432c1c16b92, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
