@@ -212,6 +212,10 @@ public class BattleManagerScript : MonoBehaviour {
             playerCardsInPlay[i].enabled = true;
             enemyCardsInPlay[i].enabled = true;
 
+            //reset the multiply value of the card
+            playerCardsInPlay[i].multiplyValue = 1;
+            enemyCardsInPlay[i].multiplyValue = 1;
+
             player.discardedCards.Add(playerCardsInPlay[i]);
             enemy.discardedCards.Add(enemyCardsInPlay[i]);
             playerCardsInPlay[i] = enemyCardsInPlay[i] = null;

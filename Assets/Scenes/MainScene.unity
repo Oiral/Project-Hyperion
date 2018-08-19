@@ -6063,11 +6063,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92cf142834508d44b625d24a0163bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 05000000070000000600000008000000
+  health: 07000000060000000500000008000000
   decks:
+  - {fileID: 11400000, guid: d2d6be9101484094cb41a7b1fbd5b992, type: 2}
+  - {fileID: 11400000, guid: 7dd4f11e4085b1e4ea22e7a342968113, type: 2}
   - {fileID: 11400000, guid: 4545f8874e6835c4a9f70cd6d0b52971, type: 2}
-  - {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d, type: 2}
-  - {fileID: 11400000, guid: 24b254a99bf7e364e8ecff9e93338c68, type: 2}
   - {fileID: 11400000, guid: d1bf3e1d03cd5de4f9384ff9ae6d5fe7, type: 2}
   gauntletNum: 1
   dependantGauntlets: 
@@ -12086,10 +12086,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92cf142834508d44b625d24a0163bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0500000007000000
+  health: 0700000008000000
   decks:
-  - {fileID: 11400000, guid: 4545f8874e6835c4a9f70cd6d0b52971, type: 2}
-  - {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d, type: 2}
+  - {fileID: 11400000, guid: 84f81504c44b8b14f81e2450cd863099, type: 2}
+  - {fileID: 11400000, guid: 7dd4f11e4085b1e4ea22e7a342968113, type: 2}
   gauntletNum: 0
   dependantGauntlets: 
 --- !u!65 &949876957
