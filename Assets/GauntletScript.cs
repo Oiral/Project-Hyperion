@@ -19,33 +19,37 @@ public class GauntletScript : MonoBehaviour {
         gm = GameManager.instance;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        Debug.Log("Gauntlet Activated");
-
-        //check if the dependants have also been beat
-        if (CheckDependants())
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            //check if the player has already completed the gauntlet
-            if (gm.gauntletNum[gauntletNum] == false)
+            Debug.Log("Gauntlet Activated");
+
+            //check if the dependants have also been beat
+            if (CheckDependants())
             {
-                //check if the gauntlet is finished
-                if (gm.playersThroughGauntlet < health.Count)
+                //check if the player has already completed the gauntlet
+                if (gm.gauntletNum[gauntletNum] == false)
                 {
-                    gm.playerSavePos = other.gameObject.transform.position;
+                    //check if the gauntlet is finished
+                    if (gm.playersThroughGauntlet < health.Count)
+                    {
+                        gm.playerSavePos = other.gameObject.transform.position;
 
-                    gm.enemyDeck = decks[gm.playersThroughGauntlet];
-                    gm.enemyHealth = health[gm.playersThroughGauntlet];
-                    gm.playersThroughGauntlet += 1;
-                    SceneFlow.RunScene(SceneList.Battle);
+                        gm.enemyDeck = decks[gm.playersThroughGauntlet];
+                        gm.enemyHealth = health[gm.playersThroughGauntlet];
+                        gm.playersThroughGauntlet += 1;
+                        //SceneFlow.RunScene(SceneList.Battle);
+                        //call set of chats
 
-                }
-                else
-                {
-                    Debug.Log("Finished the gauntlet");
-                    gm.playersThroughGauntlet = 0;
-                    gm.gauntletNum[gauntletNum] = true;
-                    gm.playerHealth = 15;
+                    }
+                    else
+                    {
+                        Debug.Log("Finished the gauntlet");
+                        gm.playersThroughGauntlet = 0;
+                        gm.gauntletNum[gauntletNum] = true;
+                        gm.playerHealth = 15;
+                    }
                 }
             }
         }

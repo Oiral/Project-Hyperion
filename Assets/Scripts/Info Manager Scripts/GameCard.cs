@@ -10,6 +10,7 @@ public class GameCard{
     public CardFamily extras;
     public Card relatedCard;
     public GameObject attachedObject;
+    public Sprite cardBackground;
 
     [Header("Battle Stats")]
     [SerializeField]
@@ -27,6 +28,7 @@ public class GameCard{
         multiplyValue = cardToCopy.multiplyValue;
         enabled = true;
         relatedCard = cardToCopy;
+        cardBackground = cardToCopy.image;
     }
 
     public void UpdateMatchCardUI(Text title, Text damageNumbers)
@@ -94,5 +96,30 @@ public class GameCard{
         battleDescriptionText.text = desc;
 
         cost.text = relatedCard.price.ToString();
+    }
+
+    public void UpdateMatchCardUI(Text title, Text damageNumbers, Text battleDescriptionText, Image background)
+    {
+        if (extras != CardFamily.Effect)//if the card is not an effect
+        {
+            damageNumbers.text = (attackDamage * multiplyValue).ToString();
+        }
+        else
+        {
+            damageNumbers.text = "";
+        }
+
+        if (multiplyValue > 1)
+        {
+            damageNumbers.color = Color.yellow;
+        }
+
+        title.text = relatedCard.nameOfCard;
+
+        string desc = relatedCard.battleDescription.Description;
+        desc = desc.Replace("{atk}", attackDamage.ToString());
+        battleDescriptionText.text = desc;
+
+        //cost.text = relatedCard.price.ToString();
     }
 }
