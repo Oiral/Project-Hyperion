@@ -20,7 +20,7 @@ public class GauntletScript : MonoBehaviour {
     public int gauntletNum;
 
     public List<int> dependantGauntlets;
-
+    
     private void Start()
     {
         gm = GameManager.instance;
