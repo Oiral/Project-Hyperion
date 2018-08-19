@@ -1,0 +1,279 @@
+fileFormatVersion: 2
+guid: 360c1eb38bc14bf40a242c976f560f61
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: CLAVICAL_CNTRL
+    100002: FK_LFT_ANKLE
+    100004: FK_RGT_ANKLE
+    100006: HAIR_CNTRL
+    100008: IK_LFT_ANKLE
+    100010: IK_RGT_CNTRL
+    100012: ikHandle1
+    100014: ikHandle2
+    100016: joint1
+    100018: joint10
+    100020: joint11
+    100022: joint12
+    100024: joint13
+    100026: joint14
+    100028: joint15
+    100030: joint16
+    100032: joint17
+    100034: joint18
+    100036: joint19
+    100038: joint2
+    100040: joint20
+    100042: joint21
+    100044: joint22
+    100046: joint23
+    100048: joint24
+    100050: joint25
+    100052: joint26
+    100054: joint27
+    100056: joint28
+    100058: joint3
+    100060: joint4
+    100062: joint5
+    100064: joint6
+    100066: joint7
+    100068: joint8
+    100070: joint9
+    100072: LFT_ELBOW_CNTRL
+    100074: LFT_FOOT_CNTRL
+    100076: LFT_HAND_CNTRL
+    100078: LFT_PV_CNTRL
+    100080: LFT_PV_LOC
+    100082: LFT_SHOULDER_CNTRL
+    100084: LFT_WRIST_CNTRL
+    100086: locator1
+    100088: locator1 1
+    100090: locator10
+    100092: locator10 1
+    100094: locator11
+    100096: locator11 1
+    100098: locator12
+    100100: locator12 1
+    100102: locator13
+    100104: locator13 1
+    100106: locator14
+    100108: locator14 1
+    100110: locator15
+    100112: locator15 1
+    100114: locator16
+    100116: locator16 1
+    100118: locator2
+    100120: locator2 1
+    100122: locator3
+    100124: locator3 1
+    100126: locator4
+    100128: locator4 1
+    100130: locator5
+    100132: locator5 1
+    100134: locator6
+    100136: locator6 1
+    100138: locator7
+    100140: locator7 1
+    100142: locator8
+    100144: locator8 1
+    100146: locator9
+    100148: locator9 1
+    100150: Locators
+    100152: Locators1
+    100154: Mesh
+    100156: Meshes
+    100158: NECK_CNTRL
+    100160: polySurface1
+    100162: Projects
+    100164: RGT_ELBOW_CNTRL
+    100166: RGT_FOOR_CNTRL
+    100168: RGT_HAND_CNTRL
+    100170: RGT_PV_CNTRL
+    100172: RGT_PV_LOC
+    100174: RGT_SHOULDER_CNTRL
+    100176: RGT_WRIST_CNTRL
+    100178: //RootNode
+    100180: ROOR_CNTRL
+    100182: SPINE_CNTRL_1
+    100184: WORLD_CNTRL
+    400000: CLAVICAL_CNTRL
+    400002: FK_LFT_ANKLE
+    400004: FK_RGT_ANKLE
+    400006: HAIR_CNTRL
+    400008: IK_LFT_ANKLE
+    400010: IK_RGT_CNTRL
+    400012: ikHandle1
+    400014: ikHandle2
+    400016: joint1
+    400018: joint10
+    400020: joint11
+    400022: joint12
+    400024: joint13
+    400026: joint14
+    400028: joint15
+    400030: joint16
+    400032: joint17
+    400034: joint18
+    400036: joint19
+    400038: joint2
+    400040: joint20
+    400042: joint21
+    400044: joint22
+    400046: joint23
+    400048: joint24
+    400050: joint25
+    400052: joint26
+    400054: joint27
+    400056: joint28
+    400058: joint3
+    400060: joint4
+    400062: joint5
+    400064: joint6
+    400066: joint7
+    400068: joint8
+    400070: joint9
+    400072: LFT_ELBOW_CNTRL
+    400074: LFT_FOOT_CNTRL
+    400076: LFT_HAND_CNTRL
+    400078: LFT_PV_CNTRL
+    400080: LFT_PV_LOC
+    400082: LFT_SHOULDER_CNTRL
+    400084: LFT_WRIST_CNTRL
+    400086: locator1
+    400088: locator1 1
+    400090: locator10
+    400092: locator10 1
+    400094: locator11
+    400096: locator11 1
+    400098: locator12
+    400100: locator12 1
+    400102: locator13
+    400104: locator13 1
+    400106: locator14
+    400108: locator14 1
+    400110: locator15
+    400112: locator15 1
+    400114: locator16
+    400116: locator16 1
+    400118: locator2
+    400120: locator2 1
+    400122: locator3
+    400124: locator3 1
+    400126: locator4
+    400128: locator4 1
+    400130: locator5
+    400132: locator5 1
+    400134: locator6
+    400136: locator6 1
+    400138: locator7
+    400140: locator7 1
+    400142: locator8
+    400144: locator8 1
+    400146: locator9
+    400148: locator9 1
+    400150: Locators
+    400152: Locators1
+    400154: Mesh
+    400156: Meshes
+    400158: NECK_CNTRL
+    400160: polySurface1
+    400162: Projects
+    400164: RGT_ELBOW_CNTRL
+    400166: RGT_FOOR_CNTRL
+    400168: RGT_HAND_CNTRL
+    400170: RGT_PV_CNTRL
+    400172: RGT_PV_LOC
+    400174: RGT_SHOULDER_CNTRL
+    400176: RGT_WRIST_CNTRL
+    400178: //RootNode
+    400180: ROOR_CNTRL
+    400182: SPINE_CNTRL_1
+    400184: WORLD_CNTRL
+    2100000: lambert1
+    4300000: polySurface1
+    4300002: Mesh
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Mesh
+    13700002: polySurface1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
