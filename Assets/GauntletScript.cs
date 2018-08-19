@@ -28,13 +28,12 @@ public class GauntletScript : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("Gauntlet Activated");
-
-        //check if the dependants have also been beat
-        if (CheckDependants())
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            //check if the player has already completed the gauntlet
-            if (gm.gauntletNum[gauntletNum] == false)
+            Debug.Log("Gauntlet Activated");
+
+            //check if the dependants have also been beat
+            if (CheckDependants())
             {
                 //check if the gauntlet is finished
                 if (gm.playersThroughGauntlet < enemies.Count)
@@ -46,13 +45,14 @@ public class GauntletScript : MonoBehaviour {
                     gm.playersThroughGauntlet += 1;
                     SceneFlow.RunScene(SceneList.Battle);
 
-                }
-                else
-                {
-                    Debug.Log("Finished the gauntlet");
-                    gm.playersThroughGauntlet = 0;
-                    gm.gauntletNum[gauntletNum] = true;
-                    gm.playerHealth = 15;
+                    }
+                    else
+                    {
+                        Debug.Log("Finished the gauntlet");
+                        gm.playersThroughGauntlet = 0;
+                        gm.gauntletNum[gauntletNum] = true;
+                        gm.playerHealth = 15;
+                    }
                 }
             }
         }

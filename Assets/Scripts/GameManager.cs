@@ -59,9 +59,9 @@ public class GameManager : MonoBehaviour {
 
 
     //Info to pass to battle scene
-    [HideInInspector]
+    //[HideInInspector]
     public int enemyHealth;
-    [HideInInspector]
+    //[HideInInspector]
     public Deck enemyDeck;
 
 	public bool gauntletRunning = false;
