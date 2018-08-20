@@ -17,7 +17,8 @@ tags:
 colorID: 0
 position: 741,130
 ---
-Teacher: Prepare... THE ONCOMING STORM!
+<<startgauntlet YM>>
+Teacher: Prepare for... THE ONCOMING STORM!
 <<startbattle YM zeus>>
 ===
 
@@ -27,8 +28,19 @@ tags:
 colorID: 0
 position: 741,130
 ---
+<<setbust YM zeus>>
+Teacher: You Win!
 <<resetbusts YM>>
-<<openshop YM>>
+===
+
+title: Zeus.Win
+tags: 
+colorID: 0
+position: 741,130
+---
+<<setbust YM zeus>>
+Teacher: Better luck next time!
+<<resetbusts YM>>
 ===
 
 title: Zeus.Buy

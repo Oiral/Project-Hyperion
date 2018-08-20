@@ -1,0 +1,19 @@
+title: Zeus.Tutorial
+tags: 
+colorID: 0
+position: 721,130
+---
+<<setbust YM zeus>>
+Teacher: Learn to play my card game!
+Teacher: By playing other people!
+<<resetbusts YM>>
+===
+
+title: Zeus.TutorialEnd
+tags: 
+colorID: 0
+position: 741,130
+---
+Teacher: Ok then! Come back when you Do!
+<<resetbusts YM>>
+===

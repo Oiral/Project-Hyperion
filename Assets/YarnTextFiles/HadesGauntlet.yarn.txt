@@ -71,6 +71,17 @@ Hades: I MISCALCUATED! NO!
 <<recorddefeat YM hades>>
 ===
 
+title: Hades.Win
+tags: 
+colorID: 0
+position: 741,130
+---
+<<setbust YM hades>>
+Hades: Hahaha. I never lose!
+<<resetbusts YM>>
+<<resetgauntlet YM>>
+===
+
 title: Hades.No
 tags: 
 colorID: 0
