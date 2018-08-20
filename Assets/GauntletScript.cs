@@ -2,25 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GauntletScript : MonoBehaviour {
+public class GauntletScript : MonoBehaviour
+{
 
-	[System.Serializable]
-	public struct Enemy
-	{
-		public string name;
-		public string talkToNode;
-		public int health;
-		public Deck deck;
-	}
+    [System.Serializable]
+    public struct Enemy
+    {
+        public string name;
+        public string talkToNode;
+        public int health;
+        public Deck deck;
+    }
 
-	GameManager gm;
+    GameManager gm;
 
-	public List<Enemy> enemies;
+    public List<Enemy> enemies;
 
     public int gauntletNum;
 
     public List<int> dependantGauntlets;
-    
+
     private void Start()
     {
         gm = GameManager.instance;
@@ -37,20 +38,21 @@ public class GauntletScript : MonoBehaviour {
             {
                 //check if the player has already completed the gauntlet
                 if (gm.gauntletNum[gauntletNum] == false)
-                //check if the gauntlet is finished
-                if (gm.playersThroughGauntlet < enemies.Count)
                 {
-					gm.SavePlayerPosition();
+                    //check if the gauntlet is finished
+                    if (gm.playersThroughGauntlet < enemies.Count)
+                    {
+                        gm.SavePlayerPosition();
 
                         gm.enemyDeck = enemies[gm.playersThroughGauntlet].deck;
                         gm.enemyHealth = enemies[gm.playersThroughGauntlet].health;
                         gm.playersThroughGauntlet += 1;
                         //SceneFlow.RunScene(SceneList.Battle);
                         //call set of chats
-                    gm.enemyDeck = enemies[gm.playersThroughGauntlet].deck;
-                    gm.enemyHealth = enemies[gm.playersThroughGauntlet].health;
-                    gm.playersThroughGauntlet += 1;
-                    SceneFlow.RunScene(SceneList.Battle);
+                        gm.enemyDeck = enemies[gm.playersThroughGauntlet].deck;
+                        gm.enemyHealth = enemies[gm.playersThroughGauntlet].health;
+                        gm.playersThroughGauntlet += 1;
+                        SceneFlow.RunScene(SceneList.Battle);
 
                     }
                     else
@@ -64,6 +66,8 @@ public class GauntletScript : MonoBehaviour {
             }
         }
     }
+
+
 
     bool CheckDependants()
     {
