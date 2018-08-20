@@ -11,13 +11,14 @@ public class PlayingCardScript : MonoBehaviour {
     public Text desc;
     public Text number;
     public Image enableImage;
+    public Image backgroundImage;
 
     public Vector3 targetPos;
     public float moveSpeed = 10;
 
     private void Start()
     {
-        info.UpdateMatchCardUI(title, number, desc);
+        info.UpdateMatchCardUI(title, number, desc, backgroundImage);
     }
 
     private void Update()
