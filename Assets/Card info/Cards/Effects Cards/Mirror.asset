@@ -17,6 +17,6 @@ MonoBehaviour:
   multiplyValue: 1
   price: 3
   nameOfCard: Mirror
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 8ebd735e0b1afec43878dc1cf6b06783, type: 3}
   description: 
   battleDescription: {fileID: 11400000, guid: c3b4a86fe8f6da3459f3326f17f15150, type: 2}

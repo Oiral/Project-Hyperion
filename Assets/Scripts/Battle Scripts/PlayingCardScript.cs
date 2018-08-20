@@ -11,6 +11,7 @@ public class PlayingCardScript : MonoBehaviour {
     public Text desc;
     public Text number;
     public Image enableImage;
+
     public Image backgroundImage;
 
     public Vector3 targetPos;

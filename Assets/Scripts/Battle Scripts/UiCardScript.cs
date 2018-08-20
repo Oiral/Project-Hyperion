@@ -10,12 +10,13 @@ public class UiCardScript : MonoBehaviour {
     public Text title;
     public Text number;
     public Text desc;
+    public Image background;
 
     public bool hover = false;
 
     private void Update()
     {
-        info.UpdateMatchCardUI(title, number, desc);
+        info.UpdateMatchCardUI(title, number, desc, background);
     }
 
     public void PlayCard()

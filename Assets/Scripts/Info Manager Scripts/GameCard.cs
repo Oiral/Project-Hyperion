@@ -120,6 +120,8 @@ public class GameCard{
         desc = desc.Replace("{atk}", attackDamage.ToString());
         battleDescriptionText.text = desc;
 
+
+        background.sprite = relatedCard.image;
         //cost.text = relatedCard.price.ToString();
     }
 }

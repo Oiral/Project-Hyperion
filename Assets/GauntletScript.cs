@@ -41,12 +41,12 @@ public class GauntletScript : MonoBehaviour {
                 if (gm.playersThroughGauntlet < enemies.Count)
                 {
                     //check if the gauntlet is finished
-                    if (gm.playersThroughGauntlet < health.Count)
+                    if (gm.playersThroughGauntlet < enemies.Count)
                     {
                         gm.playerSavePos = other.gameObject.transform.position;
 
-                        gm.enemyDeck = decks[gm.playersThroughGauntlet];
-                        gm.enemyHealth = health[gm.playersThroughGauntlet];
+                        gm.enemyDeck = enemies[gm.playersThroughGauntlet].deck;
+                        gm.enemyHealth = enemies[gm.playersThroughGauntlet].health;
                         gm.playersThroughGauntlet += 1;
                         //SceneFlow.RunScene(SceneList.Battle);
                         //call set of chats

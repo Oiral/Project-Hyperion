@@ -17,6 +17,6 @@ MonoBehaviour:
   multiplyValue: 1
   price: 3
   nameOfCard: Multiply
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 07d85f32f78dec24d80b79ee8d97d43e, type: 3}
   description: 
   battleDescription: {fileID: 11400000, guid: fe4c22872e6c03d4b916df9b7f2465ca, type: 2}

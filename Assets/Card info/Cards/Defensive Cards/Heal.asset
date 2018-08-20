@@ -17,6 +17,6 @@ MonoBehaviour:
   multiplyValue: 1
   price: 2
   nameOfCard: Heal
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 8c9b964c93ab3cf488ca3712eea0f2e3, type: 3}
   description: 
   battleDescription: {fileID: 11400000, guid: 655c7e0ceb2be8c41b55e20bd4d25019, type: 2}

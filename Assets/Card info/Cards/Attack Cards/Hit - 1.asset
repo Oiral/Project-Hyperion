@@ -17,6 +17,6 @@ MonoBehaviour:
   multiplyValue: 1
   price: 1
   nameOfCard: Hit
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: cd6d98083319a2740a48496b56b25ea3, type: 3}
   description: 
   battleDescription: {fileID: 11400000, guid: 6209455889738b447b916121611050c8, type: 2}
