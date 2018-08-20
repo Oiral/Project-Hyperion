@@ -11,6 +11,8 @@ public class PlayerScript : MonoBehaviour {
 
     public Text healthText;
     public Text shieldText;
+    public Image bust;
+    public Text playerName;
 
     public Deck currentDeck;
     public List<GameCard> discardedCards = new List<GameCard>();
@@ -63,5 +65,15 @@ public class PlayerScript : MonoBehaviour {
     {
         healthText.text = health.ToString();
         shieldText.text = shield.ToString();
+
+        if (playerName != null)
+        {
+            playerName.text = GameManager.instance.enemyName;
+        }
+
+        if (bust != null)
+        {
+            bust.sprite = GameManager.instance.enemyBust;
+        }
     }
 }

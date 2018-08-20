@@ -28,9 +28,16 @@ public class UiCardScript : MonoBehaviour {
     public void OnHover()
     {
         hover = true;
+        GetComponent<Button>().Select();
     }
     public void LeaveHover()
     {
         hover = false;
+    }
+    public void OnSelect()
+    {
+        //Debug.Log("Test");
+        //set up something to do with the movement of selection thingy
+        GameObject.FindGameObjectWithTag("SelectionBox").GetComponent<MoveScript>().targetPos = GetComponent<RectTransform>().transform.position;
     }
 }

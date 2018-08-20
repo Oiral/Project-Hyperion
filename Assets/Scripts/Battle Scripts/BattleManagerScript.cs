@@ -141,6 +141,10 @@ public class BattleManagerScript : MonoBehaviour {
 
             }
         }
+
+        //set the first item in the list to be first selected
+        playerHand[0].attachedObject.GetComponent<Button>().Select();
+
     }
 
     public void PlayerPlayCard(GameCard cardPlayed)
@@ -158,6 +162,9 @@ public class BattleManagerScript : MonoBehaviour {
                 cardPlayed.attachedObject = SpawnedCardObject;
                 SpawnedCardObject.GetComponent<PlayingCardScript>().targetPos = new Vector3(PlayerXValue, 0, i * 12);
                 playerCardsInPlay[i] = cardPlayed;
+
+                //call the fist button in list
+                playerHand[0].attachedObject.GetComponent<Button>().Select();
                 break;
             }
         }

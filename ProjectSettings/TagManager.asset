@@ -10,6 +10,7 @@ TagManager:
   - Played Card
   - Battle Manager
   - Player Hand
+  - SelectionBox
   layers:
   - Default
   - TransparentFX
