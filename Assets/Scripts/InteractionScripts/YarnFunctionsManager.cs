@@ -63,5 +63,11 @@ public class YarnFunctionsManager : MonoBehaviour {
 		otherBust.color = new Color(0, 0, 0, 0);
 
 
-		}
+	}
+
+	[YarnCommand("resetgauntlet")]
+	public void ResetGauntletRun()
+	{
+		GameManager.instance.playerHealth = 15;
+	}
 }

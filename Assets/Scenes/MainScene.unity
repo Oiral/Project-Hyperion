@@ -4041,8 +4041,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sourceText:
   - {fileID: 4900000, guid: 22bb5d87f4030184b8950057016b124f, type: 3}
-  - {fileID: 4900000, guid: b8c5aae174801b8458f3de5b942b6277, type: 3}
   - {fileID: 4900000, guid: 3421b3563b6bb8740b6d08e8bb67cc6c, type: 3}
+  - {fileID: 4900000, guid: fde6432c05ab9364e99959987bad6224, type: 3}
   stringGroups: []
   shouldOverrideLanguage: 0
   overrideLanguage: 10
@@ -4392,7 +4392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Hades
-  talkToNode: Hades
+  talkToNode: HadesGauntlet
   scriptToLoad: {fileID: 0}
 --- !u!65 &289405350
 BoxCollider:
@@ -5960,7 +5960,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &414008502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6802,6 +6802,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.size
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4287551186038214, guid: 78e8411650e6e62448dde2ad47e03f79, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6849,6 +6854,257 @@ Prefab:
       propertyPath: enemyList.Array.data[2].name
       value: hercules
       objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[3].name
+      value: hades
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[3].hp
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[3].deck
+      value: 
+      objectReference: {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d,
+        type: 2}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[4].name
+      value: aphroditethug1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[4].hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[4].deck
+      value: 
+      objectReference: {fileID: 11400000, guid: 4545f8874e6835c4a9f70cd6d0b52971,
+        type: 2}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[5].name
+      value: aphroditethug2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[5].hp
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[5].deck
+      value: 
+      objectReference: {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d,
+        type: 2}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[6].name
+      value: aphroditethug3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[6].hp
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[6].deck
+      value: 
+      objectReference: {fileID: 11400000, guid: 24b254a99bf7e364e8ecff9e93338c68,
+        type: 2}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[7].name
+      value: herculesthug1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[7].hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[7].deck
+      value: 
+      objectReference: {fileID: 11400000, guid: d1bf3e1d03cd5de4f9384ff9ae6d5fe7,
+        type: 2}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[8].name
+      value: herculesthug2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[8].hp
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[8].deck
+      value: 
+      objectReference: {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d,
+        type: 2}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[9].name
+      value: hadesthug
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[9].hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[9].deck
+      value: 
+      objectReference: {fileID: 11400000, guid: 4545f8874e6835c4a9f70cd6d0b52971,
+        type: 2}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[10].name
+      value: hercules
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[10].hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[10].deck
+      value: 
+      objectReference: {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d,
+        type: 2}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[11].name
+      value: hercules
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[11].hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[11].deck
+      value: 
+      objectReference: {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d,
+        type: 2}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[12].name
+      value: hercules
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[12].hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[12].deck
+      value: 
+      objectReference: {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d,
+        type: 2}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[13].name
+      value: hercules
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[13].hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[13].deck
+      value: 
+      objectReference: {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d,
+        type: 2}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[14].name
+      value: hercules
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[14].hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[14].deck
+      value: 
+      objectReference: {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d,
+        type: 2}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[2].hp
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[2].deck
+      value: 
+      objectReference: {fileID: 11400000, guid: 24b254a99bf7e364e8ecff9e93338c68,
+        type: 2}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[0].hp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[1].hp
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[1].deck
+      value: 
+      objectReference: {fileID: 11400000, guid: d1bf3e1d03cd5de4f9384ff9ae6d5fe7,
+        type: 2}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[15].name
+      value: hercules
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[15].hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[15].deck
+      value: 
+      objectReference: {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d,
+        type: 2}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[16].name
+      value: hercules
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[16].hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[16].deck
+      value: 
+      objectReference: {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78e8411650e6e62448dde2ad47e03f79, type: 2}
   m_IsPrefabParent: 0
@@ -10664,7 +10920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &849894794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11765,7 +12021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &949876956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12067,6 +12323,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 303e75333b8345a4eab1ccf4e196687c, type: 2}
+    - target: {fileID: 9500000, guid: d0f697aa9520aa448a36caaf3c71ae84, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8c11cab32bbfae24195c6eb7a5512925, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0f697aa9520aa448a36caaf3c71ae84, type: 3}
   m_IsPrefabParent: 0
@@ -13397,7 +13657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1074592134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20046,7 +20306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Zeus
-  talkToNode: Zeus
+  talkToNode: Hadesthug
   scriptToLoad: {fileID: 0}
 --- !u!1001 &1598903475
 Prefab:

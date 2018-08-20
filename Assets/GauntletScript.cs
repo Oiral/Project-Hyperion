@@ -39,7 +39,7 @@ public class GauntletScript : MonoBehaviour {
                 //check if the gauntlet is finished
                 if (gm.playersThroughGauntlet < enemies.Count)
                 {
-                    gm.playerSavePos = other.gameObject.transform.position;
+					gm.SavePlayerPosition();
 
                     gm.enemyDeck = enemies[gm.playersThroughGauntlet].deck;
                     gm.enemyHealth = enemies[gm.playersThroughGauntlet].health;

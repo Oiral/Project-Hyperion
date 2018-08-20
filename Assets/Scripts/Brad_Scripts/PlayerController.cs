@@ -45,12 +45,9 @@ public class PlayerController : MonoBehaviour
         walkingBool = false;
         m_Animator = GetComponentInChildren<Animator>();
 
-        //if the gm has a saved pos. move player to saved pos
-        if (GameManager.instance.playerSavePos != Vector3.zero)
-        {
-            transform.position = GameManager.instance.playerSavePos;
-        }
-    }
+		GameManager.instance.SetPlayer(gameObject);
+		GameManager.instance.SavePlayerPosition();
+	}
 
     void FixedUpdate()
     {
@@ -92,13 +89,6 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(6);
         }
-        
-        /*
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            GameManager.instance.playerSavePos = transform.position;
-            SceneFlow.RunScene(SceneList.Testing);
-        }*/
         
     }
 

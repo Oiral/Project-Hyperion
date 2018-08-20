@@ -1,0 +1,28 @@
+title: Hadesthug
+tags: 
+colorID: 0
+position: 721,130
+---
+<<setbust YM hades>>
+Thug: Fight?
+[[Yes!|Hadesthug.Yes]]
+[[No Thanks!|Hadesthug.No]]
+===
+
+title: Hadesthug.Yes
+tags: 
+colorID: 0
+position: 741,130
+---
+<<startbattle YM hadesthug>>
+<<resetbusts YM>>
+===
+
+title: Hadesthug.No
+tags: 
+colorID: 0
+position: 741,130
+---
+<<resetbusts YM>>
+
+===

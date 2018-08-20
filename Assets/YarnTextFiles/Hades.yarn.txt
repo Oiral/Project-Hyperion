@@ -1,29 +1,50 @@
-title: Hades
+title: HadesGauntlet
 tags: 
 colorID: 0
 position: 721,130
 ---
 <<setbust YM hades>>
-Hades: Hello, true believer!
-[[Hello!|Hades.Hello]]
-[[Ummmm...|Hades.Ummm]]
+Hades Thug: Are you ready to fight?
+[[Yes|HadesThug.Yes]]
+[[No|HadesThug.No]]
 ===
 
-title: Hades.Hello
+title: HadesThug.Yes
 tags: 
 colorID: 0
 position: 741,130
 ---
-Nate: Nice costume!!
-Hades: Thanks!
-<<resetbusts YM>>
+Ok
+<<startbattle YM hadesthug>>
 ===
 
-title: Hades.Ummm
+title: HadesThug.No
 tags: 
 colorID: 0
 position: 741,130
 ---
-Nate: I gotta go!
+Ok
+<<resetgauntlet YM>>
 <<resetbusts YM>>
 ===
+
+title: Hades.Yes
+tags: 
+colorID: 0
+position: 741,130
+---
+Ok
+<<resetbusts YM>>
+<<startbattle YM hades>>
+===
+
+title: Hades.No
+tags: 
+colorID: 0
+position: 741,130
+---
+Ok
+<<resetgauntlet YM>>
+<<resetbusts YM>>
+===
+

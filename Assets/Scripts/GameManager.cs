@@ -14,18 +14,27 @@ public struct Enemy{
 
 public class GameManager : MonoBehaviour {
     
+	public struct SavedPos
+	{
+		public Vector3 pos;
+		public Quaternion rot;
+	}
+
     public static GameManager instance;
 
     public int playerHealth = 15;
 
     public static int previousSceneIndex;
-    //public int battlesLoaded = 0;
-    //public List<Deck> decksToFight = new List<Deck>();
-    //public List<int> enemyHP = new List<int>();
+
+	GameObject player;
+	public SavedPos playerSavePos;
+	//public int battlesLoaded = 0;
+	//public List<Deck> decksToFight = new List<Deck>();
+	//public List<int> enemyHP = new List<int>();
 
 
-    //info kept safe for load back into main scene
-    [Header("Safe keeping for main scene")]
+	//info kept safe for load back into main scene
+	[Header("Safe keeping for main scene")]
     public int playersThroughGauntlet;
     public Dictionary<int, bool> gauntletNum = new Dictionary<int, bool>{
         { 0, false },
@@ -40,8 +49,6 @@ public class GameManager : MonoBehaviour {
     [HideInInspector]
     public Deck enemyDeck;
 	public List<Enemy> enemyList;
-
-    public Vector3 playerSavePos;
 
 	// Use this for initialization
 	void Awake () {
@@ -105,6 +112,7 @@ public class GameManager : MonoBehaviour {
 
 	public void StartBattle()
 	{
+		SavePlayerPosition();
 		SceneFlow.RunScene(SceneList.Battle);
 	}
 
@@ -119,5 +127,16 @@ public class GameManager : MonoBehaviour {
 				break;
 			}
 		}
+	}
+
+	public void SetPlayer(GameObject newPlayer)
+	{
+		player = newPlayer;
+	}
+	
+	public void SavePlayerPosition()
+	{
+		playerSavePos.pos = player.transform.position;
+		playerSavePos.rot = player.transform.rotation;
 	}
 }
