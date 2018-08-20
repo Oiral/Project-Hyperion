@@ -13,6 +13,8 @@ public class PlayingCardScript : MonoBehaviour {
     public Image enableImage;
     public Image backgroundImage;
 
+    public Image backgroundImage;
+
     public Vector3 targetPos;
     public float moveSpeed = 10;
 

@@ -17,6 +17,6 @@ MonoBehaviour:
   multiplyValue: 1
   price: 2
   nameOfCard: Block
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: d9740d114683f924a8e74d5b712bd26e, type: 3}
   description: 
   battleDescription: {fileID: 11400000, guid: bdef6f20473856244a35429b31b9bea2, type: 2}

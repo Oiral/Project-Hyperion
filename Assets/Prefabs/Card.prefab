@@ -364,6 +364,7 @@ MonoBehaviour:
   desc: {fileID: 114881741748044868}
   number: {fileID: 114036263214217634}
   enableImage: {fileID: 114192931188706516}
+  backgroundImage: {fileID: 114936971141974814}
   targetPos: {x: 0, y: 0, z: 0}
   moveSpeed: 10
 --- !u!114 &114397926725135404
