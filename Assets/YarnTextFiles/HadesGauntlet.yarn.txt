@@ -59,6 +59,18 @@ Are you sure? All your progress in these battles will be lost?
 [[No|Hades]]
 ===
 
+title: Hades.Lose
+tags: 
+colorID: 0
+position: 741,130
+---
+<<setbust YM hades>>
+Hades: I MISCALCUATED! NO!
+<<resetbusts YM>>
+<<resetgauntlet YM>>
+<<recorddefeat YM hades>>
+===
+
 title: Hades.No
 tags: 
 colorID: 0
@@ -66,5 +78,5 @@ position: 741,130
 ---
 Hades: Come back when you are ready!
 <<resetbusts YM>>
-<<resetgauntlet>>
+<<resetgauntlet YM>>
 ===

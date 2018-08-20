@@ -19,8 +19,7 @@ public class GameManager : MonoBehaviour {
 
 	#region GauntletTracker
 	public List<string> enemiesDefeatedNames;
-	[HideInInspector]
-	public List<bool> enemiesDefeatedTracker;
+	public bool[] enemiesDefeatedTracker;
 	#endregion
 
 	
@@ -81,7 +80,13 @@ public class GameManager : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
 	}
 
-    public Deck GetDeck()
+	private void Start()
+	{
+		int len = enemiesDefeatedNames.Count;
+		enemiesDefeatedTracker = new bool[len];
+	}
+
+	public Deck GetDeck()
     {
         return enemyDeck;
     }

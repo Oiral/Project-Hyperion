@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44996685, g: 0.49736005, b: 0.5612226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4356,10 +4356,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 289405348}
-  - component: {fileID: 289405349}
   - component: {fileID: 289405350}
   - component: {fileID: 289405351}
-  - component: {fileID: 289405352}
+  - component: {fileID: 289405349}
   m_Layer: 0
   m_Name: Hades
   m_TagString: Enemy
@@ -4393,8 +4392,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Hades
-  talkToNode: HadesGauntlet
+  talkToNode: Hadesthug
   scriptToLoad: {fileID: 0}
+  interactionRadius: 2
 --- !u!65 &289405350
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4418,20 +4418,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48713742cc743334f9845114cda95776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &289405352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 289405347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3419b57eb638f44db88701b5b33b8af8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: Hades
-  talkToNode: Hadesthug
-  scriptToLoad: {fileID: 0}
 --- !u!1001 &294105844
 Prefab:
   m_ObjectHideFlags: 0
@@ -6822,6 +6808,11 @@ Prefab:
       propertyPath: enemyList.Array.size
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemiesDefeatedNames.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4287551186038214, guid: 78e8411650e6e62448dde2ad47e03f79, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7214,6 +7205,21 @@ Prefab:
         type: 2}
       propertyPath: enemyList.Array.data[0].nodeToFollow
       value: Zeus.Lose
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemiesDefeatedNames.Array.data[0]
+      value: hades
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemiesDefeatedNames.Array.data[1]
+      value: hercules
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemiesDefeatedNames.Array.data[2]
+      value: aphrodite
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78e8411650e6e62448dde2ad47e03f79, type: 2}
@@ -20480,6 +20486,7 @@ MonoBehaviour:
   characterName: Zeus
   talkToNode: Hadesthug
   scriptToLoad: {fileID: 0}
+  interactionRadius: 2
 --- !u!1001 &1598903475
 Prefab:
   m_ObjectHideFlags: 0
@@ -22010,7 +22017,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f344228aff461441b994b5f88ff9675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemiesDefeatedNames: []
+  enemiesDefeatedTracker: 
   playerHealth: 15
+  playerSavePos:
+    pos: {x: 0, y: 0, z: 0}
+    rot: {x: 0, y: 0, z: 0, w: 0}
   playersThroughGauntlet: 0
   enemyHealth: 0
   enemyDeck: {fileID: 0}

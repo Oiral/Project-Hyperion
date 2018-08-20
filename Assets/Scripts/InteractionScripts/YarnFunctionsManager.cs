@@ -80,13 +80,12 @@ public class YarnFunctionsManager : MonoBehaviour {
 		GameManager.instance.gauntletRunning = true;
 	}
 
-	[YarnCommand("recordDefeat")]
+	[YarnCommand("recorddefeat")]
 	public void RecordDefeat(string enemyName)
 	{
-		List<string> enemyTracker = GameManager.instance.enemiesDefeatedNames;
-		for(int i = 0; i < enemyTracker.Count; i++)
+		for (int i = 0; i < GameManager.instance.enemiesDefeatedNames.Count; i++)
 		{
-			if (enemyName == enemyTracker[i])
+			if (enemyName == GameManager.instance.enemiesDefeatedNames[i])
 			{
 				GameManager.instance.enemiesDefeatedTracker[i] = true;
 			}
@@ -108,7 +107,6 @@ public class YarnFunctionsManager : MonoBehaviour {
 			{
 				FindObjectOfType<DialogueRunner>().StartDialogue(nodeToCall);
 			}
-			
 		}
 	}
 	#endregion

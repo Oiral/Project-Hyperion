@@ -3,16 +3,24 @@ tags:
 colorID: 0
 position: 721,130
 ---
-<<if false>>
-	Teacher: Ahhh, I see you have beaten everyone else in the class...
-	Teacher: I hope you are ready to lose!
-    <<startbattle YM zeus>>
-	<<resetbusts YM>>
-<<else>>
-	Teacher: Do you wanna buy cards?
-	[[Yes!|Zeus.Yes]]
-	[[No Thanks!|Zeus.No]]
+Teacher: Ahhh, I see you have beaten everyone else in the class...
+Teacher: I hope you are ready to lose to your master!
+[[Yes!|Zeus.Yes]]
+[[No Thanks!|Zeus.No]]
+<<startbattle YM zeus>>
+
+	
 <<endif>>
+===
+
+title: Zeus.Buy
+tags: 
+colorID: 0
+position: 741,130
+---
+Teacher: Do you wanna buy cards?
+[[Yes!|Zeus.Yes]]
+[[No Thanks!|Zeus.No]]
 ===
 
 title: Zeus.Yes
