@@ -73,7 +73,17 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(rb.velocity, Vector3.up);
 
             walkingBool = true;
+            soundBool = true;
             //Debug.Log("wB = true");
+
+            if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0 && !source.isPlaying)
+            {
+                float vol = Random.Range(volLowRange, volHighRange);
+                //soundBool = false;
+                source.Play();
+                soundBool = false;
+            }
+
         }
         else
         {
@@ -81,14 +91,14 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("wB = false");
         }
 
-        if (walkingBool && soundBool)
+       /* if (walkingBool && soundBool)
         {
             float vol = Random.Range(volLowRange, volHighRange);
             soundBool = false;
             source.PlayOneShot(walkSound, vol);
             //Debug.Log("sfx_playing");
             StartCoroutine(ResetSoundBool());
-        }
+        }*/
 
         if (Input.GetKey("escape"))
         {
@@ -97,17 +107,14 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    IEnumerator ResetSoundBool()
+    /*IEnumerator ResetSoundBool()
     {
         yield return new WaitForSeconds(walkSoundDelay);
         soundBool = true;
         print("WB = false");
-    }
+    }*/
 
-    void WalkingBool()
-    {
-
-    }
+   
 
     void idealBool()
     {
