@@ -1,33 +1,163 @@
+title: Aphroditethug1
+tags: 
+colorID: 0
+position: 524,111
+---
+<<setbust YM aphrodite2>>
+<<startgauntlet YM>>
+Aphrodite: I'm the best! You can't possibly beat me!
+[[Fight|Aphrodite1.Fight]]
+[[Run|Aphrodite1.Run]]
+===
+
+title: Aphrodite1.Fight
+tags: 
+colorID: 0
+position: 512,430
+---
+<<startbattle YM aphroditethug1>>
+<<resetbusts YM>>
+===
+
+title: Aphrodite1.Run
+tags: 
+colorID: 0
+position: 512,430
+---
+<<resetbusts YM>>
+<<resetgauntlet YM>>
+===
+
+title: Aphroditethug2
+tags: 
+colorID: 0
+position: 524,111
+---
+<<setbust YM hera>>
+Hera: Ready?
+[[Fight|Aphrodite2.Fight]]
+[[Run|Aphrodite2.Confirm]]
+===
+
+title: Aphrodite2.Fight
+tags: 
+colorID: 0
+position: 512,430
+---
+<<startbattle YM aphroditethug2>>
+<<resetbusts YM>>
+===
+
+title: Aphrodite2.Run
+tags: 
+colorID: 0
+position: 512,430
+---
+Hera: See ya!
+<<resetbusts YM>>
+<<resetgauntlet YM>>
+===
+
+title: Aphrodite2.Confirm
+tags: 
+colorID: 0
+position: 512,430
+---
+Are you sure? All your progress in these battles will be lost?
+[[Run|Aphrodite2.Run]]
+[[Stay|Aphroditethug2]]
+===
+
+
+title: Aphroditethug3
+tags: 
+colorID: 0
+position: 524,111
+---
+<<setbust YM athena>>
+Athena: Prepare for battle warrior!
+[[Fight|Aphrodite3.Fight]]
+[[Run|Aphrodite3.Confirm]]
+===
+
+title: Aphrodite3.Fight
+tags: 
+colorID: 0
+position: 512,430
+---
+<<startbattle YM aphroditethug3>>
+<<resetbusts YM>>
+===
+
+title: Aphrodite3.Run
+tags: 
+colorID: 0
+position: 512,430
+---
+Athena: Return when you have shown your worth!
+<<resetbusts YM>>
+<<resetgauntlet YM>>
+===
+
+title: Aphrodite3.Confirm
+tags: 
+colorID: 0
+position: 512,430
+---
+Are you sure? All your progress in these battles will be lost?
+[[Run|Aphrodite3.Run]]
+[[Stay|Aphroditethug3]]
+===
+
+
 title: Aphrodite
 tags: 
 colorID: 0
 position: 524,111
 ---
-<<setbust YM aphrodite>>
-<<if not visited("Aphrodite")>>
-	Aphrodite: Think you can beat me?
-	[[Yes!|Aphrodite.Yes]]
-	[[Nooo!|Aphrodite.No]]
-<<else>>
-    Aphrodite: No fighting for you today!
-	<<resetbusts YM>>
-<<endif>>
+<<setbust YM aphrodite1>>
+Aphrodite: Ready to lose?
+[[Fight|Aphrodite.Fight]]
+[[Run|Aphrodite.Confirm]]
 ===
 
-title: Aphrodite.Yes
+title: Aphrodite.Fight
 tags: 
 colorID: 0
 position: 512,430
 ---
-Aphrodite: How rude! I'm definitely not fighting you!
+<<startbattle YM aphrodite>>
 <<resetbusts YM>>
 ===
 
-title: Aphrodite.No
+title: Aphrodite.Run
 tags: 
-colorID: 6
-position: 211,417
+colorID: 0
+position: 512,430
 ---
-Aphrodite: I'm glad you know your place!
+Aphrodite: Why am I not surprised?
 <<resetbusts YM>>
+<<resetgauntlet YM>>
+===
+
+title: Aphrodite.Confirm
+tags: 
+colorID: 0
+position: 512,430
+---
+Are you sure? All your progress in these battles will be lost?
+[[Run|Aphrodite.Run]]
+[[Stay|Aphrodite]]
+===
+
+title: Aphrodite.Lose
+tags: 
+colorID: 0
+position: 512,430
+---
+<<setbust YM aphrodite1>>
+Aphrodite: ... You beat me.
+<<resetbusts YM>>
+<<resetgauntlet YM>>
+<<recorddefeat YM aphrodite>>
 ===

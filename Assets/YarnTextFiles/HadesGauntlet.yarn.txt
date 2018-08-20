@@ -55,8 +55,8 @@ colorID: 0
 position: 741,130
 ---
 Are you sure? All your progress in these battles will be lost?
-[[Yes!|Hades.No]]
-[[No|Hades]]
+[[Retreat|Hades.No]]
+[[Stay|Hades]]
 ===
 
 title: Hades.Lose

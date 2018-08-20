@@ -6074,7 +6074,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300002, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8065,15 +8065,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400178, guid: 360c1eb38bc14bf40a242c976f560f61, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.190107
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400178, guid: 360c1eb38bc14bf40a242c976f560f61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.45046
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400178, guid: 360c1eb38bc14bf40a242c976f560f61, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.922116
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400178, guid: 360c1eb38bc14bf40a242c976f560f61, type: 3}
       propertyPath: m_LocalRotation.x
@@ -9731,7 +9731,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 62b712113466b704986d1a7e31812e22, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11885,6 +11885,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 919025196}
+  - component: {fileID: 919025197}
   m_Layer: 0
   m_Name: Aphrodite
   m_TagString: Untagged
@@ -11899,13 +11900,28 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 919025195}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.2851067, y: 1.48946, z: 2.8528156}
+  m_LocalPosition: {x: -4.9050007, y: 0.039000034, z: -5.0693}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 561573099}
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &919025197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 919025195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3419b57eb638f44db88701b5b33b8af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Aphrodite
+  talkToNode: Aphroditethug1
+  scriptToLoad: {fileID: 0}
+  interactionRadius: 2
 --- !u!1 &920450236 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 7c83f88352ac7c346959d122da398970, type: 3}
@@ -15301,25 +15317,25 @@ MonoBehaviour:
   nateBust: {fileID: 734294057}
   busts:
   - name: hades
-    bust: {fileID: 21300002, guid: 62b712113466b704986d1a7e31812e22, type: 3}
-  - name: aphrodite 1
-    bust: {fileID: 21300004, guid: 62b712113466b704986d1a7e31812e22, type: 3}
+    bust: {fileID: 21300016, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
+  - name: aphrodite1
+    bust: {fileID: 21300006, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
   - name: zeus
-    bust: {fileID: 21300000, guid: 1f298915ea6ba427eb07781a6abef127, type: 3}
+    bust: {fileID: 21300014, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
   - name: medusa
-    bust: {fileID: 21300000, guid: 1f298915ea6ba427eb07781a6abef127, type: 3}
+    bust: {fileID: 21300012, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
   - name: hadesthug
-    bust: {fileID: 21300000, guid: 1f298915ea6ba427eb07781a6abef127, type: 3}
+    bust: {fileID: 21300004, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
   - name: hera
-    bust: {fileID: 21300000, guid: 1f298915ea6ba427eb07781a6abef127, type: 3}
+    bust: {fileID: 21300020, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
   - name: hercules
-    bust: {fileID: 21300000, guid: 1f298915ea6ba427eb07781a6abef127, type: 3}
+    bust: {fileID: 21300018, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
   - name: herculesthug
-    bust: {fileID: 21300000, guid: 1f298915ea6ba427eb07781a6abef127, type: 3}
+    bust: {fileID: 21300002, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
   - name: athena
-    bust: {fileID: 21300000, guid: 1f298915ea6ba427eb07781a6abef127, type: 3}
-  - name: aphrodite 2
-    bust: {fileID: 21300000, guid: 1f298915ea6ba427eb07781a6abef127, type: 3}
+    bust: {fileID: 21300010, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
+  - name: aphrodite2
+    bust: {fileID: 21300008, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
 --- !u!4 &1213907024
 Transform:
   m_ObjectHideFlags: 0
@@ -20484,7 +20500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Zeus
-  talkToNode: Hadesthug
+  talkToNode: Zeus.Battle
   scriptToLoad: {fileID: 0}
   interactionRadius: 2
 --- !u!1001 &1598903475

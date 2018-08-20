@@ -1,29 +1,28 @@
-title: Zeus
+title: Zeus.Battle
 tags: 
 colorID: 0
 position: 721,130
 ---
-Teacher: Ahhh, I see you have beaten everyone else in the class...
-Teacher: I hope you are ready to lose to your master!
-[[Yes!|Zeus.Yes]]
-[[No Thanks!|Zeus.No]]
-<<startbattle YM zeus>>
-
-	
+<<setbust YM zeus>>
+<<if not visited("Zeus.Battle")>>
+	Teacher: Ahhh, I see you have beaten everyone else in the class...
 <<endif>>
+Teacher: I hope you are ready to lose to your master!
+[[Not Today!|Zeusbattle.Yes]]
+[[What happened to the card Shop|Zeus.Buy]]
 ===
 
-title: Zeus.Buy
+title: Zeusbattle.Yes
 tags: 
 colorID: 0
 position: 741,130
 ---
-Teacher: Do you wanna buy cards?
-[[Yes!|Zeus.Yes]]
-[[No Thanks!|Zeus.No]]
+Teacher: Prepare... THE ONCOMING STORM!
+<<startbattle YM zeus>>
 ===
 
-title: Zeus.Yes
+
+title: Zeus.Lose
 tags: 
 colorID: 0
 position: 741,130
@@ -32,7 +31,28 @@ position: 741,130
 <<openshop YM>>
 ===
 
-title: Zeus.No
+title: Zeus.Buy
+tags: 
+colorID: 0
+position: 741,130
+---
+<<setbust YM zeus>>
+Teacher: Do you wanna buy cards?
+[[Yes!|Zeusbuy.Yes]]
+[[No Thanks!|Zeusbuy.No]]
+===
+
+title: Zeusbuy.Yes
+tags: 
+colorID: 0
+position: 741,130
+---
+Teacher: Choose Wisely
+<<resetbusts YM>>
+<<openshop YM>>
+===
+
+title: Zeusbuy.No
 tags: 
 colorID: 0
 position: 741,130
