@@ -3,15 +3,16 @@ tags:
 colorID: 0
 position: 721,130
 ---
-<<if not visited("Aphrodite")>>
+<<if false>>
+	Teacher: Ahhh, I see you have beaten everyone else in the class...
+	Teacher: I hope you are ready to lose!
+    <<startbattle YM zeus>>
+	<<resetbusts YM>>
+<<else>>
 	Teacher: Do you wanna buy cards?
 	[[Yes!|Zeus.Yes]]
 	[[No Thanks!|Zeus.No]]
-<<else>>
-	Teacher: I hope you are ready to lose!
-    <<startbattle YM zeus>>
 <<endif>>
-<<resetbusts YM>>
 ===
 
 title: Zeus.Yes
@@ -28,6 +29,6 @@ tags:
 colorID: 0
 position: 741,130
 ---
-Teacher: Ok then!
+Teacher: Ok then! Come back when you Do!
 <<resetbusts YM>>
 ===

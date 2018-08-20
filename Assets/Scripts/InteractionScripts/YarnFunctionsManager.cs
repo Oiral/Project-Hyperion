@@ -79,6 +79,19 @@ public class YarnFunctionsManager : MonoBehaviour {
 	{
 		GameManager.instance.gauntletRunning = true;
 	}
+
+	[YarnCommand("recordDefeat")]
+	public void RecordDefeat(string enemyName)
+	{
+		List<string> enemyTracker = GameManager.instance.enemiesDefeatedNames;
+		for(int i = 0; i < enemyTracker.Count; i++)
+		{
+			if (enemyName == enemyTracker[i])
+			{
+				GameManager.instance.enemiesDefeatedTracker[i] = true;
+			}
+		}
+	}
 	#endregion
 
 
@@ -90,7 +103,7 @@ public class YarnFunctionsManager : MonoBehaviour {
 		if (GameManager.instance.gauntletRunning)
 		{
 			int currentBattler = GameManager.instance.lastBattlerIndex;
-			string nodeToCall = GameManager.instance.enemyList[currentBattler].nodetoFollow;
+			string nodeToCall = GameManager.instance.enemyList[currentBattler].nodeToFollow;
 			if (nodeToCall != "")
 			{
 				FindObjectOfType<DialogueRunner>().StartDialogue(nodeToCall);

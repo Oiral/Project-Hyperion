@@ -8,13 +8,23 @@ public enum EnemyType { Normal,Boss,Teacher};
 [System.Serializable]
 public struct Enemy{
 	public string name;
-	public string nodetoFollow;
+	public string nodeToFollow;
 	public int hp;
 	public Deck deck;
 }
 
+
+
 public class GameManager : MonoBehaviour {
-    
+
+	#region GauntletTracker
+	public List<string> enemiesDefeatedNames;
+	[HideInInspector]
+	public List<bool> enemiesDefeatedTracker;
+	#endregion
+
+	
+	[System.Serializable]
 	public struct SavedPos
 	{
 		public Vector3 pos;
@@ -23,11 +33,14 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
 
+
     public int playerHealth = 15;
 
 	public static int previousSceneIndex;
 
 	GameObject player;
+
+	[Header("Save Position")]
 	public SavedPos playerSavePos;
 	//public int battlesLoaded = 0;
 	//public List<Deck> decksToFight = new List<Deck>();
