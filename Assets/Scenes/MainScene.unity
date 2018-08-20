@@ -4067,6 +4067,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 22bb5d87f4030184b8950057016b124f, type: 3}
   - {fileID: 4900000, guid: 3421b3563b6bb8740b6d08e8bb67cc6c, type: 3}
   - {fileID: 4900000, guid: fde6432c05ab9364e99959987bad6224, type: 3}
+  - {fileID: 4900000, guid: 3dcf7a02f7bb59b489904a6745b1ee92, type: 3}
   stringGroups: []
   shouldOverrideLanguage: 0
   overrideLanguage: 10
@@ -25654,6 +25655,7 @@ GameObject:
   - component: {fileID: 1986570023}
   - component: {fileID: 1986570025}
   - component: {fileID: 1986570024}
+  - component: {fileID: 1986570026}
   m_Layer: 0
   m_Name: Hercules
   m_TagString: Enemy
@@ -25699,6 +25701,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.72, y: 1, z: 2.25}
   m_Center: {x: -0.09, y: 0, z: -1.32}
+--- !u!114 &1986570026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1986570022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3419b57eb638f44db88701b5b33b8af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Hercules
+  talkToNode: Herculesthug1
+  scriptToLoad: {fileID: 0}
+  interactionRadius: 2
 --- !u!1 &1990400219
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,6 +26,10 @@ public class PlayerScript : MonoBehaviour {
             health += shield;
             shield = 0;
         }
+		if(health < 0)
+		{
+			health = 0;
+		}
         Debug.Log("Health: " + health + " Shield: " + shield);
         UpdateUI();
     }

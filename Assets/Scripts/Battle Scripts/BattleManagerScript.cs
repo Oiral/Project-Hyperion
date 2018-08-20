@@ -441,7 +441,7 @@ public class BattleManagerScript : MonoBehaviour {
             GM.playerHealth = player.health;
 			SceneFlow.RunScene(SceneList.MainScene);
         }
-    }
+	}
 
     IEnumerator EndTurn()
     {
