@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class GauntletScript : MonoBehaviour {
 
-    GameManager gm;
+	[System.Serializable]
+	public struct Enemy
+	{
+		public string name;
+		public string talkToNode;
+		public int health;
+		public Deck deck;
+	}
 
+	GameManager gm;
 
-    public List<int> health;
-    public List<Deck> decks;
+	public List<Enemy> enemies;
 
     public int gauntletNum;
 
@@ -19,7 +26,7 @@ public class GauntletScript : MonoBehaviour {
         gm = GameManager.instance;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         Debug.Log("Gauntlet Activated");
 
@@ -30,12 +37,12 @@ public class GauntletScript : MonoBehaviour {
             if (gm.gauntletNum[gauntletNum] == false)
             {
                 //check if the gauntlet is finished
-                if (gm.playersThroughGauntlet < health.Count)
+                if (gm.playersThroughGauntlet < enemies.Count)
                 {
                     gm.playerSavePos = other.gameObject.transform.position;
 
-                    gm.enemyDeck = decks[gm.playersThroughGauntlet];
-                    gm.enemyHealth = health[gm.playersThroughGauntlet];
+                    gm.enemyDeck = enemies[gm.playersThroughGauntlet].deck;
+                    gm.enemyHealth = enemies[gm.playersThroughGauntlet].health;
                     gm.playersThroughGauntlet += 1;
                     SceneFlow.RunScene(SceneList.Battle);
 

@@ -6218,6 +6218,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92cf142834508d44b625d24a0163bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemies:
+  - name: AphroditeThug1
+    talkToNode: AphroditeThug1
+    health: 0
+    deck: {fileID: 11400000, guid: 4545f8874e6835c4a9f70cd6d0b52971, type: 2}
+  - name: AphroditeThug2
+    talkToNode: AphroditeThug2
+    health: 0
+    deck: {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d, type: 2}
+  - name: AphroditeThug3
+    talkToNode: AphroditeThug3
+    health: 0
+    deck: {fileID: 11400000, guid: 24b254a99bf7e364e8ecff9e93338c68, type: 2}
+  - name: Aphrodite
+    talkToNode: Aphrodite
+    health: 0
+    deck: {fileID: 11400000, guid: d1bf3e1d03cd5de4f9384ff9ae6d5fe7, type: 2}
   health: 05000000070000000600000008000000
   decks:
   - {fileID: 11400000, guid: 4545f8874e6835c4a9f70cd6d0b52971, type: 2}
@@ -11270,6 +11287,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92cf142834508d44b625d24a0163bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemies:
+  - name: HerculesThug1
+    talkToNode: HerculesThug1
+    health: 0
+    deck: {fileID: 11400000, guid: d1bf3e1d03cd5de4f9384ff9ae6d5fe7, type: 2}
+  - name: HerculesThug2
+    talkToNode: HerculesThug2
+    health: 0
+    deck: {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d, type: 2}
+  - name: Hercules
+    talkToNode: Hercules
+    health: 0
+    deck: {fileID: 11400000, guid: 24b254a99bf7e364e8ecff9e93338c68, type: 2}
   health: 050000000700000009000000
   decks:
   - {fileID: 11400000, guid: d1bf3e1d03cd5de4f9384ff9ae6d5fe7, type: 2}
@@ -12523,6 +12553,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92cf142834508d44b625d24a0163bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemies:
+  - name: HadesThug
+    talkToNode: HadesThug
+    health: 0
+    deck: {fileID: 11400000, guid: 4545f8874e6835c4a9f70cd6d0b52971, type: 2}
+  - name: Hades
+    talkToNode: Hades
+    health: 0
+    deck: {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d, type: 2}
   health: 0500000007000000
   decks:
   - {fileID: 11400000, guid: 4545f8874e6835c4a9f70cd6d0b52971, type: 2}
@@ -14291,6 +14330,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92cf142834508d44b625d24a0163bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemies:
+  - name: Zeus
+    talkToNode: Zeus
+    health: 0
+    deck: {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d, type: 2}
   health: 14000000
   decks:
   - {fileID: 11400000, guid: a7092d660de9b3142a3b5286528dc21d, type: 2}
@@ -16276,10 +16320,10 @@ Transform:
   - {fileID: 1944916813}
   - {fileID: 772619553}
   - {fileID: 1955774303}
+  - {fileID: 2104041382}
   - {fileID: 37779426}
   - {fileID: 724164393}
   - {fileID: 1669430047}
-  - {fileID: 2104041382}
   - {fileID: 73852005}
   - {fileID: 2062185810}
   - {fileID: 1302374431}
@@ -28380,7 +28424,7 @@ Transform:
   - {fileID: 1248863686}
   - {fileID: 1617298457}
   m_Father: {fileID: 1227658773}
-  m_RootOrder: 98
+  m_RootOrder: 95
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2111786781
 GameObject:
