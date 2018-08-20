@@ -8,6 +8,7 @@ public enum EnemyType { Normal,Boss,Teacher};
 [System.Serializable]
 public struct Enemy{
 	public string name;
+	public string nodetoFollow;
 	public int hp;
 	public Deck deck;
 }
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour {
 
     public int playerHealth = 15;
 
-    public static int previousSceneIndex;
+	public static int previousSceneIndex;
 
 	GameObject player;
 	public SavedPos playerSavePos;
@@ -43,11 +44,16 @@ public class GameManager : MonoBehaviour {
         { 3, false }
     };
 
+
+
     //Info to pass to battle scene
     [HideInInspector]
     public int enemyHealth;
     [HideInInspector]
     public Deck enemyDeck;
+
+	public bool gauntletRunning = false;
+	public int lastBattlerIndex;
 	public List<Enemy> enemyList;
 
 	// Use this for initialization
@@ -122,6 +128,7 @@ public class GameManager : MonoBehaviour {
 		{
 			if (enemy.name.ToLower() == name.ToLower())
 			{
+				lastBattlerIndex = enemyList.IndexOf(enemy);
 				enemyHealth = enemy.hp;
 				enemyDeck = enemy.deck;
 				break;

@@ -116,8 +116,6 @@ namespace Yarn.Unity
             if (sourceText != null) {
                 foreach (var source in sourceText) {
 					// load and compile the text
-					print(sourceText);
-					print(source.text);
                     dialogue.LoadString (source.text, source.name);
                 }
             }

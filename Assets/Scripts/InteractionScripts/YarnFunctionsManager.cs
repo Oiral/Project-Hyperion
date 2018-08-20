@@ -18,6 +18,7 @@ public class YarnFunctionsManager : MonoBehaviour {
 
 	public BustInfo[] busts;
 
+	#region YarnCommands
 	///TODO: FIX THIS 
 	[YarnCommand("startbattle")]
 	public void StartBattle(string character)
@@ -69,5 +70,33 @@ public class YarnFunctionsManager : MonoBehaviour {
 	public void ResetGauntletRun()
 	{
 		GameManager.instance.playerHealth = 15;
+		GameManager.instance.gauntletRunning = false;
+		GameManager.instance.lastBattlerIndex = -1;
 	}
+
+	[YarnCommand("startgauntlet")]
+	public void StartGauntletRun()
+	{
+		GameManager.instance.gauntletRunning = true;
+	}
+	#endregion
+
+
+	#region yarnGauntletManager
+
+
+	private void Start()
+	{
+		if (GameManager.instance.gauntletRunning)
+		{
+			int currentBattler = GameManager.instance.lastBattlerIndex;
+			string nodeToCall = GameManager.instance.enemyList[currentBattler].nodetoFollow;
+			if (nodeToCall != "")
+			{
+				FindObjectOfType<DialogueRunner>().StartDialogue(nodeToCall);
+			}
+			
+		}
+	}
+	#endregion
 }
