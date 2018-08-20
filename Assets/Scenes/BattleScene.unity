@@ -958,6 +958,10 @@ Prefab:
       propertyPath: m_Name
       value: Card (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1198093119663812, guid: b62bfd6657f64a245afe465eeaddd530, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b62bfd6657f64a245afe465eeaddd530, type: 2}
   m_IsPrefabParent: 0
@@ -2262,7 +2266,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 775392f00ca9bc847945bed049cd19d7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6e05d2aa627404c4f89bfb0a7263fefc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.192
   m_Pitch: 1

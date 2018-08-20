@@ -1,0 +1,119 @@
+title: Herculesthug1
+tags: 
+colorID: 0
+position: 721,130
+---
+<<setbust YM herculesthug>>
+Thug: Fight?
+[[Yes!|Herculesthug1.Yes]]
+[[No|Herculesthug1.No]]
+===
+
+title: Herculesthug1.Yes
+tags: 
+colorID: 0
+position: 741,130
+---
+<<startgauntlet YM>>
+<<startbattle YM herculesthug1>>
+<<resetbusts YM>>
+===
+
+title: Herculesthug1.No
+tags: 
+colorID: 0
+position: 741,130
+---
+<<resetbusts YM>>
+<<resetgauntlet YM>>
+===
+
+title: Herculesthug2
+tags: 
+colorID: 0
+position: 721,130
+---
+<<setbust YM herculesthug>>
+Thug: Fight me bro!
+[[Yes!|Herculesthug2.Yes]]
+[[No|Herculesthug2.Confirm]]
+===
+
+title: Herculesthug2.Yes
+tags: 
+colorID: 0
+position: 741,130
+---
+<<startbattle YM herculesthug2>>
+<<resetbusts YM>>
+===
+
+title: Herculesthug2.No
+tags: 
+colorID: 0
+position: 741,130
+---
+<<resetbusts YM>>
+<<resetgauntlet YM>>
+===
+
+title: Herculesthug2.Confirm
+tags: 
+colorID: 0
+position: 721,130
+---
+Are you sure? All your progress in these battles will be lost?
+[[Run|Herculesthug2.No]]
+[[Stay|Herculesthug2]]
+===
+
+title: Hercules
+tags: 
+colorID: 0
+position: 721,130
+---
+<<setbust YM hercules>>
+Hercules: Bro!
+[[Yes!|Hercules.Yes]]
+[[No|Hercules.Confirm]]
+===
+
+title: Hercules.Yes
+tags: 
+colorID: 0
+position: 741,130
+---
+<<startbattle YM herculesthug2>>
+<<resetbusts YM>>
+===
+
+title: Hercules.No
+tags: 
+colorID: 0
+position: 741,130
+---
+<<resetbusts YM>>
+<<resetgauntlet YM>>
+====
+
+title: Hercules.Confirm
+tags: 
+colorID: 0
+position: 741,130
+---
+Are you sure? All your progress in these battles will be lost?
+[[Run|Hercules.No]]
+[[Stay|Hercules]]
+===
+
+title: Hercules.Lose
+tags: 
+colorID: 0
+position: 741,130
+---
+<<setbust YM hercules>>
+Hercules: Bro!
+<<resetbusts YM>>
+<<resetgauntlet YM>>
+<<recorddefeat YM hercules>>
+===

@@ -63,6 +63,8 @@ public class GameManager : MonoBehaviour {
     public int enemyHealth;
     //[HideInInspector]
     public Deck enemyDeck;
+	public Sprite enemyBust;
+	public string enemyName;
 
 	public bool gauntletRunning = false;
 	public int lastBattlerIndex;
@@ -140,7 +142,7 @@ public class GameManager : MonoBehaviour {
 		SceneFlow.RunScene(SceneList.Battle);
 	}
 
-	public void SetEnemy(string name)
+	public void SetEnemy(string name, Sprite enemyImage)
 	{
 		foreach (Enemy enemy in enemyList)
 		{
@@ -149,6 +151,9 @@ public class GameManager : MonoBehaviour {
 				lastBattlerIndex = enemyList.IndexOf(enemy);
 				enemyHealth = enemy.hp;
 				enemyDeck = enemy.deck;
+				enemyName = enemy.name;
+
+				enemyBust = enemyImage;
 				break;
 			}
 		}
