@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
             soundBool = true;
             //Debug.Log("wB = true");
 
-            if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0 && !source.isPlaying)
+            if (!source.isPlaying)
             {
                 float vol = Random.Range(volLowRange, volHighRange);
                 //soundBool = false;
