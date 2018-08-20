@@ -46,6 +46,11 @@ public class PlayerController : MonoBehaviour
         m_Animator = GetComponentInChildren<Animator>();
 
 		GameManager.instance.SetPlayer(gameObject);
+		if (GameManager.instance.playerSavePos.pos != Vector3.zero)
+		{
+			transform.position = GameManager.instance.playerSavePos.pos;
+			transform.rotation = GameManager.instance.playerSavePos.rot;
+		}
 		GameManager.instance.SavePlayerPosition();
 	}
 

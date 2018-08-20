@@ -3,10 +3,10 @@ tags:
 colorID: 0
 position: 721,130
 ---
-<<setbust YM hades>>
+<<setbust YM hadesthug>>
 Thug: Fight?
 [[Yes!|Hadesthug.Yes]]
-[[No Thanks!|Hadesthug.No]]
+[[No|Hadesthug.No]]
 ===
 
 title: Hadesthug.Yes
@@ -14,6 +14,7 @@ tags:
 colorID: 0
 position: 741,130
 ---
+<<startgauntlet YM>>
 <<startbattle YM hadesthug>>
 <<resetbusts YM>>
 ===
@@ -24,5 +25,46 @@ colorID: 0
 position: 741,130
 ---
 <<resetbusts YM>>
+<<resetgauntlet YM>>
+===
 
+title: Hades
+tags: 
+colorID: 0
+position: 741,130
+---
+<<setbust YM hades>>
+Hades: So you bet my underling...
+Hades: I guess it is time for me to... turn up the HEAT!
+[[Fight|Hades.Yes]]
+[[Retreat|Hadesno.Confirm]]
+===
+
+title: Hades.Yes
+tags: 
+colorID: 0
+position: 741,130
+---
+<<startbattle YM hades>>
+<<resetbusts YM>>
+===
+
+title: Hadesno.Confirm
+tags: 
+colorID: 0
+position: 741,130
+---
+Are you sure? All your progress in these battles will be lost?
+[[Yes!|Hades.No]]
+[[No|Hades]]
+===
+
+title: Hades.No
+tags: 
+colorID: 0
+position: 741,130
+---
+Hades: Come back when you are ready!
+<<resetbusts YM>>
+<<resetgauntlet>>
 ===
