@@ -47,7 +47,7 @@ public class NPC : MonoBehaviour {
 		}
 	}
 
-	public float interactionRadius = 2.0f;
+	float interactionRadius = 0.5f;
 
 	void OnDrawGizmosSelected()
 	{

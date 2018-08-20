@@ -23,7 +23,7 @@ public class YarnFunctionsManager : MonoBehaviour {
 	[YarnCommand("startbattle")]
 	public void StartBattle(string character)
 	{
-		GameManager.instance.SetEnemy(character, busts[1].bust);
+		GameManager.instance.SetEnemy(character, this);
 		GameManager.instance.StartBattle();
 	}
 
@@ -99,18 +99,23 @@ public class YarnFunctionsManager : MonoBehaviour {
 
 	private void Start()
 	{
+		int currentBattler = GameManager.instance.lastBattlerIndex;
+		print("current int: " + currentBattler.ToString());
+		string nodeToCall = "";
 		if (GameManager.instance.playerHealth == 0)
 		{
 			print("Player Lost");
+			nodeToCall = GameManager.instance.enemyList[currentBattler].nodePlayerLoss;
 		}
 		else if (GameManager.instance.gauntletRunning)
 		{
-			int currentBattler = GameManager.instance.lastBattlerIndex;
-			string nodeToCall = GameManager.instance.enemyList[currentBattler].nodeToFollow;
-			if (nodeToCall != "")
-			{
-				FindObjectOfType<DialogueRunner>().StartDialogue(nodeToCall);
-			}
+			nodeToCall = GameManager.instance.enemyList[currentBattler].nodePlayerWin;
+
+		}
+		print("nodeToCall: " + nodeToCall);
+		if (nodeToCall != "")
+		{
+			FindObjectOfType<DialogueRunner>().StartDialogue(nodeToCall);
 		}
 	}
 	#endregion

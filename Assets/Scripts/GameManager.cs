@@ -8,7 +8,8 @@ public enum EnemyType { Normal,Boss,Teacher};
 [System.Serializable]
 public struct Enemy{
 	public string name;
-	public string nodeToFollow;
+	public string nodePlayerWin;
+	public string nodePlayerLoss;
 	public int hp;
 	public Deck deck;
 }
@@ -44,17 +45,6 @@ public class GameManager : MonoBehaviour {
 	//public int battlesLoaded = 0;
 	//public List<Deck> decksToFight = new List<Deck>();
 	//public List<int> enemyHP = new List<int>();
-
-
-	//info kept safe for load back into main scene
-	[Header("Safe keeping for main scene")]
-    public int playersThroughGauntlet;
-    public Dictionary<int, bool> gauntletNum = new Dictionary<int, bool>{
-        { 0, false },
-        { 1, false },
-        { 2, false },
-        { 3, false }
-    };
 
 
 
@@ -142,7 +132,7 @@ public class GameManager : MonoBehaviour {
 		SceneFlow.RunScene(SceneList.Battle);
 	}
 
-	public void SetEnemy(string name, Sprite enemyImage)
+	public void SetEnemy(string name, YarnFunctionsManager YM)
 	{
 		foreach (Enemy enemy in enemyList)
 		{
@@ -153,7 +143,7 @@ public class GameManager : MonoBehaviour {
 				enemyDeck = enemy.deck;
 				enemyName = enemy.name;
 
-				enemyBust = enemyImage;
+				enemyBust = YM.busts[lastBattlerIndex].bust;
 				break;
 			}
 		}

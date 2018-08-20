@@ -150,6 +150,18 @@ Are you sure? All your progress in these battles will be lost?
 [[Stay|Aphrodite]]
 ===
 
+title: Aphrodite.Win
+tags: 
+colorID: 0
+position: 512,430
+---
+<<setbust YM aphrodite1>>
+Aphrodite: You had no chance!
+Aphrodite: You'll never beat me!
+<<resetbusts YM>>
+<<resetgauntlet YM>>
+===
+
 title: Aphrodite.Lose
 tags: 
 colorID: 0
