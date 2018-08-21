@@ -100,10 +100,6 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(ResetSoundBool());
         }*/
 
-        if (Input.GetKey("escape"))
-        {
-            SceneManager.LoadScene(6);
-        }
         
     }
 
