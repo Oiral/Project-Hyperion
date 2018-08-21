@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44996685, g: 0.49736005, b: 0.5612226, a: 1}
+  m_IndirectSpecularColor: {r: 0.44996673, g: 0.49735963, b: 0.5612218, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3999,7 +3999,6 @@ GameObject:
   m_Component:
   - component: {fileID: 289405348}
   - component: {fileID: 289405350}
-  - component: {fileID: 289405351}
   - component: {fileID: 289405349}
   - component: {fileID: 289405352}
   m_Layer: 0
@@ -4049,17 +4048,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 3.87, z: 1}
   m_Center: {x: 1.75, y: 0, z: -0.49}
---- !u!114 &289405351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 289405347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48713742cc743334f9845114cda95776, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &289405352
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12279,7 +12267,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1059986438}
   - component: {fileID: 1059986440}
-  - component: {fileID: 1059986439}
   - component: {fileID: 1059986441}
   m_Layer: 0
   m_Name: Hercules_Thugs
@@ -12308,17 +12295,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1059986439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1059986437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48713742cc743334f9845114cda95776, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1059986440
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13061,7 +13037,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1135195964}
   - component: {fileID: 1135195966}
-  - component: {fileID: 1135195965}
   m_Layer: 0
   m_Name: Aphrodite_Thugs
   m_TagString: Enemy
@@ -13085,17 +13060,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1135195965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1135195963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48713742cc743334f9845114cda95776, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1135195966
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19375,7 +19339,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1589514678}
   - component: {fileID: 1589514680}
-  - component: {fileID: 1589514679}
   - component: {fileID: 1589514682}
   m_Layer: 0
   m_Name: Zeus
@@ -19398,17 +19361,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: -95, z: 0}
---- !u!114 &1589514679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1589514677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48713742cc743334f9845114cda95776, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1589514680
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22984,7 +22936,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1913221816}
   - component: {fileID: 1913221817}
-  - component: {fileID: 1913221818}
   m_Layer: 0
   m_Name: Hades_Thug
   m_TagString: Enemy
@@ -23018,17 +22969,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 4.51, z: 1}
   m_Center: {x: 0.17, y: -0.12, z: 0.71}
---- !u!114 &1913221818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1913221815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48713742cc743334f9845114cda95776, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1922624144
 GameObject:
   m_ObjectHideFlags: 0
@@ -24055,7 +23995,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1986570023}
   - component: {fileID: 1986570025}
-  - component: {fileID: 1986570024}
   m_Layer: 0
   m_Name: Hercules
   m_TagString: Enemy
@@ -24077,17 +24016,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1986570024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1986570022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48713742cc743334f9845114cda95776, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1986570025
 BoxCollider:
   m_ObjectHideFlags: 0
