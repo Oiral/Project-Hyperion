@@ -1,7 +1,7 @@
 title: Aphroditethug1
 tags: 
 colorID: 0
-position: 524,111
+position: 721,130
 ---
 <<setbust YM aphrodite2>>
 <<startgauntlet YM>>
@@ -13,7 +13,7 @@ Aphrodite: I'm the best! You can't possibly beat me!
 title: Aphrodite1.Fight
 tags: 
 colorID: 0
-position: 512,430
+position: 741,130
 ---
 <<startbattle YM aphroditethug1>>
 <<resetbusts YM>>
@@ -22,7 +22,7 @@ position: 512,430
 title: Aphrodite1.Run
 tags: 
 colorID: 0
-position: 512,430
+position: 761,130
 ---
 <<resetbusts YM>>
 <<resetgauntlet YM>>
@@ -31,7 +31,7 @@ position: 512,430
 title: Aphroditethug2
 tags: 
 colorID: 0
-position: 524,111
+position: 721,130
 ---
 <<setbust YM hera>>
 Hera: Ready?
@@ -42,7 +42,7 @@ Hera: Ready?
 title: Aphrodite2.Fight
 tags: 
 colorID: 0
-position: 512,430
+position: 741,130
 ---
 <<startbattle YM aphroditethug2>>
 <<resetbusts YM>>
@@ -51,7 +51,7 @@ position: 512,430
 title: Aphrodite2.Run
 tags: 
 colorID: 0
-position: 512,430
+position: 761,130
 ---
 Hera: See ya!
 <<resetbusts YM>>
@@ -61,7 +61,7 @@ Hera: See ya!
 title: Aphrodite2.Confirm
 tags: 
 colorID: 0
-position: 512,430
+position: 781,130
 ---
 Are you sure? All your progress in these battles will be lost?
 [[Run|Aphrodite2.Run]]
@@ -72,7 +72,7 @@ Are you sure? All your progress in these battles will be lost?
 title: Aphroditethug3
 tags: 
 colorID: 0
-position: 524,111
+position: 721,130
 ---
 <<setbust YM medusa>>
 Medusa: I bet you are paralysed with fear
@@ -83,7 +83,7 @@ Medusa: I bet you are paralysed with fear
 title: Aphrodite3.Fight
 tags: 
 colorID: 0
-position: 512,430
+position: 741,130
 ---
 <<startbattle YM aphroditethug3>>
 <<resetbusts YM>>
@@ -92,7 +92,7 @@ position: 512,430
 title: Aphrodite3.Run
 tags: 
 colorID: 0
-position: 512,430
+position: 761,130
 ---
 Medusa: Run!
 <<resetbusts YM>>
@@ -102,7 +102,7 @@ Medusa: Run!
 title: Aphrodite3.Confirm
 tags: 
 colorID: 0
-position: 512,430
+position: 781,130
 ---
 Are you sure? All your progress in these battles will be lost?
 [[Run|Aphrodite3.Run]]
@@ -113,7 +113,7 @@ Are you sure? All your progress in these battles will be lost?
 title: Aphrodite
 tags: 
 colorID: 0
-position: 524,111
+position: 721,130
 ---
 <<setbust YM aphrodite1>>
 Aphrodite: Ready to lose?
@@ -124,7 +124,7 @@ Aphrodite: Ready to lose?
 title: Aphrodite.Fight
 tags: 
 colorID: 0
-position: 512,430
+position: 741,130
 ---
 <<startbattle YM aphrodite>>
 <<resetbusts YM>>
@@ -133,7 +133,7 @@ position: 512,430
 title: Aphrodite.Run
 tags: 
 colorID: 0
-position: 512,430
+position: 761,130
 ---
 Aphrodite: Why am I not surprised?
 <<resetbusts YM>>
@@ -143,7 +143,7 @@ Aphrodite: Why am I not surprised?
 title: Aphrodite.Confirm
 tags: 
 colorID: 0
-position: 512,430
+position: 781,130
 ---
 Are you sure? All your progress in these battles will be lost?
 [[Run|Aphrodite.Run]]
@@ -153,7 +153,7 @@ Are you sure? All your progress in these battles will be lost?
 title: Aphrodite.Win
 tags: 
 colorID: 0
-position: 512,430
+position: 721,130
 ---
 <<setbust YM aphrodite1>>
 Aphrodite: You had no chance!
@@ -165,7 +165,7 @@ Aphrodite: You'll never beat me!
 title: Aphrodite.Lose
 tags: 
 colorID: 0
-position: 512,430
+position: 741,130
 ---
 <<setbust YM aphrodite1>>
 Aphrodite: ... You beat me.

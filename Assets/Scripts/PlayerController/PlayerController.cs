@@ -91,24 +91,8 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("wB = false");
         }
 
-       /* if (walkingBool && soundBool)
-        {
-            float vol = Random.Range(volLowRange, volHighRange);
-            soundBool = false;
-            source.PlayOneShot(walkSound, vol);
-            //Debug.Log("sfx_playing");
-            StartCoroutine(ResetSoundBool());
-        }*/
-
         
     }
-
-    /*IEnumerator ResetSoundBool()
-    {
-        yield return new WaitForSeconds(walkSoundDelay);
-        soundBool = true;
-        print("WB = false");
-    }*/
 
    
 
