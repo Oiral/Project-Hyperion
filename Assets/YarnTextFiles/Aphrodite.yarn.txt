@@ -74,8 +74,8 @@ tags:
 colorID: 0
 position: 524,111
 ---
-<<setbust YM athena>>
-Athena: Prepare for battle warrior!
+<<setbust YM medusa>>
+Medusa: I bet you are paralysed with fear
 [[Fight|Aphrodite3.Fight]]
 [[Run|Aphrodite3.Confirm]]
 ===
@@ -94,7 +94,7 @@ tags:
 colorID: 0
 position: 512,430
 ---
-Athena: Return when you have shown your worth!
+Medusa: Run!
 <<resetbusts YM>>
 <<resetgauntlet YM>>
 ===

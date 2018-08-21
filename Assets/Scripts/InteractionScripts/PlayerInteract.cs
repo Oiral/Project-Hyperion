@@ -54,8 +54,17 @@ public class PlayerInteract : MonoBehaviour {
 					.magnitude <= interactionRadius;
 		});
 		if (target != null) {
-			// Kick off the dialogue at this node.
-			FindObjectOfType<DialogueRunner> ().StartDialogue (target.talkToNode);
+			if (target.GetType().Equals(typeof(ZeusNPC)) && GameManager.instance.CheckGauntlets())
+			{
+				ZeusNPC newTarget = (ZeusNPC)target;
+				FindObjectOfType<DialogueRunner>().StartDialogue(newTarget.nodeAfterCompletingGauntlet);
+			}
+			else
+			{
+				// Kick off the dialogue at this node.
+				FindObjectOfType<DialogueRunner>().StartDialogue(target.talkToNode);
+			}
+			
 		}
 	}
 }

@@ -21,6 +21,17 @@ public class GameManager : MonoBehaviour {
 	#region GauntletTracker
 	public List<string> enemiesDefeatedNames;
 	public bool[] enemiesDefeatedTracker;
+
+	public bool CheckGauntlets()
+	{
+		bool returnbool = true;
+		foreach(bool enemyBeat in enemiesDefeatedTracker)
+		{
+			returnbool = returnbool && enemyBeat;
+		}
+		print(returnbool);
+		return returnbool;
+	}
 	#endregion
 
 	

@@ -19376,7 +19376,7 @@ GameObject:
   - component: {fileID: 1589514678}
   - component: {fileID: 1589514680}
   - component: {fileID: 1589514679}
-  - component: {fileID: 1589514681}
+  - component: {fileID: 1589514682}
   m_Layer: 0
   m_Name: Zeus
   m_TagString: Enemy
@@ -19421,7 +19421,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 3.65, z: 1}
   m_Center: {x: 0.55, y: 0, z: 0}
---- !u!114 &1589514681
+--- !u!114 &1589514682
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -19429,12 +19429,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1589514677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3419b57eb638f44db88701b5b33b8af8, type: 3}
+  m_Script: {fileID: 11500000, guid: 5dd943094f8f3f7478ef0abd321864cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Zeus
-  talkToNode: Zeus.Battle
+  talkToNode: Zeus.Buy
   scriptToLoad: {fileID: 0}
+  nodeAfterCompletingGauntlet: Zeus.Battle
 --- !u!1001 &1598508544
 Prefab:
   m_ObjectHideFlags: 0
