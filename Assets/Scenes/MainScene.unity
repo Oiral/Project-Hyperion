@@ -7681,19 +7681,19 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1135195964}
+    m_TransformParent: {fileID: 657806534}
     m_Modifications:
     - target: {fileID: 400178, guid: 360c1eb38bc14bf40a242c976f560f61, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.28525782
+      value: -1.3021002
       objectReference: {fileID: 0}
     - target: {fileID: 400178, guid: 360c1eb38bc14bf40a242c976f560f61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7637267
+      value: 0.010999978
       objectReference: {fileID: 0}
     - target: {fileID: 400178, guid: 360c1eb38bc14bf40a242c976f560f61, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.52480364
+      value: -1.5713
       objectReference: {fileID: 0}
     - target: {fileID: 400178, guid: 360c1eb38bc14bf40a242c976f560f61, type: 3}
       propertyPath: m_LocalRotation.x
@@ -8393,6 +8393,65 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: d2c18a63c206b59468add9169bd647aa, type: 3}
   m_PrefabInternal: {fileID: 657439573}
+--- !u!1 &657806532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 657806534}
+  - component: {fileID: 657806533}
+  - component: {fileID: 657806535}
+  m_Layer: 0
+  m_Name: Aphrodite_Thugs
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &657806533
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 657806532}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1, z: 1.5}
+  m_Center: {x: -0.5, y: 0, z: -0.5}
+--- !u!4 &657806534
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 657806532}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.83, y: 0, z: -3.764}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2140340274}
+  - {fileID: 1145753414}
+  - {fileID: 594428753}
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &657806535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 657806532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3419b57eb638f44db88701b5b33b8af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Aphrodite
+  talkToNode: Aphroditethug1
+  scriptToLoad: {fileID: 0}
 --- !u!1 &667074603 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 09898b071a59c354fb4c9fed259243d1, type: 3}
@@ -10761,7 +10820,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 919025196}
-  - component: {fileID: 919025197}
   - component: {fileID: 919025198}
   m_Layer: 0
   m_Name: Aphrodite
@@ -10784,20 +10842,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &919025197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 919025195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3419b57eb638f44db88701b5b33b8af8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: Aphrodite
-  talkToNode: Aphroditethug1
-  scriptToLoad: {fileID: 0}
 --- !u!65 &919025198
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13251,19 +13295,19 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1135195964}
+    m_TransformParent: {fileID: 657806534}
     m_Modifications:
     - target: {fileID: 400178, guid: 360c1eb38bc14bf40a242c976f560f61, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6301422
+      value: 0.61329985
       objectReference: {fileID: 0}
     - target: {fileID: 400178, guid: 360c1eb38bc14bf40a242c976f560f61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7367267
+      value: 0.037999988
       objectReference: {fileID: 0}
     - target: {fileID: 400178, guid: 360c1eb38bc14bf40a242c976f560f61, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.4390962
+      value: 0.39259982
       objectReference: {fileID: 0}
     - target: {fileID: 400178, guid: 360c1eb38bc14bf40a242c976f560f61, type: 3}
       propertyPath: m_LocalRotation.x
@@ -20155,7 +20199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f91cea12ca9b66f46bc009f40f8c06c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PauseMenuUI: {fileID: 823662040}
 --- !u!1 &1635411009
 GameObject:
   m_ObjectHideFlags: 0
@@ -23759,7 +23802,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.38
   m_Height: 2.01
   m_Direction: 1
   m_Center: {x: 0, y: 1.02, z: 0}
@@ -23774,7 +23817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90af79a197fffe24cbf57cda24fbd9c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionRadius: 1.5
+  interactionRadius: 1.8
 --- !u!82 &1972760669
 AudioSource:
   m_ObjectHideFlags: 0
@@ -25596,19 +25639,19 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1135195964}
+    m_TransformParent: {fileID: 657806534}
     m_Modifications:
     - target: {fileID: 400178, guid: 360c1eb38bc14bf40a242c976f560f61, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.6602578
+      value: -1.6771002
       objectReference: {fileID: 0}
     - target: {fileID: 400178, guid: 360c1eb38bc14bf40a242c976f560f61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7657267
+      value: 0.009000003
       objectReference: {fileID: 0}
     - target: {fileID: 400178, guid: 360c1eb38bc14bf40a242c976f560f61, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.8509963
+      value: 0.80449986
       objectReference: {fileID: 0}
     - target: {fileID: 400178, guid: 360c1eb38bc14bf40a242c976f560f61, type: 3}
       propertyPath: m_LocalRotation.x
