@@ -71,6 +71,12 @@ public class GameManager : MonoBehaviour {
 	public int lastBattlerIndex;
 	public List<Enemy> enemyList;
 
+
+	[Header("CameraFadeManager")]
+	public GameObject fader;
+
+	[Header("Talk Indicator")]
+	public GameObject talkIndicator;
 	// Use this for initialization
 	void Awake () {
         if (instance == null)
@@ -87,6 +93,13 @@ public class GameManager : MonoBehaviour {
 	{
 		int len = enemiesDefeatedNames.Count;
 		enemiesDefeatedTracker = new bool[len];
+		lastBattlerIndex = -1;
+		fader.SetActive(true);
+	}
+
+	public void DestroySelf()
+	{
+		Destroy(gameObject);
 	}
 
 	public Deck GetDeck()

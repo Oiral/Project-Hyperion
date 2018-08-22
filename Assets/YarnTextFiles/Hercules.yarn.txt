@@ -1,119 +1,123 @@
 title: Herculesthug1
 tags: 
-colorID: 0
-position: 721,130
+colorID: 1
+position: -202,-732
 ---
 <<setbust YM herculesthug>>
-Thug: Fight?
+Thug: Bro! Do you think you can beat me??
 [[Yes!|Herculesthug1.Yes]]
 [[No|Herculesthug1.No]]
 ===
-
 title: Herculesthug1.Yes
 tags: 
 colorID: 0
-position: 741,130
+position: -202,-373
 ---
 <<startgauntlet YM>>
+Thug: Well bro! You're about to lose!
 <<startbattle YM herculesthug1>>
 <<resetbusts YM>>
 ===
-
 title: Herculesthug1.No
 tags: 
 colorID: 0
-position: 761,130
+position: 93,-705
 ---
 <<resetbusts YM>>
 <<resetgauntlet YM>>
 ===
-
 title: Herculesthug2
 tags: 
 colorID: 0
-position: 721,160
+position: 54,-195
 ---
 <<setbust YM herculesthug>>
-Thug: Fight me bro!
+Thug: Bro! You may have bet my twin, but you won't beat me!
 [[Yes!|Herculesthug2.Yes]]
 [[No|Herculesthug2.Confirm]]
 ===
-
 title: Herculesthug2.Yes
 tags: 
 colorID: 0
-position: 741,160
+position: 93,67
 ---
+Thug: Big mistake!
 <<startbattle YM herculesthug2>>
 <<resetbusts YM>>
 ===
-
 title: Herculesthug2.No
 tags: 
 colorID: 0
-position: 761,160
+position: 716,-437
 ---
 <<resetbusts YM>>
 <<resetgauntlet YM>>
 ===
-
 title: Herculesthug2.Confirm
 tags: 
 colorID: 0
-position: 781,160
+position: 399,-416
 ---
 Are you sure? All your progress in these battles will be lost?
 [[Run|Herculesthug2.No]]
 [[Stay|Herculesthug2]]
 ===
-
 title: Hercules
 tags: 
 colorID: 0
-position: 721,190
+position: 539,-87
 ---
 <<setbust YM hercules>>
-Hercules: Bro!
+<<if not visited("Hercules")>>
+    Hercules: You bet my other bros but...
+<<endif>>
+Hercules: Are you ready to face me!
 [[Yes!|Hercules.Yes]]
 [[No|Hercules.Confirm]]
 ===
-
 title: Hercules.Yes
 tags: 
 colorID: 0
-position: 741,190
+position: 495,218
 ---
+Bro! Time for me to avenge my Hercules bros!
 <<startbattle YM herculesthug2>>
 <<resetbusts YM>>
 ===
-
 title: Hercules.No
 tags: 
 colorID: 0
-position: 761,190
+position: 1120,-72
 ---
 <<resetbusts YM>>
 <<resetgauntlet YM>>
 ===
-
 title: Hercules.Confirm
 tags: 
 colorID: 0
-position: 781,190
+position: 831,-88
 ---
 Are you sure? All your progress in these battles will be lost?
 [[Run|Hercules.No]]
 [[Stay|Hercules]]
 ===
-
 title: Hercules.Lose
 tags: 
 colorID: 0
-position: 721,220
+position: 790,322
 ---
 <<setbust YM hercules>>
-Hercules: Bro!
+Hercules: Bro! How'd you beat me!
+Hercules: We need to rematch sometime soon!
 <<resetbusts YM>>
 <<resetgauntlet YM>>
 <<recorddefeat YM hercules>>
+===
+title: Hercules.Win
+tags: 
+colorID: 0
+position: 1040,329
+---
+Hercules: See told you BRO, being this jacked means... 
+Hercules: I'll always win!
 ===

@@ -47,6 +47,29 @@ public class NPC : MonoBehaviour {
 		}
 	}
 
+	private void OnTriggerEnter(Collider other)
+	{
+		if (CheckPlayer(other))
+		{
+			GameManager.instance.talkIndicator.SetActive(true);
+		}
+		
+	}
+
+	private void OnTriggerExit(Collider other)
+	{
+		if (CheckPlayer(other))
+		{
+			GameManager.instance.talkIndicator.SetActive(false);
+		}
+	}
+
+	bool CheckPlayer(Collider other)
+	{
+		print(other.tag == "Player");
+		return other.tag == "Player";
+	}
+
 	float interactionRadius = 0.5f;
 
 	void OnDrawGizmosSelected()

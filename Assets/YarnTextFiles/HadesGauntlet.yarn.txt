@@ -1,37 +1,36 @@
 title: Hadesthug
 tags: 
-colorID: 0
-position: 721,130
+colorID: 1
+position: 260,-26
 ---
 <<setbust YM hadesthug>>
-Thug: Fight?
+Thug: Fight me for...
+Thug: The HONOUR to verse HADES!
 [[Yes!|Hadesthug.Yes]]
 [[No|Hadesthug.No]]
 ===
-
 title: Hadesthug.Yes
 tags: 
 colorID: 0
-position: 741,130
+position: 158,186
 ---
+Thug: Prepare!
 <<startgauntlet YM>>
 <<startbattle YM hadesthug>>
 <<resetbusts YM>>
 ===
-
 title: Hadesthug.No
 tags: 
 colorID: 0
-position: 761,130
+position: 492,15
 ---
 <<resetbusts YM>>
 <<resetgauntlet YM>>
 ===
-
 title: Hades
 tags: 
 colorID: 0
-position: 721,160
+position: 358,355
 ---
 <<setbust YM hades>>
 Hades: So you bet my underling...
@@ -39,30 +38,28 @@ Hades: I guess it is time for me to... turn up the HEAT!
 [[Fight|Hades.Yes]]
 [[Retreat|Hadesno.Confirm]]
 ===
-
 title: Hades.Yes
 tags: 
 colorID: 0
-position: 741,160
+position: 484,568
 ---
+Hades: We'll see how strong your soul is!
 <<startbattle YM hades>>
 <<resetbusts YM>>
 ===
-
 title: Hadesno.Confirm
 tags: 
 colorID: 0
-position: 761,160
+position: 598,320
 ---
 Are you sure? All your progress in these battles will be lost?
 [[Retreat|Hades.No]]
 [[Stay|Hades]]
 ===
-
 title: Hades.Lose
 tags: 
 colorID: 0
-position: 721,190
+position: 334,798
 ---
 <<setbust YM hades>>
 Hades: I MISCALCUATED! NO!
@@ -70,22 +67,20 @@ Hades: I MISCALCUATED! NO!
 <<resetgauntlet YM>>
 <<recorddefeat YM hades>>
 ===
-
 title: Hades.Win
 tags: 
 colorID: 0
-position: 741,190
+position: 592,801
 ---
 <<setbust YM hades>>
-Hades: Hahaha. I never lose!
+Hades: Your soul is mine!
 <<resetbusts YM>>
 <<resetgauntlet YM>>
 ===
-
 title: Hades.No
 tags: 
 colorID: 0
-position: 781,160
+position: 832,294
 ---
 Hades: Come back when you are ready!
 <<resetbusts YM>>

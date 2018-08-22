@@ -41,7 +41,7 @@ namespace Yarn.Unity.Example {
      */
     public class ExampleDialogueUI : Yarn.Unity.DialogueUIBehaviour
     {
-
+		public GameObject blackBackGround;
         /// The object that contains the dialogue and the options.
         /** This object will be enabled when conversation starts, and 
          * disabled when it ends.
@@ -75,6 +75,8 @@ namespace Yarn.Unity.Example {
             // Start by hiding the container, line and option buttons
             if (dialogueContainer != null)
                 dialogueContainer.SetActive(false);
+			if (blackBackGround != null)
+				blackBackGround.SetActive(false);
 
             lineText.gameObject.SetActive (false);
 
@@ -185,6 +187,8 @@ namespace Yarn.Unity.Example {
             // Enable the dialogue controls.
             if (dialogueContainer != null)
                 dialogueContainer.SetActive(true);
+			if (blackBackGround != null)
+				blackBackGround.SetActive(true);
 
             // Hide the game controls.
             if (gameControlsContainer != null) {
@@ -202,6 +206,8 @@ namespace Yarn.Unity.Example {
             // Hide the dialogue interface.
             if (dialogueContainer != null)
                 dialogueContainer.SetActive(false);
+			if (blackBackGround != null)
+				blackBackGround.SetActive(false);
 
             // Show the game controls.
             if (gameControlsContainer != null) {

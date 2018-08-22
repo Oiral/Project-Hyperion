@@ -1,73 +1,68 @@
 title: Zeus.Battle
 tags: 
-colorID: 0
-position: 721,160
+colorID: 1
+position: 681,-15
 ---
 <<setbust YM zeus>>
 <<if not visited("Zeus.Battle")>>
-	Teacher: Ahhh, I see you have beaten everyone else in the class...
+	Teacher: I see you have beaten everyone else in the class...
+    Teacher: but beating the thunder God is not going to happen!
 <<endif>>
 Teacher: I hope you are ready to lose to your master!
 [[Not Today!|Zeusbattle.Yes]]
 [[What happened to the card Shop|Zeus.Buy]]
 ===
-
 title: Zeusbattle.Yes
 tags: 
 colorID: 0
-position: 741,160
+position: 840,-236
 ---
 <<startgauntlet YM>>
 Teacher: Prepare for... THE ONCOMING STORM!
 <<startbattle YM zeus>>
 ===
-
-
 title: Zeus.Lose
 tags: 
 colorID: 0
-position: 761,160
+position: 1126,-313
 ---
 <<setbust YM zeus>>
-Teacher: You Win!
+Teacher: Wow! I Can't Say I’m not surprised but...
+Teacher: Congratulations. Well done Nate!
 <<resetbusts YM>>
 ===
-
 title: Zeus.Win
 tags: 
 colorID: 0
-position: 721,190
+position: 885,-486
 ---
 <<setbust YM zeus>>
-Teacher: Better luck next time!
+Teacher: Can't fault the bolt! Better luck next time!
 <<resetbusts YM>>
 ===
-
 title: Zeus.Buy
 tags: 
 colorID: 0
-position: 721,130
+position: 930,111
 ---
 <<setbust YM zeus>>
 Teacher: Do you wanna buy cards?
 [[Yes!|Zeusbuy.Yes]]
 [[No Thanks!|Zeusbuy.No]]
 ===
-
 title: Zeusbuy.Yes
 tags: 
 colorID: 0
-position: 741,130
+position: 866,393
 ---
 Teacher: Choose Wisely
 <<resetbusts YM>>
 <<openshop YM>>
 ===
-
 title: Zeusbuy.No
 tags: 
 colorID: 0
-position: 761,130
+position: 1079,388
 ---
 Teacher: Ok then! Come back when you Do!
 <<resetbusts YM>>
