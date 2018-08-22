@@ -36,7 +36,7 @@ public class PlayerInteract : MonoBehaviour {
 			GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY;
 		}
 
-		if (Input.GetKeyDown(KeyCode.Space)) {
+		if (Input.GetButtonDown("Submit")) {
 			CheckForNearbyNPC ();
 		}
 	}

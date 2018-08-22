@@ -31,10 +31,25 @@ public class GameManager : MonoBehaviour {
 		}
 		print(returnbool);
 		return returnbool;
+
 	}
+	#region GauntletVariables
+	public bool gauntletRunning = false;
+	public int lastBattlerIndex;
+	public List<Enemy> enemyList;
 	#endregion
 
-	
+	#endregion
+
+    public static GameManager instance;
+
+
+    public int playerHealth = 15;
+
+	GameObject player;
+
+	#region PlayerPositionOnMap
+
 	[System.Serializable]
 	public struct SavedPos
 	{
@@ -42,41 +57,33 @@ public class GameManager : MonoBehaviour {
 		public Quaternion rot;
 	}
 
-    public static GameManager instance;
-
-
-    public int playerHealth = 15;
-
-	public static int previousSceneIndex;
-
-	GameObject player;
-
 	[Header("Save Position")]
 	public SavedPos playerSavePos;
-	//public int battlesLoaded = 0;
-	//public List<Deck> decksToFight = new List<Deck>();
-	//public List<int> enemyHP = new List<int>();
+	#endregion
 
 
-
-    //Info to pass to battle scene
-    //[HideInInspector]
-    public int enemyHealth;
+	#region BattleInfo
+	//Info to pass to battle scene
+	//[HideInInspector]
+	public int enemyHealth;
     //[HideInInspector]
     public Deck enemyDeck;
 	public Sprite enemyBust;
 	public string enemyName;
+	#endregion
 
-	public bool gauntletRunning = false;
-	public int lastBattlerIndex;
-	public List<Enemy> enemyList;
-
-
+	#region Fader
 	[Header("CameraFadeManager")]
 	public GameObject fader;
+	[HideInInspector]
+	public float waitTime = 0f;
+	#endregion
 
+	#region TalkIndicator
 	[Header("Talk Indicator")]
 	public GameObject talkIndicator;
+	#endregion
+
 	// Use this for initialization
 	void Awake () {
         if (instance == null)

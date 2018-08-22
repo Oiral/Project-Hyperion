@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using Yarn.Unity;
 using UnityEngine.UI;
@@ -115,8 +114,15 @@ public class YarnFunctionsManager : MonoBehaviour {
 		print("nodeToCall: " + nodeToCall);
 		if (nodeToCall != "")
 		{
-			FindObjectOfType<DialogueRunner>().StartDialogue(nodeToCall);
+			StartCoroutine(CallDialogueAfterDelay(nodeToCall));
 		}
+		GameManager.instance.waitTime = 2f;
+	}
+
+	IEnumerator CallDialogueAfterDelay(string nodeToCall)
+	{
+		yield return new WaitForSeconds(GameManager.instance.waitTime);
+		FindObjectOfType<DialogueRunner>().StartDialogue(nodeToCall);
 	}
 	#endregion
 }
