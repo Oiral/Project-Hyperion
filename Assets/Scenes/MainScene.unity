@@ -5505,7 +5505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6751,6 +6751,36 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: a3dd1841802864244bcd71624c2bcb2e,
         type: 2}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[4].nodePlayerLoss
+      value: Aphroditethug.Lose
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[5].nodePlayerLoss
+      value: Aphroditethug.Lose
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[6].nodePlayerLoss
+      value: Aphroditethug.Lose
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[7].nodePlayerLoss
+      value: Herculesthug.Lose
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[8].nodePlayerLoss
+      value: Herculesthug.Lose
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
+        type: 2}
+      propertyPath: enemyList.Array.data[9].nodePlayerLoss
+      value: Hadesthug.Lose
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78e8411650e6e62448dde2ad47e03f79, type: 2}
   m_IsPrefabParent: 0
@@ -9080,7 +9110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -14347,24 +14377,34 @@ MonoBehaviour:
   nateBust: {fileID: 734294057}
   busts:
   - name: zeus
+    displayName: Zeus
     bust: {fileID: 21300014, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
   - name: aphrodite1
+    displayName: Aphrodite
     bust: {fileID: 21300006, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
   - name: hercules
+    displayName: Hercules
     bust: {fileID: 21300018, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
   - name: hades
+    displayName: Hades
     bust: {fileID: 21300016, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
   - name: aphrodite2
+    displayName: Aphrodite
     bust: {fileID: 21300008, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
   - name: hera
+    displayName: Hera
     bust: {fileID: 21300020, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
   - name: medusa
+    displayName: Medusa
     bust: {fileID: 21300012, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
   - name: herculesthug
+    displayName: Poseidon
     bust: {fileID: 21300002, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
   - name: herculesthug
+    displayName: Poseidon
     bust: {fileID: 21300002, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
   - name: hadesthug
+    displayName: Atlas
     bust: {fileID: 21300004, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
 --- !u!4 &1213907024
 Transform:
@@ -21559,6 +21599,8 @@ MonoBehaviour:
   textBackGround: {fileID: 1892127269}
   textCardStartColour: {r: 0, g: 0, b: 0, a: 0}
   textCardEndColour: {r: 0, g: 0, b: 0, a: 0.46666667}
+  nateBust: {fileID: 734294057}
+  otherBust: {fileID: 416407199}
   lengthOfFade: 2
 --- !u!1 &1785983611
 GameObject:

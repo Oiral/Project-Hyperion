@@ -159,3 +159,13 @@ Aphrodite: ... You beat me. HOW!!!
 <<resetgauntlet YM>>
 <<recorddefeat YM aphrodite>>
 ===
+title: Aphroditethug.Lose
+tags: 
+colorID: 0
+position: 838,-464
+---
+<<setbust YM aphrodite>>
+Aphrodite: You cannot defeat me!
+<<resetbusts YM>>
+<<resetgauntlet YM>>
+===

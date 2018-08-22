@@ -16,6 +16,10 @@ public class StartAutoDialogue : MonoBehaviour {
 	public GameObject textBackGround;
 	public Color textCardStartColour;
 	public Color textCardEndColour;
+	[Header("background for text")]
+	public Image nateBust;
+	public Image otherBust;
+
 
 	public float lengthOfFade;
 	// Use this for initialization
@@ -27,7 +31,6 @@ public class StartAutoDialogue : MonoBehaviour {
 		yield return StartCoroutine(FadeIn());
 		if (nodeToStart != "")
 		{
-
 			FindObjectOfType<DialogueRunner>().StartDialogue(nodeToStart);
 		}
 	}
@@ -38,6 +41,8 @@ public class StartAutoDialogue : MonoBehaviour {
 		if (cardToFade != null)
 		{
 			textBackGround.SetActive(true);
+			nateBust.color = Color.white;
+			otherBust.color = Color.white;
 			for (float t = 0; t < lengthOfFade; t += Time.deltaTime)
 			{
 				cardToFade.GetComponent<Image>().color = Color.Lerp(startColour, endColour, t/lengthOfFade);

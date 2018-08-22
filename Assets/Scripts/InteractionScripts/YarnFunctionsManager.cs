@@ -9,6 +9,7 @@ public class YarnFunctionsManager : MonoBehaviour {
 	public struct BustInfo
 	{
 		public string name;
+		public string displayName;
 		public Sprite bust;
 	}
 
@@ -116,7 +117,7 @@ public class YarnFunctionsManager : MonoBehaviour {
 		{
 			StartCoroutine(CallDialogueAfterDelay(nodeToCall));
 		}
-		GameManager.instance.waitTime = 2f;
+		GameManager.instance.waitTime = 1f;
 	}
 
 	IEnumerator CallDialogueAfterDelay(string nodeToCall)
