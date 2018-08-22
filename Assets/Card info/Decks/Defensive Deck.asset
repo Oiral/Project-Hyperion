@@ -22,3 +22,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b74baa44131319d42a6689e54af7a1f1, type: 2}
   - {fileID: 11400000, guid: b74baa44131319d42a6689e54af7a1f1, type: 2}
   inventoryCards: []
+  rewardCards:
+  - {fileID: 11400000, guid: b74baa44131319d42a6689e54af7a1f1, type: 2}
+  - {fileID: 11400000, guid: 7d3f7b4c2995c1e4cbe70129de40e4ab, type: 2}
+  - {fileID: 11400000, guid: 7613bdbe1db328f4995e315aec0fc458, type: 2}
+  - {fileID: 11400000, guid: 575123dae6cf0f3499a9f99319780b10, type: 2}
+  - {fileID: 11400000, guid: 7d3f7b4c2995c1e4cbe70129de40e4ab, type: 2}
+  - {fileID: 11400000, guid: 7613bdbe1db328f4995e315aec0fc458, type: 2}
