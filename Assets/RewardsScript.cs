@@ -35,6 +35,8 @@ public class RewardsScript : MonoBehaviour {
 
             cardButton.onClick.RemoveAllListeners();
             cardButton.onClick.AddListener(delegate { AddCard(UICard.info); });
+
+            cardButton.Select();
         }
     }
     
