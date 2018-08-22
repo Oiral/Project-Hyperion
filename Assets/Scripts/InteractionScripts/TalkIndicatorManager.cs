@@ -9,6 +9,7 @@ public class TalkIndicatorManager : MonoBehaviour {
 
 	private void Start()
 	{
+		GameManager.instance.talkIndicator = gameObject;
 		StartCoroutine(TurnOffSelf());
 	}
 	

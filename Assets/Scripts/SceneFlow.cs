@@ -27,7 +27,7 @@ public static class SceneFlow {
 	};
 
 
-	static string GetSceneName(SceneList scene)
+	public static string GetSceneName(SceneList scene)
 	{
 		return scenes[(int)scene];
 	}

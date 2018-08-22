@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour {
 	#endregion
 
 	#region TalkIndicator
-	[Header("Talk Indicator")]
+	[HideInInspector]
 	public GameObject talkIndicator;
 	#endregion
 
