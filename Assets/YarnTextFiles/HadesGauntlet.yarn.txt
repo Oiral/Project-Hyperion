@@ -22,7 +22,7 @@ position: 741,130
 title: Hadesthug.No
 tags: 
 colorID: 0
-position: 741,130
+position: 761,130
 ---
 <<resetbusts YM>>
 <<resetgauntlet YM>>
@@ -31,7 +31,7 @@ position: 741,130
 title: Hades
 tags: 
 colorID: 0
-position: 741,130
+position: 721,160
 ---
 <<setbust YM hades>>
 Hades: So you bet my underling...
@@ -43,7 +43,7 @@ Hades: I guess it is time for me to... turn up the HEAT!
 title: Hades.Yes
 tags: 
 colorID: 0
-position: 741,130
+position: 741,160
 ---
 <<startbattle YM hades>>
 <<resetbusts YM>>
@@ -52,7 +52,7 @@ position: 741,130
 title: Hadesno.Confirm
 tags: 
 colorID: 0
-position: 741,130
+position: 761,160
 ---
 Are you sure? All your progress in these battles will be lost?
 [[Retreat|Hades.No]]
@@ -62,7 +62,7 @@ Are you sure? All your progress in these battles will be lost?
 title: Hades.Lose
 tags: 
 colorID: 0
-position: 741,130
+position: 721,190
 ---
 <<setbust YM hades>>
 Hades: I MISCALCUATED! NO!
@@ -74,7 +74,7 @@ Hades: I MISCALCUATED! NO!
 title: Hades.Win
 tags: 
 colorID: 0
-position: 741,130
+position: 741,190
 ---
 <<setbust YM hades>>
 Hades: Hahaha. I never lose!
@@ -85,7 +85,7 @@ Hades: Hahaha. I never lose!
 title: Hades.No
 tags: 
 colorID: 0
-position: 741,130
+position: 781,160
 ---
 Hades: Come back when you are ready!
 <<resetbusts YM>>

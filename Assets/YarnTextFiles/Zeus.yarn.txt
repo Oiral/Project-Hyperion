@@ -1,7 +1,7 @@
 title: Zeus.Battle
 tags: 
 colorID: 0
-position: 721,130
+position: 721,160
 ---
 <<setbust YM zeus>>
 <<if not visited("Zeus.Battle")>>
@@ -15,7 +15,7 @@ Teacher: I hope you are ready to lose to your master!
 title: Zeusbattle.Yes
 tags: 
 colorID: 0
-position: 741,130
+position: 741,160
 ---
 <<startgauntlet YM>>
 Teacher: Prepare for... THE ONCOMING STORM!
@@ -26,7 +26,7 @@ Teacher: Prepare for... THE ONCOMING STORM!
 title: Zeus.Lose
 tags: 
 colorID: 0
-position: 741,130
+position: 761,160
 ---
 <<setbust YM zeus>>
 Teacher: You Win!
@@ -36,7 +36,7 @@ Teacher: You Win!
 title: Zeus.Win
 tags: 
 colorID: 0
-position: 741,130
+position: 721,190
 ---
 <<setbust YM zeus>>
 Teacher: Better luck next time!
@@ -46,7 +46,7 @@ Teacher: Better luck next time!
 title: Zeus.Buy
 tags: 
 colorID: 0
-position: 741,130
+position: 721,130
 ---
 <<setbust YM zeus>>
 Teacher: Do you wanna buy cards?
@@ -67,7 +67,7 @@ Teacher: Choose Wisely
 title: Zeusbuy.No
 tags: 
 colorID: 0
-position: 741,130
+position: 761,130
 ---
 Teacher: Ok then! Come back when you Do!
 <<resetbusts YM>>

@@ -22,7 +22,7 @@ position: 741,130
 title: Herculesthug1.No
 tags: 
 colorID: 0
-position: 741,130
+position: 761,130
 ---
 <<resetbusts YM>>
 <<resetgauntlet YM>>
@@ -31,7 +31,7 @@ position: 741,130
 title: Herculesthug2
 tags: 
 colorID: 0
-position: 721,130
+position: 721,160
 ---
 <<setbust YM herculesthug>>
 Thug: Fight me bro!
@@ -42,7 +42,7 @@ Thug: Fight me bro!
 title: Herculesthug2.Yes
 tags: 
 colorID: 0
-position: 741,130
+position: 741,160
 ---
 <<startbattle YM herculesthug2>>
 <<resetbusts YM>>
@@ -51,7 +51,7 @@ position: 741,130
 title: Herculesthug2.No
 tags: 
 colorID: 0
-position: 741,130
+position: 761,160
 ---
 <<resetbusts YM>>
 <<resetgauntlet YM>>
@@ -60,7 +60,7 @@ position: 741,130
 title: Herculesthug2.Confirm
 tags: 
 colorID: 0
-position: 721,130
+position: 781,160
 ---
 Are you sure? All your progress in these battles will be lost?
 [[Run|Herculesthug2.No]]
@@ -70,7 +70,7 @@ Are you sure? All your progress in these battles will be lost?
 title: Hercules
 tags: 
 colorID: 0
-position: 721,130
+position: 721,190
 ---
 <<setbust YM hercules>>
 Hercules: Bro!
@@ -81,7 +81,7 @@ Hercules: Bro!
 title: Hercules.Yes
 tags: 
 colorID: 0
-position: 741,130
+position: 741,190
 ---
 <<startbattle YM herculesthug2>>
 <<resetbusts YM>>
@@ -90,16 +90,16 @@ position: 741,130
 title: Hercules.No
 tags: 
 colorID: 0
-position: 741,130
+position: 761,190
 ---
 <<resetbusts YM>>
 <<resetgauntlet YM>>
-====
+===
 
 title: Hercules.Confirm
 tags: 
 colorID: 0
-position: 741,130
+position: 781,190
 ---
 Are you sure? All your progress in these battles will be lost?
 [[Run|Hercules.No]]
@@ -109,7 +109,7 @@ Are you sure? All your progress in these battles will be lost?
 title: Hercules.Lose
 tags: 
 colorID: 0
-position: 741,130
+position: 721,220
 ---
 <<setbust YM hercules>>
 Hercules: Bro!

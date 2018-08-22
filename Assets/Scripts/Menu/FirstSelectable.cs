@@ -14,5 +14,6 @@ public class FirstSelectable : MonoBehaviour {
 	{
 		yield return new WaitForSecondsRealtime(0.05f);
 		gameObject.GetComponent<Button>().Select();
+		//print("Enabled!");
 	}
 }
