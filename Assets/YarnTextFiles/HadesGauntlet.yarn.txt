@@ -4,8 +4,8 @@ colorID: 1
 position: 260,-26
 ---
 <<setbust YM hadesthug>>
-Thug: Fight me for...
-Thug: The HONOUR to verse HADES!
+Atlas: Fight me for...
+Atlas: The HONOUR to verse HADES!
 [[Yes!|Hadesthug.Yes]]
 [[No|Hadesthug.No]]
 ===
@@ -14,7 +14,7 @@ tags:
 colorID: 0
 position: 158,186
 ---
-Thug: Prepare!
+Atlas: Prepare! For your moment awaits!
 <<startgauntlet YM>>
 <<startbattle YM hadesthug>>
 <<resetbusts YM>>
@@ -83,6 +83,16 @@ colorID: 0
 position: 832,294
 ---
 Hades: Come back when you are ready!
+<<resetbusts YM>>
+<<resetgauntlet YM>>
+===
+title: Hadesthug.Lose
+tags: 
+colorID: 0
+position: 901,32
+---
+<<setbust YM hadesthug>>
+Atlas: You are not worth to face Him!
 <<resetbusts YM>>
 <<resetgauntlet YM>>
 ===

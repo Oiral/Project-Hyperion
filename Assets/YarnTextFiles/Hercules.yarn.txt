@@ -4,7 +4,7 @@ colorID: 1
 position: -202,-732
 ---
 <<setbust YM herculesthug>>
-Thug: Bro! Do you think you can beat me??
+Poseidon: Bro! Do you think you can beat me??
 [[Yes!|Herculesthug1.Yes]]
 [[No|Herculesthug1.No]]
 ===
@@ -14,7 +14,7 @@ colorID: 0
 position: -202,-373
 ---
 <<startgauntlet YM>>
-Thug: Well bro! You're about to lose!
+Poseidon: Well bro! You're about to lose!
 <<startbattle YM herculesthug1>>
 <<resetbusts YM>>
 ===
@@ -32,7 +32,7 @@ colorID: 0
 position: 54,-195
 ---
 <<setbust YM herculesthug>>
-Thug: Bro! You may have bet my twin, but you won't beat me!
+Poseidon: Bro! You may have bet my twin, but you won't beat me!
 [[Yes!|Herculesthug2.Yes]]
 [[No|Herculesthug2.Confirm]]
 ===
@@ -41,7 +41,7 @@ tags:
 colorID: 0
 position: 93,67
 ---
-Thug: Big mistake!
+Poseidon: Big mistake!
 <<startbattle YM herculesthug2>>
 <<resetbusts YM>>
 ===
@@ -120,4 +120,14 @@ position: 1040,329
 ---
 Hercules: See told you BRO, being this jacked means... 
 Hercules: I'll always win!
+===
+title: Herculesthug.Lose
+tags: 
+colorID: 0
+position: 1039,-472
+---
+<<setbust YM herculesthug>>
+Poseiden: Bro! You just got ship-WRECKED!
+<<resetbusts YM>>
+<<resetgauntlet YM>>
 ===

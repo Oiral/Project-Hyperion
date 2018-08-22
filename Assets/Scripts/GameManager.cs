@@ -172,8 +172,8 @@ public class GameManager : MonoBehaviour {
 				lastBattlerIndex = enemyList.IndexOf(enemy);
 				enemyHealth = enemy.hp;
 				enemyDeck = enemy.deck;
-				enemyName = enemy.name;
 
+				enemyName = YM.busts[lastBattlerIndex].displayName;
 				enemyBust = YM.busts[lastBattlerIndex].bust;
 				break;
 			}
