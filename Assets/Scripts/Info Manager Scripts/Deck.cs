@@ -64,7 +64,7 @@ public class Deck : ScriptableObject {
             //pick a random list of 3 numbers
             for (int i = 0; i < 3; i++)
             {
-                rewards.Add(new GameCard(rewardCards[Random.Range(0, rewards.Count)]));
+                rewards.Add(new GameCard(rewardCards[Random.Range(0, rewardCards.Count)]));
             }
         }
 

@@ -26,6 +26,8 @@ public class BattleManagerScript : MonoBehaviour {
 
     GameManager GM;
 
+    bool isEvaluatingTurn;
+
     public Button matchButton;
 
     #region testing
@@ -100,6 +102,7 @@ public class BattleManagerScript : MonoBehaviour {
         CheckChainCards(enemyCardsInPlay);
         PlayerDraw();
         yield return new WaitForSeconds(0.1f);
+        isEvaluatingTurn = false;
         playerHand[0].attachedObject.GetComponent<Button>().Select();
     }
 
@@ -154,23 +157,26 @@ public class BattleManagerScript : MonoBehaviour {
 
     public void PlayerPlayCard(GameCard cardPlayed)
     {
-        for (int i = 0; i < 3; i++)
+        if (isEvaluatingTurn == false)//make sure were not evaluating the turn already
         {
-            if (playerCardsInPlay[i] == null)
+            for (int i = 0; i < 3; i++)
             {
-                //Destroy the card played
-                Destroy(cardPlayed.attachedObject);
-                playerHand.Remove(cardPlayed);
+                if (playerCardsInPlay[i] == null)
+                {
+                    //Destroy the card played
+                    Destroy(cardPlayed.attachedObject);
+                    playerHand.Remove(cardPlayed);
 
-                GameObject SpawnedCardObject = Instantiate(cardPrefab);
-                SpawnedCardObject.GetComponent<PlayingCardScript>().info = cardPlayed;
-                cardPlayed.attachedObject = SpawnedCardObject;
-                SpawnedCardObject.GetComponent<PlayingCardScript>().targetPos = new Vector3(PlayerXValue, 0, i * 12);
-                playerCardsInPlay[i] = cardPlayed;
+                    GameObject SpawnedCardObject = Instantiate(cardPrefab);
+                    SpawnedCardObject.GetComponent<PlayingCardScript>().info = cardPlayed;
+                    cardPlayed.attachedObject = SpawnedCardObject;
+                    SpawnedCardObject.GetComponent<PlayingCardScript>().targetPos = new Vector3(PlayerXValue, 0, i * 12);
+                    playerCardsInPlay[i] = cardPlayed;
 
-                //call the fist button in list
-                playerHand[0].attachedObject.GetComponent<Button>().Select();
-                break;
+                    //call the fist button in list
+                    playerHand[0].attachedObject.GetComponent<Button>().Select();
+                    break;
+                }
             }
         }
     }
@@ -231,6 +237,7 @@ public class BattleManagerScript : MonoBehaviour {
     IEnumerator CheckCards()
     {
         matchButton.interactable = false;
+        isEvaluatingTurn = true;
         hideCards.SetActive(false);
         yield return StartCoroutine(EvaluateRow(0));
         CheckHealth();
