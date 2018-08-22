@@ -6,8 +6,8 @@ position: 260,-26
 <<setbust YM hadesthug>>
 Atlas: Fight me for...
 Atlas: The HONOUR to verse HADES!
-[[Yes!|Hadesthug.Yes]]
-[[No|Hadesthug.No]]
+[[Fight|Hadesthug.Yes]]
+[[Run|Hadesthug.No]]
 ===
 title: Hadesthug.Yes
 tags: 
@@ -36,7 +36,7 @@ position: 358,355
 Hades: So you bet my underling...
 Hades: I guess it is time for me to... turn up the HEAT!
 [[Fight|Hades.Yes]]
-[[Retreat|Hadesno.Confirm]]
+[[Run|Hadesno.Confirm]]
 ===
 title: Hades.Yes
 tags: 
@@ -53,8 +53,8 @@ colorID: 0
 position: 598,320
 ---
 Are you sure? All your progress in these battles will be lost?
-[[Retreat|Hades.No]]
 [[Stay|Hades]]
+[[Retreat|Hades.No]]
 ===
 title: Hades.Lose
 tags: 

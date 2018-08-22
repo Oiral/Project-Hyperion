@@ -13699,7 +13699,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1152970972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14406,6 +14406,9 @@ MonoBehaviour:
   - name: hadesthug
     displayName: Atlas
     bust: {fileID: 21300004, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
+  - name: teacher
+    displayName: Zeus
+    bust: {fileID: 21300014, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
 --- !u!4 &1213907024
 Transform:
   m_ObjectHideFlags: 0
@@ -24156,7 +24159,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1972760663}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.08, y: 0.018999934, z: -2.13}
+  m_LocalPosition: {x: 13.08, y: 0.018999934, z: -1.953}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 863753775}

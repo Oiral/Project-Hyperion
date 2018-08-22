@@ -5,8 +5,8 @@ position: -202,-732
 ---
 <<setbust YM herculesthug>>
 Poseidon: Bro! Do you think you can beat me??
-[[Yes!|Herculesthug1.Yes]]
-[[No|Herculesthug1.No]]
+[[Fight|Herculesthug1.Yes]]
+[[Run|Herculesthug1.No]]
 ===
 title: Herculesthug1.Yes
 tags: 
@@ -33,8 +33,8 @@ position: 54,-195
 ---
 <<setbust YM herculesthug>>
 Poseidon: Bro! You may have bet my twin, but you won't beat me!
-[[Yes!|Herculesthug2.Yes]]
-[[No|Herculesthug2.Confirm]]
+[[Fight|Herculesthug2.Yes]]
+[[Run|Herculesthug2.Confirm]]
 ===
 title: Herculesthug2.Yes
 tags: 
@@ -59,8 +59,8 @@ colorID: 0
 position: 399,-416
 ---
 Are you sure? All your progress in these battles will be lost?
-[[Run|Herculesthug2.No]]
 [[Stay|Herculesthug2]]
+[[Run|Herculesthug2.No]]
 ===
 title: Hercules
 tags: 
@@ -72,8 +72,8 @@ position: 539,-87
     Hercules: You bet my other bros but...
 <<endif>>
 Hercules: Are you ready to face me!
-[[Yes!|Hercules.Yes]]
-[[No|Hercules.Confirm]]
+[[Fight|Hercules.Yes]]
+[[Run|Hercules.Confirm]]
 ===
 title: Hercules.Yes
 tags: 
@@ -98,8 +98,8 @@ colorID: 0
 position: 831,-88
 ---
 Are you sure? All your progress in these battles will be lost?
-[[Run|Hercules.No]]
 [[Stay|Hercules]]
+[[Run|Hercules.No]]
 ===
 title: Hercules.Lose
 tags: 

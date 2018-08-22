@@ -134,8 +134,8 @@ colorID: 0
 position: 732,151
 ---
 Are you sure? All your progress in these battles will be lost?
-[[Run|Aphrodite.Run]]
 [[Stay|Aphrodite]]
+[[Run|Aphrodite.Run]]
 ===
 title: Aphrodite.Win
 tags: 

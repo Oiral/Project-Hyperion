@@ -9,8 +9,18 @@ position: 681,-15
     Teacher: but beating the thunder God is not going to happen!
 <<endif>>
 Teacher: I hope you are ready to lose to your master!
-[[Not Today!|Zeusbattle.Yes]]
-[[What happened to the card Shop|Zeus.Buy]]
+[[Fight|Zeusbattle.Yes]]
+[[Run|Zeusbattle.Run]]
+[[What happened to the card Shop?|Zeus.Buy]]
+===
+title: Zeusbattle.Run
+tags: 
+colorID: 0
+position: 840,-236
+---
+<<setbust YM teacher>>
+Teacher: Come back when you are ready!
+<<resetbusts YM>>
 ===
 title: Zeusbattle.Yes
 tags: 
