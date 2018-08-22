@@ -149,8 +149,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.35004163, y: -247.7}
-  m_SizeDelta: {x: 180, y: 70}
+  m_AnchoredPosition: {x: 0.35004163, y: -233}
+  m_SizeDelta: {x: 200, y: 80}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &123263541
 MonoBehaviour:
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 254639112}
   - component: {fileID: 254639111}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Credit Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -345,8 +345,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 109.679855}
-  m_SizeDelta: {x: 255.9, y: 83.5}
+  m_AnchoredPosition: {x: 0, y: 224}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &254639111
 MonoBehaviour:
@@ -369,11 +369,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 20f98d26c439d09478fa1699c84d8742, type: 3}
-    m_FontSize: 65
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 6
-    m_MaxSize: 65
+    m_MaxSize: 80
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -685,7 +685,7 @@ RectTransform:
   m_GameObject: {fileID: 720617469}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.53754634, y: 0.53754616, z: 0.53754616}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 123263540}
   m_RootOrder: 0
@@ -716,11 +716,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 20f98d26c439d09478fa1699c84d8742, type: 3}
-    m_FontSize: 56
+    m_FontSize: 45
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 56
+    m_MinSize: 0
+    m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -892,10 +892,10 @@ RectTransform:
   m_Father: {fileID: 1358059140}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1918, y: 1120}
+  m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1628707881
 MonoBehaviour:
@@ -960,11 +960,11 @@ RectTransform:
   m_Father: {fileID: 2104900112}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -378.01694, y: -86.193756}
-  m_SizeDelta: {x: 1670.3999, y: 717.2}
-  m_Pivot: {x: 0, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000032106884, y: 0.00000059604645}
+  m_SizeDelta: {x: 1200, y: 766}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1781147957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -986,35 +986,23 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 20f98d26c439d09478fa1699c84d8742, type: 3}
-    m_FontSize: 65
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 6
+    m_MinSize: 5
     m_MaxSize: 65
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Music - ChrIs Marrow 4 ("ChIll HIp-Hop Beat")
-
-    Lead ConCepT Artist - SIrIah Steele
-
-    Lead Coder & Game Design- HamISH Paget
-
-    Producer & Tech Art- Brad Cox
-
-    Procucer & Implementation- Sean Mcgifford
-
-    lead Modeller- RIck BAckhouse
-
-    card Design & Game Design- Sam WIlson
-
-    Font- Open WIndow Fonts
-
-
-'
+  m_Text: "Music - ChrIs Marrow 4 (\"ChIll HIp-Hop Beat\")\nFont - Open WIndow Fonts\n\ncard
+    Design & Game DesIgner - Sam WIlson\nLead EngIneer & Game DesIgner - HamISH Paget\nLead
+    ConCepT ArtIst & Character DesIgner - SIrIah Steele\nlead Modeller & VFX DesIgner
+    - RIck BAckhouse\nProducer, Tech Art & Sound DesIGN - Brad Cox\nProcucer, DesIgn
+    & Programmer - Sean MIchael\n\nYarnspInner used under the MIT LIcense (MIT)\r.
+    CopyrIght (c) 2015-2017 Secret Lab Pty. Ltd. and Yarn SpInner contrIbutors.\n"
 --- !u!222 &1781147958
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1117,7 +1105,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.5419922, y: 52.196716}
+  m_AnchoredPosition: {x: 0, y: -0.0000038146973}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2104900113
