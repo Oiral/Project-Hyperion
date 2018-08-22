@@ -15,6 +15,9 @@ public class BattleManagerScript : MonoBehaviour {
     public GameObject UIHandParent;
     public List<GameCard> playerHand = new List<GameCard>();
 
+    public GameObject battleUI;
+    public GameObject cardPickerUI;
+
     public GameCard[] enemyCardsInPlay = new GameCard[3];
     public GameCard[] playerCardsInPlay = new GameCard[3];
 
@@ -96,6 +99,8 @@ public class BattleManagerScript : MonoBehaviour {
         AiDraw();
         CheckChainCards(enemyCardsInPlay);
         PlayerDraw();
+        yield return new WaitForSeconds(0.1f);
+        playerHand[0].attachedObject.GetComponent<Button>().Select();
     }
 
     public void AiDraw()
@@ -143,7 +148,7 @@ public class BattleManagerScript : MonoBehaviour {
         }
 
         //set the first item in the list to be first selected
-        playerHand[0].attachedObject.GetComponent<Button>().Select();
+        //playerHand[0].attachedObject.GetComponent<Button>().Select();
 
     }
 
@@ -170,6 +175,8 @@ public class BattleManagerScript : MonoBehaviour {
         }
     }
 
+    
+
     public void ReShuffle(PlayerScript person)
     {
         foreach (GameCard card in person.discardedCards)
@@ -182,13 +189,24 @@ public class BattleManagerScript : MonoBehaviour {
     //Check how many chain cards there are then takes each of them and adds their value
     void CheckChainCards(GameCard[] playedCardsToCheck)
     {
+        //checking for the chain cards
         List<GameCard> chainCards = new List<GameCard>();
+        List<GameCard> attackCards = new List<GameCard>();
+        GameCard superChain = null;
         //find all the chain cards in play
         foreach (GameCard card in playedCardsToCheck)
         {
             if (card.typeOfCard == CardType.Chain)
             {
                 chainCards.Add(card);
+            }
+            if (card.typeOfCard == CardType.SuperChain)
+            {
+                superChain = card;
+            }
+            else if (card.extras == CardFamily.Attack)
+            {
+                attackCards.Add(card);
             }
         }
 
@@ -198,6 +216,16 @@ public class BattleManagerScript : MonoBehaviour {
             chainCard.attackDamage = chainCards.Count;
         }
 
+        //if we have found a super chain card
+        if (superChain != null)
+        {
+            for (int i = 0; i < attackCards.Count; i++)
+            {
+                superChain.multiplyValue += 1;
+            }
+        }
+
+        
     }
 
     IEnumerator CheckCards()
@@ -284,6 +312,14 @@ public class BattleManagerScript : MonoBehaviour {
                 defendMove = 4;
             }
 
+            //ZEUS - ATTACK - FREEZE - DONE === - EFFECT
+            //APHRODITE - BIG HEAL - DONE === - DEFEND
+            //HADES - CHAIN ATTACK - DONE === - ATTACK
+            //MEDUSA - MASS FREEZE - DONE === - EFFECT
+            //HERCULES - BIG ATTACK - DONE === - ATTACK
+            //ATHENA - BIG SHIELD - DONE === - DEFEND
+
+
             switch (cardToEval.typeOfCard)
             {
                 case CardType.Mirror:
@@ -317,6 +353,17 @@ public class BattleManagerScript : MonoBehaviour {
                     yield return new WaitForSeconds(0.5f);
                     //Check the new spawned in card
                     yield return StartCoroutine( EvaluateCard(spawnedCard, row, isPlayer));
+                    break;
+
+                case CardType.MassFreeze:
+                    //check each for
+                    for (int r = 0; r < 3; r++)
+                    {
+                        if (otherCollumn[r].extras != CardFamily.Effect)
+                        {
+                            otherCollumn[r].enabled = false;
+                        }
+                    }
                     break;
 
                 case CardType.Freeze:
@@ -368,6 +415,21 @@ public class BattleManagerScript : MonoBehaviour {
                     //visualisation
                     VisualMove(cardToEval, new Vector3(0, -1, 9));
                     break;
+
+                case CardType.AttackFreeze:
+                    //run the freeze
+                    if (otherCollumn[row].extras != CardFamily.Effect)
+                    {
+                        otherCollumn[row].enabled = false;
+                    }
+
+                    //run the attack
+                    opponent.Damage(cardToEval.attackDamage * cardToEval.multiplyValue);
+
+                    //Visual
+                    VisualMove(cardToEval, new Vector3(attackMove, 0, 0));
+                    break;
+
                 case CardType.Heal:
                     Debug.Log("Heal",cardToEval.attachedObject);
                     //heal the player
@@ -446,7 +508,20 @@ public class BattleManagerScript : MonoBehaviour {
         {
             Debug.Log("End Game Early");
             GM.playerHealth = player.health;
-			SceneFlow.RunScene(SceneList.MainScene);
+
+            //if player wins disable the ui and turn the collection ui on
+            if (GM.playerHealth == 0)
+            {
+                SceneFlow.RunScene(SceneList.MainScene);
+            }
+            else
+            {
+                StopAllCoroutines();
+                battleUI.SetActive(false);
+                cardPickerUI.SetActive(true);
+            }
+
+			
         }
 	}
 

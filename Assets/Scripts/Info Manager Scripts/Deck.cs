@@ -11,7 +11,7 @@ public class Deck : ScriptableObject {
     [SerializeField]
     public List<Card> inventoryCards;
 
-
+    public List<Card> rewardCards;
 
     public void GenerateActiveDeck()
     {
@@ -40,11 +40,35 @@ public class Deck : ScriptableObject {
     /// <returns>the game card that has been drawn</returns>
     public GameCard DrawRandom()
     {
-        int randomNumber = UnityEngine.Random.Range(0, activeDeck.Count);
+        int randomNumber = Random.Range(0, activeDeck.Count);
         //Debug.Log(randomNumber.ToString());
         GameCard card = activeDeck[randomNumber];
         activeDeck.Remove(card);
 
         return card;
     }
+
+    public List<GameCard> GetRewardCards()
+    {
+        List<GameCard> rewards = new List<GameCard>();
+        //check if there are 3 or less reward cards
+        if (rewardCards.Count <= 3)
+        {
+            foreach (Card reward in rewardCards)
+            {
+                rewards.Add(new GameCard(reward));
+            }
+        }
+        else//there are more than 3
+        {
+            //pick a random list of 3 numbers
+            for (int i = 0; i < 3; i++)
+            {
+                rewards.Add(new GameCard(rewardCards[Random.Range(0, rewards.Count)]));
+            }
+        }
+
+        return rewards;
+
+    } 
 }

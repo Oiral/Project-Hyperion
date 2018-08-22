@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adeb1f6442496034eb6d3cff142f0f5a, type: 3}
+  m_Name: Zeus - Attack-Freeze
+  m_EditorClassIdentifier: 
+  typeOfCard: 5
+  extras: 0
+  attackDamage: 3
+  multiplyValue: 1
+  price: 8
+  nameOfCard: Zeus' Lightning Bolt
+  image: {fileID: 21300000, guid: ac5a620acbd05524290235393b5d6e88, type: 3}
+  description: 
+  battleDescription: {fileID: 11400000, guid: 46b261408a03c49469faed5c777108c6, type: 2}

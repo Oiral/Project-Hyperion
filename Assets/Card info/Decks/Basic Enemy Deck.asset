@@ -31,3 +31,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3e15ea2e48608b048b3c5260edbf4862, type: 2}
   - {fileID: 11400000, guid: 3e15ea2e48608b048b3c5260edbf4862, type: 2}
   inventoryCards: []
+  rewardCards:
+  - {fileID: 11400000, guid: b74baa44131319d42a6689e54af7a1f1, type: 2}
+  - {fileID: 11400000, guid: 7d3f7b4c2995c1e4cbe70129de40e4ab, type: 2}
+  - {fileID: 11400000, guid: 4bd9ca2887b80284cbdec62310e98235, type: 2}

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adeb1f6442496034eb6d3cff142f0f5a, type: 3}
   m_Name: Hit - 3
   m_EditorClassIdentifier: 
-  typeOfCard: 6
+  typeOfCard: 8
   extras: 2
   attackDamage: 3
   multiplyValue: 1

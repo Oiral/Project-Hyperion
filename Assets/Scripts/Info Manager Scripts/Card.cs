@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public enum CardFamily { Effect, Defend, Attack };
-public enum CardType { Mirror, Freeze, Thief, Multiply, Heal, Block, Hit, Chain }
+public enum CardType { Mirror, MassFreeze, Freeze, Thief, Multiply, AttackFreeze, Heal, Block,/*ATTACK DEFEND,*/ Hit, SuperChain, Chain }
 
 [CreateAssetMenu(fileName = "Card Data", menuName = "Cards/Create Card", order = 1)]
 public class Card : ScriptableObject {
