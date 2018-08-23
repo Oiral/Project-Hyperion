@@ -4,7 +4,7 @@ colorID: 1
 position: -780,-444
 ---
 <<setbust YM aphrodite2>>
-<<startgauntlet YM>>
+<<startgauntlet YM Hera>>
 Aphrodite: I'm the best! You can't possibly beat me!
 [[Fight|Herathug1.Fight]]
 [[Run|Herathug1.Run]]
@@ -70,7 +70,7 @@ colorID: 0
 position: 220,-259
 ---
 <<setbust YM medusa>>
-Medusa: I bet you are paralysed with fear.
+Medusa: I can see you are paralysed with fear.
 [[Fight|Herathug3.Fight]]
 [[Run|Herathug3.Confirm]]
 ===

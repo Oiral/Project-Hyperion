@@ -15,7 +15,7 @@ colorID: 0
 position: 158,186
 ---
 Atlas: Prepare! For your moment awaits!
-<<startgauntlet YM>>
+<<startgauntlet YM Hades>>
 <<startbattle YM hadesthug>>
 <<resetbusts YM>>
 ===
@@ -33,7 +33,7 @@ colorID: 0
 position: 358,355
 ---
 <<setbust YM hades>>
-Hades: So you bet my underling...
+Hades: So you have defeated my underling...
 Hades: I guess it is time for me to... turn up the HEAT!
 [[Fight|Hades.Yes]]
 [[Run|Hadesno.Confirm]]
