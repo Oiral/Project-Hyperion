@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ffde8eccfd71840b4c33b5733848e9, type: 3}
   m_Name: Zeus - Attack-Freeze
   m_EditorClassIdentifier: 
-  Description: Deal {atk} damage and freeze opponents card
+  Description: Deal {atk} damage and freeze opponents card. Cannot be frozen

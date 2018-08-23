@@ -321,7 +321,7 @@ public class BattleManagerScript : MonoBehaviour {
 
             //ZEUS - ATTACK - FREEZE - DONE === - EFFECT
             //APHRODITE - BIG HEAL - DONE === - DEFEND
-            //HADES - CHAIN ATTACK - DONE === - ATTACK
+            //HADES - SUPER CHAIN - DONE === - ATTACK
             //MEDUSA - MASS FREEZE - DONE === - EFFECT
             //HERCULES - BIG ATTACK - DONE === - ATTACK
             //ATHENA - BIG SHIELD - DONE === - DEFEND
@@ -455,7 +455,10 @@ public class BattleManagerScript : MonoBehaviour {
                     VisualMove(cardToEval, new Vector3(defendMove, 0, 0));
                     break;
 
+                //if it is a chain, super chain or a hit
                 case CardType.Hit:
+                case CardType.Chain:
+                case CardType.SuperChain:
                     Debug.Log("Hit", cardToEval.attachedObject);
                     //deal damage
                     opponent.Damage(cardToEval.attackDamage * cardToEval.multiplyValue);
@@ -464,8 +467,8 @@ public class BattleManagerScript : MonoBehaviour {
                     VisualMove(cardToEval, new Vector3(attackMove, 0, 0));
                     break;
 
-                case CardType.Chain:
-                    Debug.Log("Chain", cardToEval.attachedObject);
+                default:
+                    Debug.Log(cardToEval.relatedCard.nameOfCard + " Has not been assigned properly. Treating it as an attack", cardToEval.attachedObject);
                     //deal damage
                     opponent.Damage(cardToEval.attackDamage * cardToEval.multiplyValue);
 
