@@ -80,8 +80,8 @@ tags:
 colorID: 0
 position: 495,218
 ---
-Bro! Time for me to avenge my Hercules bros!
-<<startbattle YM herculesthug2>>
+Bro! Time for me to avenge my bros!
+<<startbattle YM hercules>>
 <<resetbusts YM>>
 ===
 title: Hercules.No
@@ -118,6 +118,7 @@ tags:
 colorID: 0
 position: 1040,329
 ---
+<<setbust YM hercules>>
 Hercules: See told you BRO, being this jacked means... 
 Hercules: I'll always win!
 ===

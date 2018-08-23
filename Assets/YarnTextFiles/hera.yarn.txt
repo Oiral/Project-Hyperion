@@ -1,0 +1,171 @@
+title: Herathug1
+tags: 
+colorID: 1
+position: -780,-444
+---
+<<setbust YM aphrodite2>>
+<<startgauntlet YM>>
+Aphrodite: I'm the best! You can't possibly beat me!
+[[Fight|Herathug1.Fight]]
+[[Run|Herathug1.Run]]
+===
+title: Herathug1.Fight
+tags: 
+colorID: 0
+position: -544,-424
+---
+Aphrodite: Prepare to lose!
+<<startbattle YM herathug1>>
+<<resetbusts YM>>
+===
+title: Herathug1.Run
+tags: 
+colorID: 0
+position: -680,-151
+---
+<<resetbusts YM>>
+<<resetgauntlet YM>>
+===
+title: Herathug2
+tags: 
+colorID: 0
+position: -294,-325
+---
+<<setbust YM aphrodite1>>
+Aphrodite: Ugh! How did you lose to nate!
+Aphrodite: I'll put him in his place!
+[[Fight|Herathug2.Fight]]
+[[Run|Herathug2.Confirm]]
+===
+title: Herathug2.Fight
+tags: 
+colorID: 0
+position: -31,-293
+---
+Aphrodite: Your run is over!
+<<startbattle YM herathug2>>
+<<resetbusts YM>>
+===
+title: Herathug2.Run
+tags: 
+colorID: 0
+position: -198,182
+---
+Aphrodite: Typical.
+<<resetbusts YM>>
+<<resetgauntlet YM>>
+===
+title: Herathug2.Confirm
+tags: 
+colorID: 0
+position: -144,-50
+---
+Are you sure? All your progress in these battles will be lost?
+[[Run|Herathug2.Run]]
+[[Stay|Herathug2]]
+===
+title: Herathug3
+tags: 
+colorID: 0
+position: 220,-259
+---
+<<setbust YM medusa>>
+Medusa: I bet you are paralysed with fear.
+[[Fight|Herathug3.Fight]]
+[[Run|Herathug3.Confirm]]
+===
+title: Herathug3.Fight
+tags: 
+colorID: 0
+position: 471,-167
+---
+Medusa: I'll make this quick.
+<<startbattle YM herathug3>>
+<<resetbusts YM>>
+===
+title: Herathug3.Run
+tags: 
+colorID: 0
+position: 193,273
+---
+Medusa: Run!
+<<resetbusts YM>>
+<<resetgauntlet YM>>
+===
+title: Herathug3.Confirm
+tags: 
+colorID: 0
+position: 223,27
+---
+Are you sure? All your progress in these battles will be lost?
+[[Run|Herathug3.Run]]
+[[Stay|Herathug3]]
+===
+title: Hera
+tags: 
+colorID: 0
+position: 740,-127
+---
+<<setbust YM hera>>
+Hera: Are you ready to fight?
+[[Fight|Hera.Fight]]
+[[Run|Hera.Confirm]]
+===
+title: Hera.Fight
+tags: 
+colorID: 0
+position: 951,-63
+---
+Hera: Lets fight!
+<<startbattle YM hera>>
+<<resetbusts YM>>
+===
+title: Hera.Run
+tags: 
+colorID: 0
+position: 735,414
+---
+Hera: Ok! Come back when you are ready!
+<<resetbusts YM>>
+<<resetgauntlet YM>>
+===
+title: Hera.Confirm
+tags: 
+colorID: 0
+position: 732,151
+---
+Are you sure? All your progress in these battles will be lost?
+[[Stay|Hera]]
+[[Run|Hera.Run]]
+===
+title: Hera.Win
+tags: 
+colorID: 0
+position: 1176,-209
+---
+<<setbust YM hera>>
+Hera: Hard Luck! So close, and yet so far. Try again!
+<<resetbusts YM>>
+<<resetgauntlet YM>>
+===
+title: Hera.Lose
+tags: 
+colorID: 0
+position: 1190,31
+---
+<<setbust YM hera>>
+Hera: You beat me! Congradulations
+<<resetbusts YM>>
+<<resetgauntlet YM>>
+<<recorddefeat YM hera>>
+===
+title: Herathug.Lose
+tags: 
+colorID: 0
+position: 838,-464
+---
+<<setbust YM hera>>
+Hera: Nice Try, better luck next time!
+<<resetbusts YM>>
+<<resetgauntlet YM>>
+===

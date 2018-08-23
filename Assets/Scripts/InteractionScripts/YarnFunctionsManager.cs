@@ -88,6 +88,7 @@ public class YarnFunctionsManager : MonoBehaviour {
 			if (enemyName == GameManager.instance.enemiesDefeatedNames[i])
 			{
 				GameManager.instance.enemiesDefeatedTracker[i] = true;
+				print(name + " set to true in enemiesDefeatedTracker");
 			}
 		}
 	}
