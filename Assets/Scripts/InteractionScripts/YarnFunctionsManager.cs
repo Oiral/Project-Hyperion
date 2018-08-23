@@ -2,6 +2,7 @@
 using UnityEngine;
 using Yarn.Unity;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 
 public class YarnFunctionsManager : MonoBehaviour {
 
@@ -19,6 +20,10 @@ public class YarnFunctionsManager : MonoBehaviour {
 	public Image nateBust;
 
 	public BustInfo[] busts;
+
+    public AnalyticsEventTracker beatGauntletTracker;
+    public AnalyticsEventTracker repeatBeatGauntletTracker;
+    public string currentGauntletName = "Unassigned gauntlet";
 
 	#region YarnCommands
 	///TODO: FIX THIS 
@@ -71,14 +76,16 @@ public class YarnFunctionsManager : MonoBehaviour {
 	[YarnCommand("resetgauntlet")]
 	public void ResetGauntletRun()
 	{
+        currentGauntletName = "Unassigned gauntlet";
 		GameManager.instance.playerHealth = 15;
 		GameManager.instance.gauntletRunning = false;
 		GameManager.instance.lastBattlerIndex = -1;
 	}
 
 	[YarnCommand("startgauntlet")]
-	public void StartGauntletRun()
+	public void StartGauntletRun(string gauntletName)//add the name of the gauntlet
 	{
+        currentGauntletName = gauntletName;
 		GameManager.instance.gauntletRunning = true;
 	}
 
@@ -89,10 +96,29 @@ public class YarnFunctionsManager : MonoBehaviour {
 		{
 			if (enemyName == GameManager.instance.enemiesDefeatedNames[i])
 			{
-				GameManager.instance.enemiesDefeatedTracker[i] = true;
-				print(name + " set to true in enemiesDefeatedTracker");
-			}
-		}
+                //check if they have defeated gauntlet already
+                if (GameManager.instance.enemiesDefeatedTracker[i] == true)
+                {
+                    //already defeated gaunlet
+                    //Add anylytics of repeat beat gauntlet
+                    repeatBeatGauntletTracker.TriggerEvent();
+                }
+                else
+                {
+                    //first time defeating the gaunlet
+
+                    //Add anylytics beat gauntlet of enemyName
+                    beatGauntletTracker.TriggerEvent();
+                }
+
+                GameManager.instance.enemiesDefeatedTracker[i] = true;
+				print(enemyName + " set to true in enemiesDefeatedTracker");
+                
+                
+            }
+        }
+        
+
 	}
 
 	[YarnCommand("callcredits")]
@@ -139,5 +165,15 @@ public class YarnFunctionsManager : MonoBehaviour {
 		yield return new WaitForSeconds(GameManager.instance.waitTime);
 		FindObjectOfType<DialogueRunner>().StartDialogue(nodeToCall);
 	}
-	#endregion
+    #endregion
+
+    #region Analytics
+
+    [YarnCommand("beatbattle")]
+    public void BeatBattleAnylitcs(string battleNum,string gauntletName)
+    {
+        //do stuff
+    }
+
+    #endregion
 }

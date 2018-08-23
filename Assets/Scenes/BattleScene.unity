@@ -2034,6 +2034,14 @@ MonoBehaviour:
   setupUpTurnButton: {fileID: 529668387}
   playerAutoPlayButton: {fileID: 1615825235}
   hideCards: {fileID: 71789233}
+  attackParticlePrefab: {fileID: 1454017765803892, guid: 7ea4b87a3d009c3469802757f3d919f6,
+    type: 2}
+  defendParticlePrefab: {fileID: 1977548852925932, guid: 16a7753145dff5c43b58366136e0caa3,
+    type: 2}
+  freezeParticlePrefab: {fileID: 1582228100050038, guid: 67dbccec5758dfd4f9c396176e07550b,
+    type: 2}
+  healthParticlePrefab: {fileID: 1489399920381920, guid: e4d53c47ded327843b31c958eb422ee8,
+    type: 2}
 --- !u!1 &845658858
 GameObject:
   m_ObjectHideFlags: 0
@@ -2774,7 +2782,7 @@ Prefab:
     - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
         type: 2}
       propertyPath: enemyHealth
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
         type: 2}
@@ -2785,7 +2793,7 @@ Prefab:
     - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
         type: 2}
       propertyPath: enemyName
-      value: Hades
+      value: Testing Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 114711342182314904, guid: 78e8411650e6e62448dde2ad47e03f79,
         type: 2}
