@@ -19,4 +19,4 @@ MonoBehaviour:
   nameOfCard: Medusa's Head
   image: {fileID: 21300000, guid: 7887eb29be627a241b8e536d62643af0, type: 3}
   description: 
-  battleDescription: {fileID: 11400000, guid: 54f17771ab5e90b4fb9fa15e162de621, type: 2}
+  battleDescription: {fileID: 11400000, guid: b0eaaaf216604db46b83698c54402bac, type: 2}

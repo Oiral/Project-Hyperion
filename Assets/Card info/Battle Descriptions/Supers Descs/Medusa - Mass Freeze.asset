@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ffde8eccfd71840b4c33b5733848e9, type: 3}
   m_Name: Medusa - Mass Freeze
   m_EditorClassIdentifier: 
-  Description: Freeze all opponents attack and defend cards
+  Description: When activated, freeze all opponents attack and defend cards

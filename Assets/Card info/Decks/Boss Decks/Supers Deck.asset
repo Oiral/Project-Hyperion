@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20608c04a0d30864f8e7397e56de38dd, type: 3}
+  m_Name: Supers Deck
+  m_EditorClassIdentifier: 
+  unactiveDeck:
+  - {fileID: 11400000, guid: 2e26073cbbe7fac41aa89d089cfa7cd4, type: 2}
+  - {fileID: 11400000, guid: fb9369bf2c947ca44bb93978eadc7241, type: 2}
+  - {fileID: 11400000, guid: 0ca35c42dea5bc64c99d7df9a2e257c6, type: 2}
+  - {fileID: 11400000, guid: a17729bb982dc2e41ae813bba890f7c1, type: 2}
+  - {fileID: 11400000, guid: 13e4753dedec73f4bbcbffadc5b61361, type: 2}
+  - {fileID: 11400000, guid: fa3d05283b3547f458f1f6408a74b6bd, type: 2}
+  inventoryCards: []
+  rewardCards: []

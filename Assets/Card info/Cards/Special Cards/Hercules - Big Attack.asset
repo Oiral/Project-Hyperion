@@ -17,6 +17,6 @@ MonoBehaviour:
   multiplyValue: 1
   price: 8
   nameOfCard: Hercules' Strength
-  image: {fileID: 21300000, guid: ac5a620acbd05524290235393b5d6e88, type: 3}
+  image: {fileID: 21300000, guid: aec1df16dba634348b1e8991ba90e457, type: 3}
   description: 
   battleDescription: {fileID: 11400000, guid: 54f17771ab5e90b4fb9fa15e162de621, type: 2}
