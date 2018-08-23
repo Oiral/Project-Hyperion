@@ -47,7 +47,7 @@ tags:
 colorID: 0
 position: 840,-236
 ---
-<<startgauntlet YM>>
+<<startgauntlet YM Zeus>>
 Teacher: Prepare for... THE ONCOMING STORM!
 <<startbattle YM zeus>>
 ===

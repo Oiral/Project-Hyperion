@@ -13,7 +13,7 @@ tags:
 colorID: 0
 position: -202,-373
 ---
-<<startgauntlet YM>>
+<<startgauntlet YM Hercules>>
 Poseidon: Well bro! You're about to lose!
 <<startbattle YM herculesthug1>>
 <<resetbusts YM>>
@@ -32,7 +32,7 @@ colorID: 0
 position: 54,-195
 ---
 <<setbust YM herculesthug>>
-Poseidon: Bro! You may have bet my twin, but you won't beat me!
+Poseidon: Bro! You may have defeated my twin, but you won't beat me!
 [[Fight|Herculesthug2.Yes]]
 [[Run|Herculesthug2.Confirm]]
 ===
@@ -69,7 +69,7 @@ position: 539,-87
 ---
 <<setbust YM hercules>>
 <<if not visited("Hercules")>>
-    Hercules: You bet my other bros but...
+    Hercules: You have defeated my other bros but...
 <<endif>>
 Hercules: Are you ready to face me!
 [[Fight|Hercules.Yes]]
