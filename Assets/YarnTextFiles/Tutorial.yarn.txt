@@ -10,7 +10,7 @@ Teacher:
 Teacher: Today in class we are playing cards
 Teacher: Do you know how to play the game?
 [[No|Tutorial]]
-[[Yes|Tutorial.Lies]]
+[[Yes|Tutorial.End]]
 <<resetbusts YM>>
 ===
 title: Tutorial
@@ -18,9 +18,9 @@ tags:
 colorID: 0
 position: 983,-98
 ---
-Teacher: Here are the cards!
-[[I don't get it!| Tutorial]]
-[[I get it thanks! |Tutorial.End]]
+Teacher: Well... maybe the other students might help you!
+Teacher: Here are your cards.
+<<resetbusts YM>>
 ===
 title: Tutorial.Lies
 tags: 
@@ -37,6 +37,6 @@ tags:
 colorID: 0
 position: 1320,172
 ---
-Teacher: Here are the cards!
+Teacher: Here are your cards.
 <<resetbusts YM>>
 ===
