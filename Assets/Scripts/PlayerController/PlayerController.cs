@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using Yarn.Unity;
 
 public class PlayerController : MonoBehaviour
 {
@@ -59,45 +59,56 @@ public class PlayerController : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
+		m_Animator.SetBool("Walking Bool", walkingBool);
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        rb.velocity = (movement.normalized * speed);
+		if (FindObjectOfType<DialogueRunner>().isDialogueRunning == false)
+		{
+			Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+			rb.velocity = (movement.normalized * speed);
 
-        rb.angularVelocity = Vector3.zero;
+			rb.angularVelocity = Vector3.zero;
+		
 
-        m_Animator.SetBool("Walking Bool",walkingBool);
+			if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+			{
+				//Set our rotation to our move direction
+				transform.rotation = Quaternion.LookRotation(rb.velocity, Vector3.up);
 
-        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
-        {
-            //Set our rotation to our move direction
-            transform.rotation = Quaternion.LookRotation(rb.velocity, Vector3.up);
+				walkingBool = true;
+				soundBool = true;
+				//Debug.Log("wB = true");
 
-            walkingBool = true;
-            soundBool = true;
-            //Debug.Log("wB = true");
+				if (!source.isPlaying)
+				{
+					float vol = Random.Range(volLowRange, volHighRange);
+					//soundBool = false;
+					source.Play();
+					soundBool = false;
+				}
 
-            if (!source.isPlaying)
-            {
-                float vol = Random.Range(volLowRange, volHighRange);
-                //soundBool = false;
-                source.Play();
-                soundBool = false;
-            }
+			}
+			else
+			{
+				walkingBool = false;
+				//Debug.Log("wB = false");
+			}
 
-        }
-        else
-        {
-            walkingBool = false;
-            //Debug.Log("wB = false");
-        }
+		}
+		else
+		{
+			walkingBool = false;
+			//Debug.Log("wB = false");
+			rb.angularVelocity = Vector3.zero;
+		}
 
-        
-    }
+
+	}
 
    
 
     void idealBool()
     {
         normal_ideal_bool = true;
-    }
+		
+	}
 }

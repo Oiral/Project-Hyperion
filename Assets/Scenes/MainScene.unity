@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44996685, g: 0.49736005, b: 0.5612226, a: 1}
+  m_IndirectSpecularColor: {r: 0.44996673, g: 0.49735963, b: 0.5612218, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19486,7 +19486,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1589514678}
-  - component: {fileID: 1589514680}
   - component: {fileID: 1589514682}
   - component: {fileID: 1589514679}
   m_Layer: 0
@@ -19522,18 +19521,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.45
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &1589514680
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1589514677}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 3.65, z: 1}
-  m_Center: {x: 0.55, y: 0, z: 0}
 --- !u!114 &1589514682
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public enum EnemyType { Normal,Boss,Teacher};
 
+
 [System.Serializable]
 public struct Enemy{
 	public string name;
@@ -101,7 +102,8 @@ public class GameManager : MonoBehaviour {
 		int len = enemiesDefeatedNames.Count;
 		enemiesDefeatedTracker = new bool[len];
 		lastBattlerIndex = -1;
-		fader.SetActive(true);
+		if (fader != null) {
+			fader.SetActive(true); }
 	}
 
 	public void DestroySelf()

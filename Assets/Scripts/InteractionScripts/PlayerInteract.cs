@@ -28,15 +28,15 @@ public class PlayerInteract : MonoBehaviour {
 	// Update is called once per frame
 	// TODO edit the key to be the confirm key
 	void Update () {
-
+		/*
 		if (FindObjectOfType<DialogueRunner> ().isDialogueRunning == true) {
 			GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
 			return;
 		} else {
 			GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY;
 		}
-
-		if (Input.GetButtonDown("Submit")) {
+		*/
+		if (Input.GetButtonDown("Submit") && FindObjectOfType<DialogueRunner>().isDialogueRunning == false) {
 			CheckForNearbyNPC ();
 		}
 	}
