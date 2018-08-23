@@ -25,6 +25,12 @@ public class UiCardScript : MonoBehaviour {
             
     }
 
+    public void RewardCard()
+    {
+        Debug.Log("Adding");
+        //GetComponentInParent<RewardsScript>().AddCard(info);
+    }
+
     public void OnHover()
     {
         hover = true;
