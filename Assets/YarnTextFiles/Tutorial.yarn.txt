@@ -4,15 +4,39 @@ colorID: 1
 position: 721,130
 ---
 <<setbust YM zeus>>
-Teacher: Learn to play my card game!
-Teacher: By playing other people!
+Teacher: Nate! You are late again!
+Teacher: And disrespecting my wishes by wearing a blue toga!
+Teacher: 
+Teacher: Today in class we are playing cards
+Teacher: Do you know how to play the game?
+[[No|Tutorial]]
+[[Yes|Tutorial.Lies]]
 <<resetbusts YM>>
 ===
-title: Zeus.TutorialEnd
+title: Tutorial
 tags: 
 colorID: 0
-position: 989,132
+position: 983,-98
 ---
-Teacher: Ok then! Come back when you Do!
+Teacher: Here are the cards!
+[[I don't get it!| Tutorial]]
+[[I get it thanks! |Tutorial.End]]
+===
+title: Tutorial.Lies
+tags: 
+colorID: 0
+position: 1011,362
+---
+Teacher: I made this card game up last night!
+Teacher: Are you sure you don't want me to teach you how to play?
+[[Tutorial| Tutorial]]
+[[No Tutorial| Tutorial.End]]
+===
+title: Tutorial.End
+tags: 
+colorID: 0
+position: 1320,172
+---
+Teacher: Here are the cards!
 <<resetbusts YM>>
 ===
