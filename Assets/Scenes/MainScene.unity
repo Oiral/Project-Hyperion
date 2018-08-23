@@ -5425,7 +5425,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300014, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 81a81b7d8467dcb4fa8946772a8a1723, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11003,6 +11003,21 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: df4c9837ad1fdbf4d912334758956a11, type: 3}
   m_PrefabInternal: {fileID: 929428214}
+--- !u!1 &931626465 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 8228f7896c9261a4e901725880b46a2b, type: 3}
+  m_PrefabInternal: {fileID: 1253278883}
+--- !u!114 &931626467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 931626465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22663c4278c603b45a1856cb5bc007af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &934538653
 GameObject:
   m_ObjectHideFlags: 0
@@ -14199,12 +14214,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1334fe890175394abc50a9c0a3df236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beard: {fileID: 931626465}
   otherBust: {fileID: 416407199}
   nateBust: {fileID: 734294057}
   busts:
   - name: zeus
     displayName: Zeus
-    bust: {fileID: 21300014, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
+    bust: {fileID: 21300000, guid: 81a81b7d8467dcb4fa8946772a8a1723, type: 3}
   - name: hera
     displayName: Hera
     bust: {fileID: 21300020, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
@@ -14888,6 +14904,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 86b8612e3f672594a90af9507af6ba39, type: 2}
+    - target: {fileID: 100000, guid: 8228f7896c9261a4e901725880b46a2b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8228f7896c9261a4e901725880b46a2b, type: 3}
   m_IsPrefabParent: 0
@@ -19526,9 +19546,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Zeus
-  talkToNode: Zeus.Buy
+  talkToNode: ZeusStart
   scriptToLoad: {fileID: 0}
-  nodeAfterCompletingGauntlet: Zeus.Battle
+  nodeAfterCompletingGauntlet: Zeus.Battle1
 --- !u!1001 &1598508544
 Prefab:
   m_ObjectHideFlags: 0

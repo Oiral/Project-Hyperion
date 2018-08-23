@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class YarnFunctionsManager : MonoBehaviour {
 
+	public GameObject beard;
+
 	[System.Serializable]
 	public struct BustInfo
 	{
@@ -91,6 +93,17 @@ public class YarnFunctionsManager : MonoBehaviour {
 				print(name + " set to true in enemiesDefeatedTracker");
 			}
 		}
+	}
+
+	[YarnCommand("callcredits")]
+	public void CallCredits()
+	{
+		SceneFlow.RunScene(SceneList.Credits);
+	}
+
+	[YarnCommand("setBeard")]
+	public void Setbeard(string state){
+		beard.SetActive(true);
 	}
 	#endregion
 

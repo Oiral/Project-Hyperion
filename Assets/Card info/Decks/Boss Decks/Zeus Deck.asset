@@ -14,10 +14,22 @@ MonoBehaviour:
   unactiveDeck:
   - {fileID: 11400000, guid: 2e26073cbbe7fac41aa89d089cfa7cd4, type: 2}
   - {fileID: 11400000, guid: fb9369bf2c947ca44bb93978eadc7241, type: 2}
+  - {fileID: 11400000, guid: fb9369bf2c947ca44bb93978eadc7241, type: 2}
+  - {fileID: 11400000, guid: fb9369bf2c947ca44bb93978eadc7241, type: 2}
+  - {fileID: 11400000, guid: 0ca35c42dea5bc64c99d7df9a2e257c6, type: 2}
   - {fileID: 11400000, guid: 0ca35c42dea5bc64c99d7df9a2e257c6, type: 2}
   - {fileID: 11400000, guid: a17729bb982dc2e41ae813bba890f7c1, type: 2}
-  - {fileID: 11400000, guid: 13e4753dedec73f4bbcbffadc5b61361, type: 2}
+  - {fileID: 11400000, guid: a17729bb982dc2e41ae813bba890f7c1, type: 2}
   - {fileID: 11400000, guid: fa3d05283b3547f458f1f6408a74b6bd, type: 2}
+  - {fileID: 11400000, guid: fa3d05283b3547f458f1f6408a74b6bd, type: 2}
+  - {fileID: 11400000, guid: fa3d05283b3547f458f1f6408a74b6bd, type: 2}
+  - {fileID: 11400000, guid: 7613bdbe1db328f4995e315aec0fc458, type: 2}
+  - {fileID: 11400000, guid: 7613bdbe1db328f4995e315aec0fc458, type: 2}
+  - {fileID: 11400000, guid: 009d0825d82246240870383f939e9154, type: 2}
+  - {fileID: 11400000, guid: 009d0825d82246240870383f939e9154, type: 2}
+  - {fileID: 11400000, guid: 6eeb590a2c3470d49a9345f228784900, type: 2}
+  - {fileID: 11400000, guid: 6eeb590a2c3470d49a9345f228784900, type: 2}
+  - {fileID: 11400000, guid: 6eeb590a2c3470d49a9345f228784900, type: 2}
   inventoryCards: []
   rewardCards:
   - {fileID: 11400000, guid: fa3d05283b3547f458f1f6408a74b6bd, type: 2}

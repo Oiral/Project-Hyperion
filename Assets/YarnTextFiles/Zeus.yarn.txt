@@ -13,13 +13,33 @@ Teacher: I hope you are ready to lose to your master!
 [[Run|Zeusbattle.Run]]
 [[What happened to the card Shop?|Zeus.Buy]]
 ===
+title: Zeus.Battle1
+tags: 
+colorID: 0
+position: 840,-300
+---
+<<if not visited("Zeus.Battle1")>>
+	<<setbust YM zeus>>
+	Teacher: I see you have beaten everyone else in the class...
+	Teacher: but are you ready...
+	<<setBeard YM true>>
+	<<setbust YM teacher>>
+	Teacher: To face the God of thunder!
+<<else>>
+	<<setbust YM teacher>>
+	Zeus: Beating the thunder God is not going to happen!
+	Zeus: I hope you are ready to lose!
+<<endif>>
+[[Fight|Zeusbattle.Yes]]
+[[Run|Zeusbattle.Run]]
+===
 title: Zeusbattle.Run
 tags: 
 colorID: 0
 position: 840,-236
 ---
 <<setbust YM teacher>>
-Teacher: Come back when you are ready!
+Zeus: Come back when you are ready!
 <<resetbusts YM>>
 ===
 title: Zeusbattle.Yes
@@ -31,22 +51,40 @@ position: 840,-236
 Teacher: Prepare for... THE ONCOMING STORM!
 <<startbattle YM zeus>>
 ===
+title: Zeus.Continue
+tags: 
+colorID: 0
+position: 1126,-313
+---
+If you want the credits, you can access them from the main menu!
+<<resetbusts YM>>
+===
+title: Credits
+tags: 
+colorID: 0
+position: 1126,-313
+---
+<<callcredits YM>>
+<<resetbusts YM>>
+===
 title: Zeus.Lose
 tags: 
 colorID: 0
 position: 1126,-313
 ---
-<<setbust YM zeus>>
-Teacher: Wow! I Can't Say I’m not surprised but...
+<<setbust YM teacher>>
+Teacher: Wow! I Can't Say I’m surprised!
 Teacher: Congratulations. Well done Nate!
 <<resetbusts YM>>
+[[Credits|Credits]]
+[[Continue|Zeus.Continue]]
 ===
 title: Zeus.Win
 tags: 
 colorID: 0
 position: 885,-486
 ---
-<<setbust YM zeus>>
+<<setbust YM teacher>>
 Teacher: Can't fault the bolt! Better luck next time!
 <<resetbusts YM>>
 ===
@@ -75,5 +113,14 @@ colorID: 0
 position: 1079,388
 ---
 Teacher: Ok then! Come back when you Do!
+<<resetbusts YM>>
+===
+title: ZeusStart
+tags: 
+colorID: 0
+position: 583,-253
+---
+<<setbust YM zeus>>
+Teacher: Come back here when you have beaten the other students!
 <<resetbusts YM>>
 ===
