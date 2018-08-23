@@ -109,9 +109,9 @@ position: 790,322
 <<setbust YM hercules>>
 Hercules: Bro! How'd you beat me!
 Hercules: We need to rematch sometime soon!
+<<recorddefeat YM hercules>>
 <<resetbusts YM>>
 <<resetgauntlet YM>>
-<<recorddefeat YM hercules>>
 ===
 title: Hercules.Win
 tags: 

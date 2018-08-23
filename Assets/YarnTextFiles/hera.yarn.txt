@@ -155,9 +155,9 @@ position: 1190,31
 ---
 <<setbust YM hera>>
 Hera: You beat me! Congradulations
+<<recorddefeat YM hera>>
 <<resetbusts YM>>
 <<resetgauntlet YM>>
-<<recorddefeat YM hera>>
 ===
 title: Herathug.Lose
 tags: 

@@ -75,7 +75,9 @@ position: 1126,-313
 <<setbust YM teacher>>
 Teacher: Wow! I Can't Say I’m surprised!
 Teacher: Congratulations. Well done Nate!
+<<recorddefeat YM zeus>>
 <<resetbusts YM>>
+<<resetgauntlet YM>>
 [[Credits|Credits]]
 [[Continue|Zeus.Continue]]
 ===

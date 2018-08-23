@@ -26,10 +26,11 @@ public class GameManager : MonoBehaviour {
 	public bool CheckGauntlets()
 	{
 		bool returnbool = true;
-		foreach(bool enemyBeat in enemiesDefeatedTracker)
-		{
-			returnbool = returnbool && enemyBeat;
-		}
+
+        for (int i = 0; i < enemiesDefeatedTracker.Length-1; i++)//want to check if we have defeated people in the list but not that last one as that will be the final boss
+        {
+            returnbool = returnbool && enemiesDefeatedTracker[i];
+        }
 		print(returnbool);
 		return returnbool;
 

@@ -63,9 +63,9 @@ position: 334,798
 ---
 <<setbust YM hades>>
 Hades: I MISCALCUATED! NO!
+<<recorddefeat YM hades>>
 <<resetbusts YM>>
 <<resetgauntlet YM>>
-<<recorddefeat YM hades>>
 ===
 title: Hades.Win
 tags: 
