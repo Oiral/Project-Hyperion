@@ -76,6 +76,12 @@ public class BattleManagerScript : MonoBehaviour {
 
     #endregion
 
+    [Header("Particles")]
+    public GameObject attackParticlePrefab;
+    public GameObject defendParticlePrefab;
+    public GameObject freezeParticlePrefab;
+    public GameObject healthParticlePrefab;
+
     private void Start()
     {
         //Check if there is a game manager with a deck to be loaded
@@ -368,6 +374,7 @@ public class BattleManagerScript : MonoBehaviour {
                     {
                         if (otherCollumn[r].extras != CardFamily.Effect)
                         {
+                            SpawnParticle(freezeParticlePrefab, otherCollumn[r].attachedObject);
                             otherCollumn[r].enabled = false;
                         }
                     }
@@ -377,6 +384,7 @@ public class BattleManagerScript : MonoBehaviour {
                     Debug.Log("Freeze");
                     if (otherCollumn[row].extras != CardFamily.Effect)
                     {
+                        SpawnParticle(freezeParticlePrefab, otherCollumn[row].attachedObject);
                         otherCollumn[row].enabled = false;
                     }
                     break;
@@ -433,6 +441,10 @@ public class BattleManagerScript : MonoBehaviour {
                     //run the attack
                     opponent.Damage(cardToEval.attackDamage * cardToEval.multiplyValue);
 
+                    //spawn the particles
+                    SpawnParticle(freezeParticlePrefab, otherCollumn[row].attachedObject);
+                    SpawnParticle(attackParticlePrefab, cardToEval.attachedObject);
+
                     //Visual
                     VisualMove(cardToEval, new Vector3(attackMove, 0, 0));
                     break;
@@ -442,6 +454,9 @@ public class BattleManagerScript : MonoBehaviour {
                     //heal the player
                     user.Heal(cardToEval.attackDamage * cardToEval.multiplyValue);
 
+                    //Particles
+                    SpawnParticle(healthParticlePrefab, cardToEval.attachedObject);
+
                     //Visual
                     VisualMove(cardToEval, new Vector3(defendMove, 0, 0));
                     break;
@@ -450,6 +465,9 @@ public class BattleManagerScript : MonoBehaviour {
                     Debug.Log("Block", cardToEval.attachedObject);
                     //add block
                     user.Block(cardToEval.attackDamage * cardToEval.multiplyValue);
+
+                    //Particles
+                    SpawnParticle(defendParticlePrefab, cardToEval.attachedObject);
 
                     //Visual
                     VisualMove(cardToEval, new Vector3(defendMove, 0, 0));
@@ -463,6 +481,9 @@ public class BattleManagerScript : MonoBehaviour {
                     //deal damage
                     opponent.Damage(cardToEval.attackDamage * cardToEval.multiplyValue);
 
+                    //Particles
+                    SpawnParticle(attackParticlePrefab, cardToEval.attachedObject);
+
                     //Visual
                     VisualMove(cardToEval, new Vector3(attackMove, 0, 0));
                     break;
@@ -472,11 +493,20 @@ public class BattleManagerScript : MonoBehaviour {
                     //deal damage
                     opponent.Damage(cardToEval.attackDamage * cardToEval.multiplyValue);
 
+                    //Particles
+                    SpawnParticle(attackParticlePrefab, cardToEval.attachedObject);
+
                     //Visual
                     VisualMove(cardToEval, new Vector3(attackMove, 0, 0));
                     break;
             }
         }
+    }
+
+    void SpawnParticle(GameObject particlePrefab, GameObject spawnObject)
+    {
+        GameObject particle = Instantiate(particlePrefab, spawnObject.transform.position + (Vector3.up * 0.2f), Quaternion.identity,spawnObject.transform);
+        Destroy(particle, 3);
     }
 
     void VisualMove(GameCard cardToMove,Vector3 moveDir)
