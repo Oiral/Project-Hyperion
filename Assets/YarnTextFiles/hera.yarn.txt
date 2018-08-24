@@ -5,8 +5,8 @@ position: -780,-444
 ---
 <<setbust YM aphrodite2>>
 <<startgauntlet YM Hera>>
-Aphrodite: I'm the best! You can't possibly beat me!
-[[Fight|Herathug1.Fight]]
+AphrodIte: I'm the best! You can't possIbly beat me!
+[[FIght|Herathug1.Fight]]
 [[Run|Herathug1.Run]]
 ===
 title: Herathug1.Fight
@@ -14,7 +14,7 @@ tags:
 colorID: 0
 position: -544,-424
 ---
-Aphrodite: Prepare to lose!
+AphrodIte: Prepare to lose!
 <<startbattle YM herathug1>>
 <<resetbusts YM>>
 ===
@@ -32,9 +32,9 @@ colorID: 0
 position: -294,-325
 ---
 <<setbust YM aphrodite1>>
-Aphrodite: Ugh! How did you lose to nate!
-Aphrodite: I'll put him in his place!
-[[Fight|Herathug2.Fight]]
+AphrodIte: Ugh! How dId you lose to nate!
+AphrodIte: I'll put hIm In hIs place!
+[[FIght|Herathug2.Fight]]
 [[Run|Herathug2.Confirm]]
 ===
 title: Herathug2.Fight
@@ -42,7 +42,7 @@ tags:
 colorID: 0
 position: -31,-293
 ---
-Aphrodite: Your run is over!
+AphrodIte: Your run Is over!
 <<startbattle YM herathug2>>
 <<resetbusts YM>>
 ===
@@ -51,7 +51,7 @@ tags:
 colorID: 0
 position: -198,182
 ---
-Aphrodite: Typical.
+AphrodIte: TypIcal.
 <<resetbusts YM>>
 <<resetgauntlet YM>>
 ===
@@ -60,7 +60,7 @@ tags:
 colorID: 0
 position: -144,-50
 ---
-Are you sure? All your progress in these battles will be lost?
+Are you sure? All your progress In these battles wIll be lost?
 [[Run|Herathug2.Run]]
 [[Stay|Herathug2]]
 ===
@@ -70,8 +70,8 @@ colorID: 0
 position: 220,-259
 ---
 <<setbust YM medusa>>
-Medusa: I can see you are paralysed with fear.
-[[Fight|Herathug3.Fight]]
+Medusa: I can see you are paralysed wIth fear.
+[[FIght|Herathug3.Fight]]
 [[Run|Herathug3.Confirm]]
 ===
 title: Herathug3.Fight
@@ -79,7 +79,7 @@ tags:
 colorID: 0
 position: 471,-167
 ---
-Medusa: I'll make this quick.
+Medusa: I'll make thIs quIck.
 <<startbattle YM herathug3>>
 <<resetbusts YM>>
 ===
@@ -97,7 +97,7 @@ tags:
 colorID: 0
 position: 223,27
 ---
-Are you sure? All your progress in these battles will be lost?
+Are you sure? All your progress In these battles wIll be lost?
 [[Run|Herathug3.Run]]
 [[Stay|Herathug3]]
 ===
@@ -107,8 +107,8 @@ colorID: 0
 position: 740,-127
 ---
 <<setbust YM hera>>
-Hera: Are you ready to fight?
-[[Fight|Hera.Fight]]
+Hera: Are you ready to fIght?
+[[FIght|Hera.Fight]]
 [[Run|Hera.Confirm]]
 ===
 title: Hera.Fight
@@ -116,7 +116,7 @@ tags:
 colorID: 0
 position: 951,-63
 ---
-Hera: Lets fight!
+Hera: Lets fIght!
 <<startbattle YM hera>>
 <<resetbusts YM>>
 ===
@@ -134,7 +134,7 @@ tags:
 colorID: 0
 position: 732,151
 ---
-Are you sure? All your progress in these battles will be lost?
+Are you sure? All your progress In these battles wIll be lost?
 [[Stay|Hera]]
 [[Run|Hera.Run]]
 ===
@@ -144,7 +144,7 @@ colorID: 0
 position: 1176,-209
 ---
 <<setbust YM hera>>
-Hera: Hard Luck! So close, and yet so far. Try again!
+Hera: Hard Luck! So close, and yet so far. Try agaIn!
 <<resetbusts YM>>
 <<resetgauntlet YM>>
 ===
@@ -154,7 +154,7 @@ colorID: 0
 position: 1190,31
 ---
 <<setbust YM hera>>
-Hera: You beat me! Congradulations
+Hera: You beat me! CongradulatIons
 <<recorddefeat YM hera>>
 <<resetbusts YM>>
 <<resetgauntlet YM>>
@@ -165,7 +165,7 @@ colorID: 0
 position: 838,-464
 ---
 <<setbust YM hera>>
-Hera: Nice Try, better luck next time!
+Hera: NIce Try, better luck next tIme!
 <<resetbusts YM>>
 <<resetgauntlet YM>>
 ===

@@ -1,42 +1,170 @@
 title: Zeus.Tutorial
 tags: 
 colorID: 1
-position: 721,130
+position: 256,-321
 ---
 <<setbust YM zeus>>
-Teacher: Nate! You are late again!
-Teacher: And disrespecting my wishes by wearing a blue toga!
-Teacher: 
-Teacher: Today in class we are playing cards
-Teacher: Do you know how to play the game?
-[[No|Tutorial]]
-[[Yes|Tutorial.End]]
-<<resetbusts YM>>
+Teacher: Nate! You are late agaIn!
+Teacher: and wearIng a blue toga! Why?
+Teacher: Anyway, Today In class we are playIng cards for the lesson. Have you played thIs game before?
+[[No|Tutorial.Which]]
+[[Yes|Tutorial.Lies]]
 ===
 title: Tutorial
 tags: 
 colorID: 0
-position: 983,-98
+position: 1000,-128
 ---
-Teacher: Well... maybe the other students might help you!
-Teacher: Here are your cards.
-<<resetbusts YM>>
+Teacher: What do you want to know?
+[[Card Game?|Tutorial.Game]]
+[[Cards?|Tutorial.Cards]]
+[[I've get It. Thanks!|Tutorial.End]]
 ===
 title: Tutorial.Lies
 tags: 
 colorID: 0
-position: 1011,362
+position: 639,408
 ---
-Teacher: I made this card game up last night!
-Teacher: Are you sure you don't want me to teach you how to play?
-[[Tutorial| Tutorial]]
-[[No Tutorial| Tutorial.End]]
+Teacher: You lIe! I made thIs card game up last nIght!
+Teacher: Do you want me to show you how to play?
+[[Teach me how to play!|Tutorial]]
+[[No thanks, I don't need help|Tutorial.End]]
 ===
 title: Tutorial.End
 tags: 
 colorID: 0
-position: 1320,172
+position: 1171,254
 ---
-Teacher: Here are your cards.
+<<if not visited("ZeusStart")>>
+    Teacher: In that case, here are your cards. Go have some fun!
+<<else>>
+	Go have fun!
+<<endif>>
 <<resetbusts YM>>
+===
+title: Tutorial.Game
+tags: 
+colorID: 0
+position: 1116,-565
+---
+Teacher: The goal of the game Is to reduce your opponent's health to zero.
+Teacher: Each round Is made up of three rows.
+Teacher: You play three cards each round, one In each row.
+Teacher: Once all cards are played, Each row of cards are actIvated.
+Teacher: Cards are actIvated In thIs order: Effect cards, Defense cards, Attack Cards.
+<<if not visited("Everything")>>
+    Teacher: Honestly, The best way to learn Is to play.
+<<endif>>
+Teacher: Now, Your classmates have organIsed themselves Into groups.
+Teacher: You'll get 15 health to beat everyone In the whole group. Good luck!
+<<if visited("Tutorial")>>
+    [[Tutorial]]
+<<else>>
+    So, do you thInk you get It?
+    [[Yes!|Tutorial.End]]
+    [[No|Tutorial]]
+<<endif>>
+===
+title: Tutorial.CardsOverview
+tags: 
+colorID: 0
+position: 1585,-555
+---
+Teacher: Ok, so there are dIfferent types of cards.
+<<showcard YM 1>>
+Teacher: ThIs Is an attack card.
+Teacher: Attack cards deal damage to your opponent.
+Teacher: There are dIfferent types of attack cards, keep an eye out for them!
+<<showcard YM 2>>
+Teacher: ThIs Is a defense card.
+Teacher: Defense cards can block attacks by IncreasIng your shIeld. They can also heal.
+Teacher: Your shIeld resets at the end of the turn, so use them wIsely!
+<<showcard YM 3>>
+Teacher: ThIs Is an effect card.
+Teacher: ThIs one wIll freeze the card In the same row.
+Teacher: There are dIfferent types of effect cards, they wIll explaIn on them what the do.
+<<showcard YM 4>>
+Teacher: FInally, thIs Is a specIal God card.
+Teacher: These all do somethIng really specIal, read them for an explanatIon of what they do.
+<<showcard YM 0>>
+That's all the cards!
+<<if not visited("Everything") and visited("Tutorial")>>
+    [[Tutorial]]
+<<else>>
+    [[Tutorial.Game]]
+<<endif>>
+===
+title: Tutorial.Cards
+tags: 
+colorID: 6
+position: 1326,-143
+---
+Teacher: What do you want to know about the cards?
+[[Attack Cards|Tutorial.AttackCards]]
+[[Defense Cards|Tutorial.DefenseCards]]
+[[Effect Cards|Tutorial.EffectCards]]
+[[Return|Tutorial]]
+===
+title: Tutorial.Which
+tags: 
+colorID: 0
+position: 640,-371
+---
+Would you lIke me to explaIn the rules?
+[[ExplaIn everthIng!|Everything]]
+[[Just tell me what I want to know|Tutorial]]
+[[Don't worry, I'm good!|AreYouSure]]
+===
+title: AreYouSure
+tags: 
+colorID: 0
+position: 661,-12
+---
+Teacher: Are you sure?
+[[Yes!|Tutorial.End]]
+[[No|Tutorial]]
+===
+title: Everything
+tags: 
+colorID: 0
+position: 913,-822
+---
+Teacher: AlrIght, I hope you are ready!
+[[Tutorial.CardsOverview]]
+===
+title: Tutorial.AttackCards
+tags: 
+colorID: 0
+position: 1645,-309
+---
+<<showcard YM 1>>
+Teacher: ThIs Is an attack card.
+Teacher: Attack cards deal damage to your opponent.
+Teacher: There are dIfferent types of attack cards, keep an eye out for them!
+<<showcard YM 0>>
+[[Tutorial.Cards]]
+===
+title: Tutorial.DefenseCards
+tags: 
+colorID: 0
+position: 1776,-46
+---
+<<showcard YM 2>>
+Teacher: ThIs Is a defense card.
+Teacher: Defense cards can block attacks by IncreasIng your shIeld. They can also heal.
+Teacher: Your shIeld resets at the end of the turn, so use them wIsely!
+<<showcard YM 0>>
+[[Tutorial.Cards]]
+===
+title: Tutorial.EffectCards
+tags: 
+colorID: 0
+position: 1511,155
+---
+<<showcard YM 3>>
+Teacher: ThIs Is an effect card.
+Teacher: ThIs one wIll freeze the card In the same row.
+Teacher: There are dIfferent types of effect cards, they wIll explaIn on them what the do.
+<<showcard YM 0>>
+[[Tutorial.Cards]]
 ===

@@ -1,8 +1,10 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 using UnityEngine.UI;
 using UnityEngine.Analytics;
+using System;
 
 public class YarnFunctionsManager : MonoBehaviour {
 
@@ -16,14 +18,18 @@ public class YarnFunctionsManager : MonoBehaviour {
 		public Sprite bust;
 	}
 
+	[Header("Cards for tutorial")]
+	public Image tutorialCardDisplay;
+	public List<Sprite> tutorialCards;
+
 	public Image otherBust;
 	public Image nateBust;
 
 	public BustInfo[] busts;
 
-    public AnalyticsEventTracker beatGauntletTracker;
-    public AnalyticsEventTracker repeatBeatGauntletTracker;
-    public string currentGauntletName = "Unassigned gauntlet";
+	public AnalyticsEventTracker beatGauntletTracker;
+	public AnalyticsEventTracker repeatBeatGauntletTracker;
+	public string currentGauntletName = "Unassigned gauntlet";
 
 	#region YarnCommands
 	///TODO: FIX THIS 
@@ -38,6 +44,20 @@ public class YarnFunctionsManager : MonoBehaviour {
 	public void OpenShop()
 	{
 		SceneFlow.RunScene(SceneList.Shop);
+	}
+	[YarnCommand("showcard")]
+	public void ShowTutorialCard(string num)
+	{
+		int index = Int32.Parse(num);
+		if (index == 0)
+		{
+			tutorialCardDisplay.color = Color.clear;
+		}
+		else
+		{
+			tutorialCardDisplay.sprite = tutorialCards[index];
+			tutorialCardDisplay.color = Color.white;
+		}
 	}
 
 	[YarnCommand("setbust")]

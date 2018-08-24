@@ -4,9 +4,9 @@ colorID: 1
 position: 260,-26
 ---
 <<setbust YM hadesthug>>
-Atlas: Fight me for...
+Atlas: FIght me for...
 Atlas: The HONOUR to verse HADES!
-[[Fight|Hadesthug.Yes]]
+[[FIght|Hadesthug.Yes]]
 [[Run|Hadesthug.No]]
 ===
 title: Hadesthug.Yes
@@ -14,7 +14,7 @@ tags:
 colorID: 0
 position: 158,186
 ---
-Atlas: Prepare! For your moment awaits!
+Atlas: Prepare! For your moment awaIts!
 <<startgauntlet YM Hades>>
 <<startbattle YM hadesthug>>
 <<resetbusts YM>>
@@ -33,9 +33,9 @@ colorID: 0
 position: 358,355
 ---
 <<setbust YM hades>>
-Hades: So you have defeated my underling...
-Hades: I guess it is time for me to... turn up the HEAT!
-[[Fight|Hades.Yes]]
+Hades: So you have defeated my underlIng...
+Hades: I guess It Is tIme for me to... turn up the HEAT!
+[[FIght|Hades.Yes]]
 [[Run|Hadesno.Confirm]]
 ===
 title: Hades.Yes
@@ -43,7 +43,7 @@ tags:
 colorID: 0
 position: 484,568
 ---
-Hades: We'll see how strong your soul is!
+Hades: We'll see how strong your soul Is!
 <<startbattle YM hades>>
 <<resetbusts YM>>
 ===
@@ -52,7 +52,7 @@ tags:
 colorID: 0
 position: 598,320
 ---
-Are you sure? All your progress in these battles will be lost?
+Are you sure? All your progress In these battles wIll be lost?
 [[Stay|Hades]]
 [[Retreat|Hades.No]]
 ===
@@ -73,7 +73,7 @@ colorID: 0
 position: 592,801
 ---
 <<setbust YM hades>>
-Hades: Your soul is mine!
+Hades: Your soul Is mIne!
 <<resetbusts YM>>
 <<resetgauntlet YM>>
 ===
@@ -92,7 +92,7 @@ colorID: 0
 position: 901,32
 ---
 <<setbust YM hadesthug>>
-Atlas: You are not worth to face Him!
+Atlas: You are not worth to face HIm!
 <<resetbusts YM>>
 <<resetgauntlet YM>>
 ===

@@ -4,8 +4,8 @@ colorID: 1
 position: -202,-732
 ---
 <<setbust YM herculesthug>>
-Poseidon: Bro! Do you think you can beat me??
-[[Fight|Herculesthug1.Yes]]
+PoseIdon: Bro! Do you thInk you can beat me??
+[[FIght|Herculesthug1.Yes]]
 [[Run|Herculesthug1.No]]
 ===
 title: Herculesthug1.Yes
@@ -14,7 +14,7 @@ colorID: 0
 position: -202,-373
 ---
 <<startgauntlet YM Hercules>>
-Poseidon: Well bro! You're about to lose!
+PoseIdon: Well bro! You're about to lose!
 <<startbattle YM herculesthug1>>
 <<resetbusts YM>>
 ===
@@ -32,8 +32,8 @@ colorID: 0
 position: 54,-195
 ---
 <<setbust YM herculesthug>>
-Poseidon: Bro! You may have defeated my twin, but you won't beat me!
-[[Fight|Herculesthug2.Yes]]
+PoseIdon: Bro! You may have defeated my twIn, but you won't beat me!
+[[FIght|Herculesthug2.Yes]]
 [[Run|Herculesthug2.Confirm]]
 ===
 title: Herculesthug2.Yes
@@ -41,7 +41,7 @@ tags:
 colorID: 0
 position: 93,67
 ---
-Poseidon: Big mistake!
+PoseIdon: BIg mIstake!
 <<startbattle YM herculesthug2>>
 <<resetbusts YM>>
 ===
@@ -58,7 +58,7 @@ tags:
 colorID: 0
 position: 399,-416
 ---
-Are you sure? All your progress in these battles will be lost?
+Are you sure? All your progress In these battles wIll be lost?
 [[Stay|Herculesthug2]]
 [[Run|Herculesthug2.No]]
 ===
@@ -72,7 +72,7 @@ position: 539,-87
     Hercules: You have defeated my other bros but...
 <<endif>>
 Hercules: Are you ready to face me!
-[[Fight|Hercules.Yes]]
+[[FIght|Hercules.Yes]]
 [[Run|Hercules.Confirm]]
 ===
 title: Hercules.Yes
@@ -80,7 +80,7 @@ tags:
 colorID: 0
 position: 495,218
 ---
-Bro! Time for me to avenge my bros!
+Bro! TIme for me to avenge my bros!
 <<startbattle YM hercules>>
 <<resetbusts YM>>
 ===
@@ -97,7 +97,7 @@ tags:
 colorID: 0
 position: 831,-88
 ---
-Are you sure? All your progress in these battles will be lost?
+Are you sure? All your progress In these battles wIll be lost?
 [[Stay|Hercules]]
 [[Run|Hercules.No]]
 ===
@@ -108,7 +108,7 @@ position: 790,322
 ---
 <<setbust YM hercules>>
 Hercules: Bro! How'd you beat me!
-Hercules: We need to rematch sometime soon!
+Hercules: We need to rematch sometIme soon!
 <<recorddefeat YM hercules>>
 <<resetbusts YM>>
 <<resetgauntlet YM>>
@@ -119,8 +119,8 @@ colorID: 0
 position: 1040,329
 ---
 <<setbust YM hercules>>
-Hercules: See told you BRO, being this jacked means... 
-Hercules: I'll always win!
+Hercules: See told you BRO, beIng thIs jacked means... 
+Hercules: I'll always wIn!
 ===
 title: Herculesthug.Lose
 tags: 
@@ -128,7 +128,7 @@ colorID: 0
 position: 1039,-472
 ---
 <<setbust YM herculesthug>>
-Poseiden: Bro! You just got ship-WRECKED!
+PoseIden: Bro! You just got shIp-WRECKED!
 <<resetbusts YM>>
 <<resetgauntlet YM>>
 ===

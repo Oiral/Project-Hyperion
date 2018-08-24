@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class FirstSelectable : MonoBehaviour {
 
@@ -13,6 +14,10 @@ public class FirstSelectable : MonoBehaviour {
 		{
 			t = 1.5f;
 		}
+		else if(SceneManager.GetActiveScene().name == SceneFlow.GetSceneName(SceneList.MainTitle))
+		{
+			t = 2f;
+		}
 		StartCoroutine(SetFirstOption(t));
 	}
 
@@ -20,6 +25,14 @@ public class FirstSelectable : MonoBehaviour {
 	{
 		yield return new WaitForSecondsRealtime(t);
 		gameObject.GetComponent<Button>().Select();
-		//print("Enabled!");
+		print("Enabled!");
+	}
+	private void OnDisable()
+	{
+		if (gameObject.GetComponent<Button>().FindSelectableOnDown() != null)
+		{
+			gameObject.GetComponent<Button>().FindSelectableOnDown().Select();
+		}
+		
 	}
 }
