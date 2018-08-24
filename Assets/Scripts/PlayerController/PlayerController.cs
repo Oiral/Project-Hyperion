@@ -67,7 +67,6 @@ public class PlayerController : MonoBehaviour
 			rb.velocity = (movement.normalized * speed);
 
 			rb.angularVelocity = Vector3.zero;
-		
 
 			if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
 			{
@@ -99,6 +98,7 @@ public class PlayerController : MonoBehaviour
 			walkingBool = false;
 			//Debug.Log("wB = false");
 			rb.angularVelocity = Vector3.zero;
+			rb.velocity = Vector3.zero;
 		}
 
 

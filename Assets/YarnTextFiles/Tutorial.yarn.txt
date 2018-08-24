@@ -38,7 +38,7 @@ position: 1171,254
 <<if not visited("ZeusStart")>>
     Teacher: In that case, here are your cards. Go have some fun!
 <<else>>
-	Go have fun!
+	Teacher: Go have fun!
 <<endif>>
 <<resetbusts YM>>
 ===
@@ -60,7 +60,7 @@ Teacher: You'll get 15 health to beat everyone In the whole group. Good luck!
 <<if visited("Tutorial")>>
     [[Tutorial]]
 <<else>>
-    So, do you thInk you get It?
+    Teacher: So, do you thInk you get It?
     [[Yes!|Tutorial.End]]
     [[No|Tutorial]]
 <<endif>>
@@ -87,7 +87,7 @@ Teacher: There are dIfferent types of effect cards, they wIll explaIn on them wh
 Teacher: FInally, thIs Is a specIal God card.
 Teacher: These all do somethIng really specIal, read them for an explanatIon of what they do.
 <<showcard YM 0>>
-That's all the cards!
+Teacher: That's all the cards!
 <<if not visited("Everything") and visited("Tutorial")>>
     [[Tutorial]]
 <<else>>
@@ -110,7 +110,7 @@ tags:
 colorID: 0
 position: 640,-371
 ---
-Would you lIke me to explaIn the rules?
+Teacher: Would you lIke me to explaIn the rules?
 [[ExplaIn everthIng!|Everything]]
 [[Just tell me what I want to know|Tutorial]]
 [[Don't worry, I'm good!|AreYouSure]]
