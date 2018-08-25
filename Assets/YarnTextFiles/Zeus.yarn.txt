@@ -3,7 +3,7 @@ tags:
 colorID: 1
 position: 579,-109
 ---
-<<setbust YM zeus>>
+<<setbust YM teacher>>
 <<if not visited("Zeus.Battle")>>
 	Teacher: I see you have beaten everyone else In the class...
     Teacher: but beatIng the thunder God Is not goIng to happen!
@@ -19,14 +19,14 @@ colorID: 0
 position: 600,-367
 ---
 <<if not visited("Zeus.Battle1")>>
-	<<setbust YM zeus>>
+	<<setbust YM teacher>>
 	Teacher: I see you have beaten everyone else In the class...
 	Teacher: but are you ready...
 	<<setBeard YM true>>
-	<<setbust YM teacher>>
+	<<setbust YM zeus>>
 	Teacher: To face the God of thunder!
 <<else>>
-	<<setbust YM teacher>>
+	<<setbust YM zeus>>
 	Zeus: BeatIng the thunder God Is not goIng to happen!
 	Zeus: I hope you are ready to lose!
 <<endif>>
@@ -38,7 +38,7 @@ tags:
 colorID: 0
 position: 889,-333
 ---
-<<setbust YM teacher>>
+<<setbust YM zeus>>
 Zeus: Come back when you are ready!
 <<resetbusts YM>>
 ===
@@ -72,7 +72,7 @@ tags:
 colorID: 0
 position: 1382,-395
 ---
-<<setbust YM teacher>>
+<<setbust YM zeus>>
 Teacher: Wow! I Can't Say I’m surprIsed!
 Teacher: CongratulatIons. Well done Nate!
 <<recorddefeat YM zeus>>
@@ -86,16 +86,17 @@ tags:
 colorID: 0
 position: 1135,-561
 ---
-<<setbust YM teacher>>
+<<setbust YM zeus>>
 Teacher: Can't fault the bolt! Better luck next tIme!
 <<resetbusts YM>>
+<<resetgauntlet YM>>
 ===
 title: Zeus.Buy
 tags: 
 colorID: 0
 position: 1150,-3
 ---
-<<setbust YM zeus>>
+<<setbust YM teacher>>
 Teacher: Do you wanna buy cards?
 [[Yes!|Zeusbuy.Yes]]
 [[No Thanks!|Zeusbuy.No]]
@@ -122,7 +123,7 @@ tags:
 colorID: 0
 position: 292,-368
 ---
-<<setbust YM zeus>>
+<<setbust YM teacher>>
 Do you need a remInder on the rules?
 [[Yes|Tutorial]]
 [[No|ZeusStart.No]]

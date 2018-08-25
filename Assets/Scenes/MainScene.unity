@@ -14464,7 +14464,7 @@ MonoBehaviour:
   busts:
   - name: zeus
     displayName: Zeus
-    bust: {fileID: 21300000, guid: 81a81b7d8467dcb4fa8946772a8a1723, type: 3}
+    bust: {fileID: 21300014, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
   - name: hera
     displayName: Hera
     bust: {fileID: 21300020, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
@@ -14494,7 +14494,7 @@ MonoBehaviour:
     bust: {fileID: 21300004, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
   - name: teacher
     displayName: Zeus
-    bust: {fileID: 21300014, guid: 738d211030ff49444aef74d47f07ba0b, type: 3}
+    bust: {fileID: 21300000, guid: 81a81b7d8467dcb4fa8946772a8a1723, type: 3}
   beatGauntletTracker: {fileID: 1283297195}
   repeatBeatGauntletTracker: {fileID: 1283297194}
   currentGauntletName: Unassigned gauntlet

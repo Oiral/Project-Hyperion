@@ -3,7 +3,7 @@ tags:
 colorID: 1
 position: 256,-321
 ---
-<<setbust YM zeus>>
+<<setbust YM teacher>>
 Teacher: Nate! You are late agaIn!
 Teacher: and wearIng a blue toga! Why?
 Teacher: Anyway, Today In class we are playIng cards for the lesson. Have you played thIs game before?
