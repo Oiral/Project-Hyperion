@@ -45,7 +45,6 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
 
-
     public int playerHealth = 15;
 
 	GameObject player;
@@ -103,8 +102,13 @@ public class GameManager : MonoBehaviour {
 		int len = enemiesDefeatedNames.Count;
 		enemiesDefeatedTracker = new bool[len];
 		lastBattlerIndex = -1;
-		if (fader != null) {
-			fader.SetActive(true); }
+		if (SaveManager.instance.callLoadGameActive)
+		{
+			SaveManager.instance.LoadGame(this);
+		}
+		else if (fader != null) {
+			fader.SetActive(true);
+		}
 	}
 
 	public void DestroySelf()
