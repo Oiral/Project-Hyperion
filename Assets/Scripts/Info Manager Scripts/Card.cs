@@ -8,7 +8,10 @@ public enum CardType { Mirror, MassFreeze, Freeze, Thief, Multiply, AttackFreeze
 
 [CreateAssetMenu(fileName = "Card Data", menuName = "Cards/Create Card", order = 1)]
 public class Card : ScriptableObject {
-    
+
+	[Header("UniqueCardTemplateID")]
+	public string uniqueCardTemplateID = "";
+
     [Header("General Stats")]
 
     public CardType typeOfCard;
@@ -29,4 +32,15 @@ public class Card : ScriptableObject {
     [Multiline]
     public string description;
     public CardBattleDescriptions battleDescription;
+
+	public void OnValidate()
+	{
+		uniqueCardTemplateID = "";
+		Debug.Log(uniqueCardTemplateID);
+	}
+
+	public string GetStringID()
+	{
+		return uniqueCardTemplateID;
+	}
 }
